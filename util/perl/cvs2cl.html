@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>cvs2cl.pl - convert cvs log messages to changelogs</title>
+<link rev="made" href="mailto:gp@familiehaase.de" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#options">OPTIONS</a></li>
+	<li><a href="#examples">EXAMPLES</a></li>
+	<li><a href="#authors">AUTHORS</a></li>
+	<li><a href="#bugs">BUGS</a></li>
+	<li><a href="#prerequisites">PREREQUISITES</a></li>
+	<li><a href="#operating_system_compatibility">OPERATING SYSTEM COMPATIBILITY</a></li>
+	<li><a href="#script_categories">SCRIPT CATEGORIES</a></li>
+	<li><a href="#copyright">COPYRIGHT</a></li>
+	<li><a href="#see_also">SEE ALSO</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>cvs2cl.pl - convert cvs log messages to changelogs</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<p><strong>cvs2cl</strong> [<em>options</em>] [<em>FILE1</em> [<em>FILE2</em> ...]]</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>cvs2cl produces a GNU-style ChangeLog for CVS-controlled sources by
+running ``cvs log'' and parsing the output. Duplicate log messages get
+unified in the Right Way.</p>
+<p>The default output of cvs2cl is designed to be compact, formally unambiguous,
+but still easy for humans to read.  It should be largely self-explanatory; the
+one abbreviation that might not be obvious is ``utags''.  That stands for
+``universal tags'' -- a universal tag is one held by all the files in a given
+change entry.</p>
+<p>If you need output that's easy for a program to parse, use the <strong>--xml</strong> option.
+Note that with XML output, just about all available information is included
+with each change entry, whether you asked for it or not, on the theory that
+your parser can ignore anything it's not looking for.</p>
+<p>If filenames are given as arguments cvs2cl only shows log information for the
+named files.</p>
+<p>
+</p>
+<hr />
+<h1><a name="options">OPTIONS</a></h1>
+<dl>
+<dt><strong><a name="item__2dh_2c__2dhelp_2c__2d_2dhelp_2c__2d_3f"><strong>-h</strong>, <strong>-help</strong>, <strong>--help</strong>, <strong>-?</strong></a></strong><br />
+</dt>
+<dd>
+Show a short help and exit.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dversion"><strong>--version</strong></a></strong><br />
+</dt>
+<dd>
+Show version and exit.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dr_2c__2d_2drevisions"><strong>-r</strong>, <strong>--revisions</strong></a></strong><br />
+</dt>
+<dd>
+Show revision numbers in output.
+</dd>
+<p></p>
+<dt><strong><a name="item__2db_2c__2d_2dbranches"><strong>-b</strong>, <strong>--branches</strong></a></strong><br />
+</dt>
+<dd>
+Show branch names in revisions when possible.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dt_2c__2d_2dtags"><strong>-t</strong>, <strong>--tags</strong></a></strong><br />
+</dt>
+<dd>
+Show tags (symbolic names) in output.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dt_2c__2d_2dtagdates"><strong>-T</strong>, <strong>--tagdates</strong></a></strong><br />
+</dt>
+<dd>
+Show tags in output on their first occurance.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dshow_2ddead"><strong>--show-dead</strong></a></strong><br />
+</dt>
+<dd>
+Show dead files.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dstdin"><strong>--stdin</strong></a></strong><br />
+</dt>
+<dd>
+Read from stdin, don't run cvs log.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dstdout"><strong>--stdout</strong></a></strong><br />
+</dt>
+<dd>
+Output to stdout not to ChangeLog.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dd_2c__2d_2ddistributed"><strong>-d</strong>, <strong>--distributed</strong></a></strong><br />
+</dt>
+<dd>
+Put ChangeLogs in subdirs.
+</dd>
+<p></p>
+<dt><strong><a name="item__2df_file_2c__2d_2dfile_file"><strong>-f</strong> <em>FILE</em>, <strong>--file</strong> <em>FILE</em></a></strong><br />
+</dt>
+<dd>
+Write to <em>FILE</em> instead of ChangeLog.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dfsf"><strong>--fsf</strong></a></strong><br />
+</dt>
+<dd>
+Use this if log data is in FSF ChangeLog style.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dfsf"><strong>--FSF</strong></a></strong><br />
+</dt>
+<dd>
+Attempt strict FSF-standard compatible output.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dw_secs_2c__2d_2dwindow_secs"><strong>-W</strong> <em>SECS</em>, <strong>--window</strong> <em>SECS</em></a></strong><br />
+</dt>
+<dd>
+Window of time within which log entries unify.
+</dd>
+<p></p>
+<dt><strong><a name="item__2du_ufile_2c__2d_2dusermap_ufile">-<strong>U</strong> <em>UFILE</em>, <strong>--usermap</strong> <em>UFILE</em></a></strong><br />
+</dt>
+<dd>
+Expand usernames to email addresses from <em>UFILE</em>.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dpasswd_passwordfile"><strong>--passwd</strong> <em>PASSWORDFILE</em></a></strong><br />
+</dt>
+<dd>
+Use system passwd file for user name expansion.  If no mail domain is provided
+(via <strong>--domain</strong>), it tries to read one from <strong>/etc/mailname</strong>, output of <strong>hostname
+-d</strong>, <strong>dnsdomainname</strong>, or <strong>domain-name</strong>.  cvs2cl exits with an error if none of
+those options is successful. Use a domain of '' to prevent the addition of a
+mail domain.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2ddomain_domain"><strong>--domain</strong> <em>DOMAIN</em></a></strong><br />
+</dt>
+<dd>
+Domain to build email addresses from.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dgecos"><strong>--gecos</strong></a></strong><br />
+</dt>
+<dd>
+Get user information from GECOS data.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dr_regexp_2c__2d_2dregexp_regexp"><strong>-R</strong> <em>REGEXP</em>, <strong>--regexp</strong> <em>REGEXP</em></a></strong><br />
+</dt>
+<dd>
+Include only entries that match <em>REGEXP</em>.  This option may be used multiple
+times.
+</dd>
+<p></p>
+<dt><strong><a name="item__2di_regexp_2c__2d_2dignore_regexp"><strong>-I</strong> <em>REGEXP</em>, <strong>--ignore</strong> <em>REGEXP</em></a></strong><br />
+</dt>
+<dd>
+Ignore files whose names match <em>REGEXP</em>.  This option may be used multiple
+times.  The regexp is a perl regular expression.  It is matched as is; you may
+want to prefix with a ^ or suffix with a $ to anchor the match.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dc_2c__2d_2dcase_2dinsensitive"><strong>-C</strong>, <strong>--case-insensitive</strong></a></strong><br />
+</dt>
+<dd>
+Any regexp matching is done case-insensitively.
+</dd>
+<p></p>
+<dt><strong><a name="item__2df_branch_2c__2d_2dfollow_branch"><strong>-F</strong> <em>BRANCH</em>, <strong>--follow</strong> <em>BRANCH</em></a></strong><br />
+</dt>
+<dd>
+Show only revisions on or ancestral to <em>BRANCH</em>.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dfollow_2donly_branch"><strong>--follow-only</strong> <em>BRANCH</em></a></strong><br />
+</dt>
+<dd>
+Like --follow, but sub-branches are not followed.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dno_2dancestors"><strong>--no-ancestors</strong></a></strong><br />
+</dt>
+<dd>
+When using <strong>-F</strong>, only track changes since the <em>BRANCH</em> started.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dno_2dhide_2dbranch_2dadditions"><strong>--no-hide-branch-additions</strong></a></strong><br />
+</dt>
+<dd>
+By default, entries generated by cvs for a file added on a branch (a dead 1.1
+entry) are not shown.  This flag reverses that action.
+</dd>
+<p></p>
+<dt><strong><a name="item__2ds_2c__2d_2dseparate_2dheader"><strong>-S</strong>, <strong>--separate-header</strong></a></strong><br />
+</dt>
+<dd>
+Blank line between each header and log message.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dsummary"><strong>--summary</strong></a></strong><br />
+</dt>
+<dd>
+Add CVS change summary information.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dno_2dwrap"><strong>--no-wrap</strong></a></strong><br />
+</dt>
+<dd>
+Don't auto-wrap log message (recommend <strong>-S</strong> also).
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dno_2dindent"><strong>--no-indent</strong></a></strong><br />
+</dt>
+<dd>
+Don't indent log message
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dgmt_2c__2d_2dutc"><strong>--gmt</strong>, <strong>--utc</strong></a></strong><br />
+</dt>
+<dd>
+Show times in GMT/UTC instead of local time.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2daccum"><strong>--accum</strong></a></strong><br />
+</dt>
+<dd>
+Add to an existing ChangeLog (incompatible with <strong>--xml</strong>).
+</dd>
+<p></p>
+<dt><strong><a name="item__2dw_2c__2d_2dday_2dof_2dweek"><strong>-w</strong>, <strong>--day-of-week</strong></a></strong><br />
+</dt>
+<dd>
+Show day of week.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dno_2dtimes"><strong>--no-times</strong></a></strong><br />
+</dt>
+<dd>
+Don't show times in output.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dchrono"><strong>--chrono</strong></a></strong><br />
+</dt>
+<dd>
+Output log in chronological order (default is reverse chronological order).
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dheader_file"><strong>--header</strong> <em>FILE</em></a></strong><br />
+</dt>
+<dd>
+Get ChangeLog header from <em>FILE</em> (``<strong>-</strong>'' means stdin).
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dxml"><strong>--xml</strong></a></strong><br />
+</dt>
+<dd>
+Output XML instead of ChangeLog format.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dxml_2dencoding_encoding_2e"><strong>--xml-encoding</strong> <em>ENCODING.</em></a></strong><br />
+</dt>
+<dd>
+Insert encoding clause in XML header.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dnoxmlns"><strong>--noxmlns</strong></a></strong><br />
+</dt>
+<dd>
+Don't include xmlns= attribute in root element.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dhide_2dfilenames"><strong>--hide-filenames</strong></a></strong><br />
+</dt>
+<dd>
+Don't show filenames (ignored for XML output).
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dno_2dcommon_2ddir"><strong>--no-common-dir</strong></a></strong><br />
+</dt>
+<dd>
+Don't shorten directory names from filenames.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2drcs_cvsroot"><strong>--rcs</strong> <em>CVSROOT</em></a></strong><br />
+</dt>
+<dd>
+Handle filenames from raw RCS, for instance those produced by ``cvs rlog''
+output, stripping the prefix <em>CVSROOT</em>.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dp_2c__2d_2dprune"><strong>-P</strong>, <strong>--prune</strong></a></strong><br />
+</dt>
+<dd>
+Don't show empty log messages.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dlines_2dmodified"><strong>--lines-modified</strong></a></strong><br />
+</dt>
+<dd>
+Output the number of lines added and the number of lines removed for
+each checkin (if applicable). At the moment, this only affects the
+XML output mode.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dignore_2dtag_tag"><strong>--ignore-tag</strong> <em>TAG</em></a></strong><br />
+</dt>
+<dd>
+Ignore individual changes that are associated with a given tag.
+May be repeated, if so, changes that are associated with any of
+the given tags are ignored.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2dshow_2dtag_tag"><strong>--show-tag</strong> <em>TAG</em></a></strong><br />
+</dt>
+<dd>
+Log only individual changes that are associated with a given
+tag.  May be repeated, if so, changes that are associated with
+any of the given tags are logged.
+</dd>
+<p></p>
+<dt><strong><a name="item__2d_2ddelta_from_tag_3ato_tag"><strong>--delta</strong> <em>FROM_TAG</em><strong>:</strong><em>TO_TAG</em></a></strong><br />
+</dt>
+<dd>
+Attempt a delta between two tags (since <em>FROM_TAG</em> up to and
+including <em>TO_TAG</em>).  The algorithm is a simple date-based one
+(this is a hard problem) so results are imperfect.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dg_opts_2c__2d_2dglobal_2dopts_opts"><strong>-g</strong> <em>OPTS</em>, <strong>--global-opts</strong> <em>OPTS</em></a></strong><br />
+</dt>
+<dd>
+Pass <em>OPTS</em> to cvs like in ``cvs <em>OPTS</em> log ...''.
+</dd>
+<p></p>
+<dt><strong><a name="item__2dl_opts_2c__2d_2dlog_2dopts_opts"><strong>-l</strong> <em>OPTS</em>, <strong>--log-opts</strong> <em>OPTS</em></a></strong><br />
+</dt>
+<dd>
+Pass <em>OPTS</em> to cvs log like in ``cvs ... log <em>OPTS</em>''.
+</dd>
+<p></p></dl>
+<p>Notes about the options and arguments:</p>
+<ul>
+<li></li>
+The <strong>-I</strong> and <strong>-F</strong> options may appear multiple times.
+<p></p>
+<li></li>
+To follow trunk revisions, use ``<strong>-F trunk</strong>'' (``<strong>-F TRUNK</strong>'' also works).  This is
+okay because no would ever, ever be crazy enough to name a branch ``trunk'',
+right?  Right.
+<p></p>
+<li></li>
+For the <strong>-U</strong> option, the <em>UFILE</em> should be formatted like CVSROOT/users. That is,
+each line of <em>UFILE</em> looks like this:
+<pre>
+       jrandom:jrandom@red-bean.com</pre>
+<p>or maybe even like this</p>
+<pre>
+       jrandom:'Jesse Q. Random &lt;jrandom@red-bean.com&gt;'</pre>
+<p>Don't forget to quote the portion after the colon if necessary.</p>
+<p></p>
+<li></li>
+Many people want to filter by date.  To do so, invoke cvs2cl.pl like this:
+<pre>
+       cvs2cl.pl -l &quot;-d'DATESPEC'&quot;</pre>
+<p>where DATESPEC is any date specification valid for ``cvs log -d''.  (Note that
+CVS 1.10.7 and below requires there be no space between -d and its argument).</p>
+<pre>
+
+=item *</pre>
+<p>Dates/times are interpreted in the local time zone.</p>
+<p></p>
+<li></li>
+Remember to quote the argument to `<strong>-l</strong>' so that your shell doesn't interpret
+spaces as argument separators.
+<p></p>
+<li></li>
+See the 'Common Options' section of the cvs manual ('info cvs' on UNIX-like
+systems) for more information.
+<p></p>
+<li></li>
+Note that the rules for quoting under windows shells are different.
+<p></p>
+<li></li>
+To run in an automated environment such as CGI or PHP, suidperl may be needed
+in order to execute as the correct user to enable /cvsroot read lock files to
+be written for the 'cvs log' command.  This is likely just a case of changing
+the /usr/bin/perl command to /usr/bin/suidperl, and explicitly declaring the
+PATH variable.
+<p></p></ul>
+<p>
+</p>
+<hr />
+<h1><a name="examples">EXAMPLES</a></h1>
+<p>Some examples (working on UNIX shells):</p>
+<pre>
+      # logs after 6th March, 2003 (inclusive)
+      cvs2cl.pl -l &quot;-d'&gt;2003-03-06'&quot;
+      # logs after 4:34PM 6th March, 2003 (inclusive)
+      cvs2cl.pl -l &quot;-d'&gt;2003-03-06 16:34'&quot;
+      # logs between 4:46PM 6th March, 2003 (exclusive) and
+      # 4:34PM 6th March, 2003 (inclusive)
+      cvs2cl.pl -l &quot;-d'2003-03-06 16:46&gt;2003-03-06 16:34'&quot;</pre>
+<p>Some examples (on non-UNIX shells):</p>
+<pre>
+      # Reported to work on windows xp/2000
+      cvs2cl.pl -l  &quot;-d&quot;&quot;&gt;2003-10-18;today&lt;&quot;&quot;&quot;</pre>
+<p>
+</p>
+<hr />
+<h1><a name="authors">AUTHORS</a></h1>
+<dl>
+<dt><strong><a name="item_karl_fogel">Karl Fogel</a></strong><br />
+</dt>
+<dt><strong><a name="item_melissa_o_27neill">Melissa O'Neill</a></strong><br />
+</dt>
+<dt><strong><a name="item_martyn_j_2e_pearce">Martyn J. Pearce</a></strong><br />
+</dt>
+</dl>
+<p>Contributions from</p>
+<dl>
+<dt><strong><a name="item_mike_ayers">Mike Ayers</a></strong><br />
+</dt>
+<dt><strong><a name="item_tim_bradshaw">Tim Bradshaw</a></strong><br />
+</dt>
+<dt><strong><a name="item_richard_broberg">Richard Broberg</a></strong><br />
+</dt>
+<dt><strong><a name="item_nathan_bryant">Nathan Bryant</a></strong><br />
+</dt>
+<dt><strong><a name="item_oswald_buddenhagen">Oswald Buddenhagen</a></strong><br />
+</dt>
+<dt><strong><a name="item_neil_conway">Neil Conway</a></strong><br />
+</dt>
+<dt><strong><a name="item_arthur_de_jong">Arthur de Jong</a></strong><br />
+</dt>
+<dt><strong><a name="item_mark_w_2e_eichin">Mark W. Eichin</a></strong><br />
+</dt>
+<dt><strong><a name="item_dave_elcock">Dave Elcock</a></strong><br />
+</dt>
+<dt><strong><a name="item_reid_ellis">Reid Ellis</a></strong><br />
+</dt>
+<dt><strong><a name="item_simon_josefsson">Simon Josefsson</a></strong><br />
+</dt>
+<dt><strong><a name="item_robin_hugh_johnson">Robin Hugh Johnson</a></strong><br />
+</dt>
+<dt><strong><a name="item_terry_kane">Terry Kane</a></strong><br />
+</dt>
+<dt><strong><a name="item_pete_kempf">Pete Kempf</a></strong><br />
+</dt>
+<dt><strong><a name="item_akos_kiss">Akos Kiss</a></strong><br />
+</dt>
+<dt><strong><a name="item_claus_klein">Claus Klein</a></strong><br />
+</dt>
+<dt><strong><a name="item_eddie_kohler">Eddie Kohler</a></strong><br />
+</dt>
+<dt><strong><a name="item_richard_laager">Richard Laager</a></strong><br />
+</dt>
+<dt><strong><a name="item_kevin_lilly">Kevin Lilly</a></strong><br />
+</dt>
+<dt><strong><a name="item_karl_2dheinz_marbaise">Karl-Heinz Marbaise</a></strong><br />
+</dt>
+<dt><strong><a name="item_mitsuaki_masuhara">Mitsuaki Masuhara</a></strong><br />
+</dt>
+<dt><strong><a name="item_henrik_nordstrom">Henrik Nordstrom</a></strong><br />
+</dt>
+<dt><strong><a name="item_joe_orton">Joe Orton</a></strong><br />
+</dt>
+<dt><strong><a name="item_peter_palfrader">Peter Palfrader</a></strong><br />
+</dt>
+<dt><strong><a name="item_thomas_parmelan">Thomas Parmelan</a></strong><br />
+</dt>
+<dt><strong><a name="item_jordan_russell">Jordan Russell</a></strong><br />
+</dt>
+<dt><strong><a name="item_jacek_sliwerski">Jacek Sliwerski</a></strong><br />
+</dt>
+<dt><strong><a name="item_johannes_stezenbach">Johannes Stezenbach</a></strong><br />
+</dt>
+<dt><strong><a name="item_joseph_walton">Joseph Walton</a></strong><br />
+</dt>
+<dt><strong><a name="item_ernie_zapata">Ernie Zapata</a></strong><br />
+</dt>
+</dl>
+<p>
+</p>
+<hr />
+<h1><a name="bugs">BUGS</a></h1>
+<p>Please report bugs to <code>bug-cvs2cl@red-bean.com</code>.</p>
+<p>
+</p>
+<hr />
+<h1><a name="prerequisites">PREREQUISITES</a></h1>
+<p>This script requires <code>Text::Wrap</code>, <code>Time::Local</code>, and <code>File::Basename</code>.  It
+also seems to require <code>Perl 5.004_04</code> or higher.</p>
+<p>
+</p>
+<hr />
+<h1><a name="operating_system_compatibility">OPERATING SYSTEM COMPATIBILITY</a></h1>
+<p>Should work on any OS.</p>
+<p>
+</p>
+<hr />
+<h1><a name="script_categories">SCRIPT CATEGORIES</a></h1>
+<p>Version_Control/CVS</p>
+<p>
+</p>
+<hr />
+<h1><a name="copyright">COPYRIGHT</a></h1>
+<p>(C) 2001,2002,2003,2004 Martyn J. Pearce &lt;<a href="mailto:fluffy@cpan.org">fluffy@cpan.org</a>&gt;, under the GNU GPL.</p>
+<p>(C) 1999 Karl Fogel &lt;<a href="mailto:kfogel@red-bean.com">kfogel@red-bean.com</a>&gt;, under the GNU GPL.</p>
+<p>cvs2cl.pl is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.</p>
+<p>cvs2cl.pl is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.</p>
+<p>You may have received a copy of the GNU General Public License
+along with cvs2cl.pl; see the file COPYING.  If not, write to the
+Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+Boston, MA 02111-1307, USA.</p>
+<p>
+</p>
+<hr />
+<h1><a name="see_also">SEE ALSO</a></h1>
+<p><code>cvs(1)</code></p>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+%!PS-Adobe-3.0
+
+% A 16-shade horizontal gradient
+
+gsave
+  216 72 translate     % lower-left of images at (216, 72)
+  72 144 scale         % size of rendered image is 72 points by 72 points
+  32                   % 16 pixels wide
+  1                    % 1 pixel high
+  4                    % 4 bits per pixel
+  [16 0 0 1 0 0]       % transform array... maps unit square to pixels
+  {<0123456789ABCDEF>} % the image data itself
+  image                % let's draw!
+grestore
+
+% A 16-tone color gradient from green to blue
+
+gsave
+  360 72 translate
+  72 144 scale         % size of rendered image is 72 points by 72 points
+  32                   % number of samples per line
+  1                    % number of lines
+  4                    % bits per color channel (1, 2, 4, or 8)
+  [16 0 0 1 0 0]       % transform array... maps unit square to pixels
+  {<0000000000000000>} % the red image data
+  {<FEDCBA9876543210>} % the green image data
+  {<0123456789ABCDEF>} % the blue image data
+  true                 % pull channels from separate sources
+  3                    % 3 color channels (RGB)
+  colorimage
+grestore
+
+gsave
+  72 72 translate
+  72 144 scale         % size of rendered image is 72 points by 72 points
+  32                   % number of samples per line
+  1                    % number of lines
+  4                    % bits per color channel (1, 2, 4, or 8)
+  [16 0 0 1 0 0]       % transform array... maps unit square to pixels
+  {<0123456789ABCDEF>} % the r image data
+  {<0000000000000000>} % the g image data
+  {<FEDCBA9876543210>} % the b image data
+  true                 % pull channels from separate sources
+  3                    % 3 color channels (RGB)
+  colorimage
+grestore
+
+showpage

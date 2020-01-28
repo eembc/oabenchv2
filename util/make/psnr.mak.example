@@ -1,0 +1,33 @@
+#==============================================================================
+#$RCSfile: psnr.mak.example,v $
+#
+#   DESC : Example toolchain file for results and psnr processing 
+#          from target data.
+#
+# AUTHOR : Rick Foos, ECL, LLC
+#
+#  EEMBC : Technical Advisory Group (TechTAG)
+#
+#    CVS : $Revision: 1.1 $
+#------------------------------------------------------------------------------
+# Copyright (c) 1998-2005 by the EDN Embedded Microprocessor 
+# Benchmark Consortium (EEMBC), Inc. All Rights Reserved.
+#==============================================================================
+#
+#
+# 1. Get the target results into office/<toolchain>/results_lite
+#
+# 2. Execute the following make command in Office to process Ghostscript
+#    Time and PSNR results from a target.
+# make TOOLCHAIN=armcc LITE=_lite TIMELOGS= SIZELOGS= bmarks=gs8
+#
+# 3. Log files will be created in office directory:
+#    xxx_timev2.log
+#    xxx_psnrv2.log
+#
+AWKDIR			= awk
+AWKSZ=gcc
+ALL_TARGETS		= alltime allpsnr
+CMDLINE_CHEADER = skip
+PLATFORM=x86
+TARGETS			= gcc

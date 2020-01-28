@@ -1,0 +1,527 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "bezierv2"=.\bezierv2\win32\bezierv2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libbez
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "bezierv2_lite"=.\bezierv2\win32\bezierv2_lite.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libbez
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "cheader"=..\util\c\win32\cheader.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ditherv2"=.\ditherv2\win32\ditherv2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libpgm
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ditherv2_lite"=.\ditherv2\win32\ditherv2_lite.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libpgm
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "empty"=.\empty\win32\empty.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "empty_lite"=.\empty\win32\empty_lite.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "gs8"=.\gs8\win32\gs8.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libfonts
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libps
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libz
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libicc
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libexamples
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libresource
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libjasper
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libjbig2
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libjpeg
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libpgm
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libpng
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "gs8_lite"=.\gs8\win32\gs8_lite.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libexamples
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libfonts
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libicc
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libjbig2
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libjpeg
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libpng
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libps
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libz
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libresource
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libth_lite
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name libjasper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "imgcmp"=".\gs8\jasper-1.701.0\src\msvc\imgcmp.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libjasper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "imginfo"=".\gs8\jasper-1.701.0\src\msvc\imginfo.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libjasper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "libbez"=.\libbez\win32\libbez.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libexamples"=.\gs8\win32\libexamples.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libfonts"=.\gs8\win32\libfonts.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libicc"=.\gs8\win32\libicc.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libjasper"=".\gs8\jasper-1.701.0\src\msvc\libjasper.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libjbig2"=.\gs8\win32\libjbig2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libjpeg"=.\gs8\win32\libjpeg.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libpgm"=.\libpgm\win32\libpgm.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libpng"=.\gs8\win32\libpng.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libps"=.\gs8\win32\libps.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libresource"=.\gs8\win32\libresource.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libth"=.\empty\win32\libth.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libth_lite"=.\empty\win32\libth_lite.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libtiff"=..\util\psnr\win32\libtiff.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libtxt"=.\libtxt\win32\libtxt.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libz"=.\gs8\win32\libz.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "psnr"=..\util\psnr\win32\psnr.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libtiff
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "rotatev2"=.\rotatev2\win32\rotatev2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libpgm
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "rotatev2_lite"=.\rotatev2\win32\rotatev2_lite.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libpgm
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "textv2"=.\textv2\win32\textv2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libtxt
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "textv2_lite"=.\textv2\win32\textv2_lite.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libtxt
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "tiffcmp"=..\util\psnr\win32\tiffcmp.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libtiff
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "uudecode"=..\util\c\win32\uudecode.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

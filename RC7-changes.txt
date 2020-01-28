@@ -1,0 +1,112 @@
+Generic:
+========
+
+Profiling the code and using profile guided optimizations:
+	The file 3dcolor.ps can be used for GS OTB training, as can the font catalogue.
+	For the other benchmarks, the first dataset can be used for training.
+	To create profile using gcc: make PGOINI=1
+	To use profile info with gcc: make PGOUSE=1
+The file extracttime.awk has been replaced with a perl version.
+A new field (UID) has been added to the report.
+	
+
+Benchmark Specific
+==================
+
+GhostScript
+	Using new version (8.54)
+	Example files for gs8 are compiled into the init section using the built in ghostscript mechanism, as well as other configuration files.
+		Configured with --enable-compile-inits
+		Definition of which files to compile into the image can be found at gs8/src/int.mak under the macro EXAMPLE_FILES.
+		gs8/src/unix-aux.mak holds the commands for generating the built in file system (mkromfs)
+	Since we are not using jpeg2000, there is no reason to compile in that code. 
+		Configured with --without-jasper --without-jbig2dec
+	CMaps removed to reduce executable size since we are not using CIDFonts
+	* With gcc executable is now under 6M, with MSVC8 under 5M.
+	Sources were modified to avoid requirement to allow multiple definitions of symbols. 
+	Sources were modified to fit within the EEMBC test harness.
+	* GCC only, build is forced to -O0 due to fail when compiled with optimizations.
+		* This is under investigation, though artifex claims may be gcc bug related to FP.
+		* This is related to font construction.
+	GS only flags are controlled by the variable GSOPTS in gcc.mak (moved from the iterations.mak file).
+	Combination of which datasets to run, on which devices and with what flags is controlled by oav2/rungs.pl.
+
+
+Selected devices and rational:
+gs_bitcmyk_levels = 2 4 16 32 256 
+	deskjet 
+		Sample Inkjet printer handling (Final format to H-P DeskJet)
+		* This is an HP official driver in GS8.54, it is somewhat buggy but works for the samples chosen
+	laserjet 
+		Sample Laser printer handling (Final format to H-P LaserJet)
+		* This is an HP official driver in GS8.54, it is somewhat buggy but works for the samples chosen
+	tiffg4 
+		Fax like output (many printers today have MFP functionality), viewable monochrome
+	bmp256 
+		Viewable color (contone RGB format)
+	bitcmyk
+		RAW cmyk output halftoned at different color depths
+		2/4/16/32 corresponding to 1/2/4/8 bits per color plane
+		* This device can also go up to 12b and 16b color depth if we want to test them
+		  May be good for future extension
+
+New datafiles
+	Previously used files
+		doretree.ps - color vector graphics, default from GS samples , removed
+		golfer.eps - BW vector graphics, default from GS samples , removed
+		EEMBCJournalPage1.ps - bitmap image, 400K, removed
+		Rotate-fontlist2.ps - all chars of one font, landscape orientation (2 lines of text), duplicated 10x - recommend remove or train
+	New files 
+		banner.ps - banner page, 
+			* Processed 200 times via for loop
+			* printed n-up (20x10) to a single output page to minimize output size
+			* Testing text banner processing
+		presentation.ps - 4 slides presentation x4 (collated copies), vertical gradient on first slide, 45deg lines on BG
+			* Printed n-up (4x4) to a single output page to minimize output size
+			* Testing processing for typical "easy" presentation
+		presentation4.pdf - the same 4 slides, in pdf, 1 per page
+			* Testing processing for typical "easy" presentation, pdf format, output performance as well.
+			* sent 4 times to minimize startup penalty
+		mandel.ps - color vector graphics, drawing a fractal
+			* Testing computationaly intensive line drawing, scientific papers
+		spreadsheet.ps - 2 pages of common spreadsheet material (numbers,text,charts)
+			* Testing common spreadsheet printing
+			* sent 8 times to minimize startup penalty
+			* print n-up (4x4) to minimize output size
+		photo.ps - 600DPI 8x6 with jpeg filter
+			* sent 4 times to minimize startup penalty
+			* print n-up (2x2) to minimize output size
+
+	Training file
+		3dcolor.ps - postscript colorspace mapping, color and vector graphics, using all devices.
+
+	Potential new files
+		fractal-fern.ps - monochrome vector graphics (computationaly intensive like mandel, but mono)
+		ebreadme - readme for energybench, just text
+		font catalogue - can be done for several fonts, already built in.
+			Recommend instead of "rotate-fontlist" sample
+			~140 pages
+
+	Sizes
+
+
+Notes:
+	To produce output to separate pages for verification, supply the flag -split to rungs.pl 
+	How to view bitcmyk output?
+	Ghostscript supplies a utility script that can show cmyk files.
+	Since this is RAW CMYK data, you need to know the image size (in pixels) to construct a viewable image,
+	as well as the bit depth.
+	For the benchmark images, install a default version of ghostscript that works on your host machine
+	(e.g. from http://sourceforge.net/project/showfiles.php?group_id=1897&package_id=1845)
+	Then invoke from oav2 directory
+		<GS install dir>/bin/gswin32c.exe -dBITS=<N> -- gs8/lib/viewcmyk.ps <cmykfile>.cmyk<N>b 612
+	e.g. 
+		 /c/apps/gs/gs8.53/bin/gswin32c.exe -dBITS=2 -- gs8/lib/viewcmyk.ps gs-output/gs8.banner.cmyk2b 612
+
+PSNR
+	Fixed to take into account bits per sample for tiff
+	Added PSNR for packed bits (cmyk 1/2/4/8)
+
+Bezier
+	The benchmark has been modified to save information from all interpolated points.
+	In FP mode, it will also calculate SNR to determine pass/fail.

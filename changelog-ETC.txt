@@ -1,0 +1,27 @@
+ETC Changelog: This file contains a list of changes since ETC took over the codebase.
+=====================================================================================
+5/25/07: Suite: office (v2), Author: Shay Gal-On
+. Modified makefiles and sources to enable one image per algorithm, with multiple datasets
+. Fixed issues with GS that caused gcc optimizations to crash
+. Fixed issues with GS that caused compilation and run issues with armcc and ghs tools
+3/27/06: Suite: office (v2), Author: Shay Gal-On
+. Added date tag to logfiles 
+	Changes in $ROOT/makefile
+. Added 2 new datasets to Bezier (DATA_3 and DATA_4). 
+	Changes to office/*.mak,office/*.cml,office/bezierv2/algo.h,office/libbez/* accordingly.
+. Changed Bezier benchmark to save subsample of interpolated data, and test against expected results.
+	Changes to office/bezierv2/{bez.h,bez.c,pointio.h,pointio.c,bmark.c,bmark_lite.c} and office/libbez/*
+. Changed benchmark identifiers to indicate OF2 instead of OFW
+	Changes in office/$bmarks/algo.h
+. Changed office/doc/releasenotes.rtf to indicate changes to bezier, gs8 and text benchmarks.
+. Changed ghostscript data files to cause processing multiple times
+	Changes to office/gs-output/* and office/gs8/examples/*
+	* EEMBCJournalPage1.ps is using the multiple copy operator since it has in line bitmap data
+. Fixed bug #289 reported by IBM
+	Change to getTerm() in office/textv2/text.c
+. Enable compilation with VS2003
+	Change to {th,th_lite}/src/doscan.c
+
+
+	
+

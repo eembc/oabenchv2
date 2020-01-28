@@ -1,0 +1,96 @@
+/* $Id: index.dox,v 1.2 2005/11/17 01:06:23 rick Exp $ */
+/**
+ * @file 
+ * @brief Documentation file for Mainpage.
+ */
+/** @defgroup eembc_util Version 2 Benchmark Utilities.
+*/
+/** @defgroup tiffcmp TIFF File Comparison.
+*/
+/** @defgroup PSNR PSNR Comparison Calculator.
+*/
+
+/**
+@mainpage EEMBC PSNR Introduction
+
+This document describes the detail design level details of the EEMBC
+PSNR method for benchmark validation.  This code was first released as
+part of the Version 2 Consumer Subcommittee Benchmarks.  Enhancements
+made for use in the Office Automation Subcommittee, and it is used for
+Ghostscript benchmark validation.
+
+The PSNR process involves using a HOST based reference decoder. The toolchain
+you use to build this is determined in the makefile (PSNRTOOLCHAIN). GCC is
+the default PSNR toolchain, and which runs on most hosts.
+
+You MUST complete a build and run of the host based toolchain to supply
+the psnr executable, and decoder executable for the test prior to
+embedded toolchain runs.  Otherwise the run step will fail.
+
+The baseline data sets used for PSNR are the Encoder datasets.  These
+are much smaller than the decode data sets.  There are still many
+uuencoded files to process, and utilities are provided for extracting,
+uudecoding, running the psnr calculator.
+
+This process is part of the EEMBC Makefile build.  If you are using
+your own build process, it will need to be modified to support PSNR
+calculation.
+
+PSNR is a fairly significant modification to the build process, and it
+may be a good time to switch to the EEMBC makefile build.
+
+The PSNR calculation steps for encoders:
+
+-# Encoder is executed with DO_UUENCODE. The encoders now support a command line
+option "-do_uuencode" which enables this at run time.
+
+The makefile run processing has been changed for PSNR.
+-# Encoders set to output uuencode data at runtime.
+-# Special decoder run for PSNR. In this run, decoder has uuencode enabled at runtime.
+-# HOST built decoders run to generate Encoder PSNR.
+
+Notes for benchmark porting developers.
+-# In the MPEG 2 encoder par files, do not enable the reference file
+generator when do_uuencode is enabled.  This par file option will cause
+an internal reference frame to be dumped to uuencode, along with a
+final dump of the mpeg file.  The reference file dump is done within
+the timing loop, and the results file will be quite large.  If it's
+possible to dump this using the host file system, it will be much
+quicker.  If not, you have been warned.
+
+\section office_sec Office Automation
+
+PSNR has native uses in Consumer Version 2 for comparison of video formats.
+
+PSNR has been extended to become a middle ground between absolute comparison, CRC, and SNR used
+in the signal processing benchmarks of telecom. These extensions to basic
+PSNR were done for consistency, and comparability of benchmarks in the suite.
+
+PSNR was extended for the MP3 audio decoder to compare raw PCM so that a similar
+comparison method could be used. This is also mathematically similar to a Power SNR
+measurement, the traditional measurement method for audio streams.
+
+Conceptually, PSNR can be viewed as a two dimensional SNR measurement for audio.
+The key to this comparison is that the output PCM is of the same bitrate, and
+number of channels. To incorporate this into the video PSNR, it is then a matter of
+creating audio frames that can be compared to each other using PSNR.
+
+Additional file format support has been added to process image files. These image file 
+extensions
+are beyond the traditional formats, like GIF or JPEG, which can be compared by CRC.
+PSNR, as used in EEMBC Office Automation
+benchmarks is used to compare printer output formats. 
+This extension to PSNR is different than the extension to audio, we are
+dealing with 2 dimensional images. The extension is used to compare the raw image characteristics
+of files embedded with printer control or font information.
+
+The PSNR Algorithm extensions involve support for the following binary file formats:
+- AIFF Audio files for MP3 PCM comparisons.
+- BMP Image files produced by Ghostscript.
+- deskjet HP deskjet printer output.
+- laserjet HP laserjet printer output.
+- pdfwrite Adobe PDF output.
+
+
+
+*/

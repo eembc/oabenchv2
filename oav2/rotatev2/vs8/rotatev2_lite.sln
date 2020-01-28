@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rotatev2_lite", "rotatev2_lite.vcproj", "{C195CB19-5B71-4C00-9CEC-544D51814B62}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4D736E1C-1B4F-4FC5-8BDC-E86C8655311E} = {4D736E1C-1B4F-4FC5-8BDC-E86C8655311E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpgm", "..\..\libpgm\vs8\libpgm.vcproj", "{4D736E1C-1B4F-4FC5-8BDC-E86C8655311E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C195CB19-5B71-4C00-9CEC-544D51814B62}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C195CB19-5B71-4C00-9CEC-544D51814B62}.Debug|Win32.Build.0 = Debug|Win32
+		{C195CB19-5B71-4C00-9CEC-544D51814B62}.Release|Win32.ActiveCfg = Release|Win32
+		{C195CB19-5B71-4C00-9CEC-544D51814B62}.Release|Win32.Build.0 = Release|Win32
+		{4D736E1C-1B4F-4FC5-8BDC-E86C8655311E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4D736E1C-1B4F-4FC5-8BDC-E86C8655311E}.Debug|Win32.Build.0 = Debug|Win32
+		{4D736E1C-1B4F-4FC5-8BDC-E86C8655311E}.Release|Win32.ActiveCfg = Release|Win32
+		{4D736E1C-1B4F-4FC5-8BDC-E86C8655311E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

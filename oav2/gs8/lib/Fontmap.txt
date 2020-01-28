@@ -1,0 +1,66 @@
+% Copyright (C) 1996, 1999 Aladdin Enterprises.  All rights reserved.
+% 
+% This software is provided AS-IS with no warranty, either express or
+% implied.
+% 
+% This software is distributed under license and may not be copied,
+% modified or distributed except as expressly authorized under the terms
+% of the license contained in the file LICENSE in this distribution.
+% 
+% For more information about licensing, please refer to
+% http://www.ghostscript.com/licensing/. For information on
+% commercial licensing, go to http://www.artifex.com/licensing/ or
+% contact Artifex Software, Inc., 101 Lucas Valley Road #110,
+% San Rafael, CA  94903, U.S.A., +1(415)492-9861.
+
+% $Id$
+% Fontmap - font aliases for 35 Type 1 URW fonts
+
+% ----------------------------------------------------------------
+% Aliases
+
+/Bookman-Demi			/URWBookmanL-DemiBold	;
+/Bookman-DemiItalic		/URWBookmanL-DemiBoldItal	;
+/Bookman-Light			/URWBookmanL-Ligh	;
+/Bookman-LightItalic		/URWBookmanL-LighItal	;
+
+/Courier			/NimbusMonL-Regu	;
+/Courier-Oblique		/NimbusMonL-ReguObli	;
+/Courier-Bold			/NimbusMonL-Bold	;
+/Courier-BoldOblique		/NimbusMonL-BoldObli	;
+
+/AvantGarde-Book		/URWGothicL-Book	;
+/AvantGarde-BookOblique		/URWGothicL-BookObli	;
+/AvantGarde-Demi		/URWGothicL-Demi	;
+/AvantGarde-DemiOblique		/URWGothicL-DemiObli	;
+
+/Helvetica			/NimbusSanL-Regu	;
+/Helvetica-Oblique		/NimbusSanL-ReguItal	;
+/Helvetica-Bold			/NimbusSanL-Bold	;
+/Helvetica-BoldOblique		/NimbusSanL-BoldItal	;
+
+/Helvetica-Narrow		/NimbusSanL-ReguCond	;
+/Helvetica-Narrow-Oblique	/NimbusSanL-ReguCondItal	;
+/Helvetica-Narrow-Bold		/NimbusSanL-BoldCond	;
+/Helvetica-Narrow-BoldOblique	/NimbusSanL-BoldCondItal	;
+
+/Palatino-Roman			/URWPalladioL-Roma	;
+/Palatino-Italic		/URWPalladioL-Ital	;
+/Palatino-Bold			/URWPalladioL-Bold	;
+/Palatino-BoldItalic		/URWPalladioL-BoldItal	;
+
+/NewCenturySchlbk-Roman		/CenturySchL-Roma	;
+/NewCenturySchlbk-Italic	/CenturySchL-Ital	;
+/NewCenturySchlbk-Bold		/CenturySchL-Bold	;
+/NewCenturySchlbk-BoldItalic	/CenturySchL-BoldItal	;
+
+/Times-Roman			/NimbusRomNo9L-Regu	;
+/Times-Italic			/NimbusRomNo9L-ReguItal	;
+/Times-Bold			/NimbusRomNo9L-Medi	;
+/Times-BoldItalic		/NimbusRomNo9L-MediItal	;
+
+/Symbol				/StandardSymL	;
+
+/ZapfChancery-MediumItalic	/URWChanceryL-MediItal	;
+
+/ZapfDingbats			/Dingbats	;

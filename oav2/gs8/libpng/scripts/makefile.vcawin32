@@ -1,0 +1,53 @@
+# makefile for libpng
+# Copyright (C) 1998 Tim Wegner
+# For conditions of distribution and use, see copyright notice in png.h
+# Assumes that zlib.lib, zconf.h, and zlib.h have been copied to ..\zlib
+# To use, do "nmake /f scripts\makefile.vcawin32"
+
+# -------- Microsoft Visual C++ 5.0 and later, uses assembler code --------
+
+# Caution: the assembler code was introduced at libpng version 1.0.4 and has
+# not yet been thoroughly tested.
+
+# If you don't want to use assembler code, use makefile.vcwin32 instead.
+
+CFLAGS=-DPNG_USE_PNGVCRD -Ox -GA3s -nolof  ssbembl=rf  ss>0.4 and has
+#$32 .3 smakefile.vcwde was   *cL
+O=.objwant uncomme conexcode,put errstrzcosagepng  a d.
+nt ERRFILE= >>hat errswant tvariafilswaOBJS1 =hat $(O)hat set$(O)hat get$(O)hat rr cl$(O)hat trans$(O)hat wr cl$(O)waOBJS2 =hat mem$(O)hat prG_U$(O)hat rG_U$(O)hat errst$(O)hat write$(O)waOBJS3 =hat rtran$(O)hat wtran$(O)hat rio$(O)hat wio$(O)hat vcrd$(O)wa
+all:.4 and .$32 .3 at $(O):hat zlhat have b
+		  $(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at set$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at get$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at rG_U$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at prG_U$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at rtran$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at rr cl$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at vcrd$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at errst$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at mem$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at rio$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at wio$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at  don$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at  rans$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at write$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at wtran$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 at wr cl$(O):hat zlhat have b
+	$(C
+# -c $(Cs   *) $*.c $(ERRFILE) .3 4 and .$32: $(OBJS1) $(OBJS2) $(OBJS3) .	echo somethid hde,del >.4 and .$32 .	del 4 and .$32 .	$32 /OUT:4 and .$32 $(OBJS1) $(OBJS2) $(OBJS3) .3 at  don.exe:hat  don.obj 4 and .$32 .	$(LD) $(was   *)hat  don.obj 4 and .$32 do "nma\and zlib /OUT:at  don.exe /SUBSYSTEM:CONSOLE .3  don:hat  don.exe .	at  donwant tEeen us
+# Copyright (C) 199

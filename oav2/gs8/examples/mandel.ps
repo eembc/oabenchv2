@@ -1,0 +1,220 @@
+%!PS
+
+%
+% Mandelbrot-set en Julia-set
+%
+% (C) P. Kleiweg 1996, 1998
+%
+
+% Enkele constanten
+/mandelset  1 def
+/juliaset   2 def
+/fullcolor  3 def
+/greyscale  4 def
+/blackwhite 5 def
+
+% Kies welke set gebruikt moet worden (mandelset of juliaset)
+/useset mandelset def
+
+% Kies de kleuren (fullcolor of greyscale of blackwhite)
+/usecolor fullcolor def
+
+% Bandbreedte voor de kleuren (heel getal, groter dan 0)
+/bandwidth 1 def
+
+% Aantal kleuren voor greyscale
+/greys 12 def
+
+% Beginwaarden voor Julia-set
+/RealC .32  def
+/ImC   .043 def
+
+% Oplossend vermogen in beeldpunten van het gebruikte device
+/maxsize 256 def    % moet een gehele macht van 2 zijn (groter of gelijk aan minsize)
+/minsize   1 def    % moet een gehele macht van 2 zijn (1 of groter)
+
+% Aantal iteraties voordat voor zwart wordt gekozen, ca. 200
+/maxiter 32 def
+
+% Venster op de Mandelbrot-set (hoogte wordt berekend)
+/mx -0.667 def  % middelpunt x
+/my  0     def  % middelpunt y
+/mw  1.333 def  % breedte
+
+% Venster op de Julia-set (hoogte wordt berekend)
+/jx 0 def  % middelpunt x
+/jy 0 def  % middelpunt y
+/jw 4 def  % breedte
+
+%%%%%%%% END OF USER OPTIONS %%%%%%%%
+
+% Afmetingen van het papier
+newpath
+clippath pathbbox
+/hoog exch def
+/breed exch def
+pop
+pop
+newpath
+
+% Aanpassing matrix: 1 unit -> 1 pixel (1 dot)
+% Voorkomt fouten door afronding
+1 1 dtransform
+% X
+exch
+abs
+dup breed mul /breed exch def
+1 exch div
+exch
+% Y
+abs
+dup hoog mul /hoog exch def
+1 exch div
+scale
+
+% Afrondingsfouten van scale herstellen
+matrix currentmatrix aload pop
+6 {
+    round
+    6 1 roll
+} repeat
+matrix astore setmatrix
+
+% Nogmaals: afmetingen van het papier, deze keer afgerond
+newpath
+clippath pathbbox
+round /hoog exch def
+round /breed exch def
+pop
+pop
+newpath
+
+useset mandelset eq {
+  /x mx def
+  /y my def
+  /xdiff mw def
+} {
+  /x jx def
+  /y jy def
+  /xdiff jw def
+} ifelse
+
+/ydiff xdiff breed div hoog mul def
+/x1 x xdiff 2 div sub def
+/x2 x1 xdiff add def
+/y1 y ydiff 2 div sub def
+/y2 y1 ydiff add def
+
+/mandel {
+    /RealZ 0 def
+    /ImZ 0 def
+    /Depth -1 def
+    0 1 maxiter {
+        RealZ dup mul dup
+        ImZ dup mul dup
+        3 1 roll
+        add 4 gt {
+            pop pop
+            /Depth exch def
+            exit
+        } if
+        /ImZ RealZ ImZ mul 2 mul fy add def
+        sub fx add /RealZ exch def
+        pop
+    } for
+} bind def    
+
+/julia {
+    /RealZ fx def
+    /ImZ fy def
+    /Depth -1 def
+    0 1 maxiter {
+        RealZ dup mul dup
+        ImZ dup mul dup
+        3 1 roll
+        add 4 gt {
+            pop pop
+            /Depth exch def
+            exit
+        } if
+        /ImZ RealZ ImZ mul 2 mul ImC add def
+        sub RealC add /RealZ exch def
+        pop
+    } for
+} bind def    
+
+/reds   14 def
+/greens 10 def
+/blues   6 def
+/red   [ 0 1 reds   1 sub { 360 mul reds   div 90 sub sin 1 add 2 div .7 mul .3 add } for ] def
+/green [ 0 1 greens 1 sub { 360 mul greens div 90 sub sin 1 add 2 div .7 mul .3 add } for ] def
+/blue  [ 0 1 blues  1 sub { 360 mul blues  div 90 sub sin 1 add 2 div .7 mul .3 add } for ] def
+
+/setcolors {
+    usecolor fullcolor eq {
+        Depth -1 eq {
+            0 0 0
+        } {
+            red   Depth bandwidth idiv reds   mod get
+            green Depth bandwidth idiv greens mod get
+            blue  Depth bandwidth idiv blues  mod get
+        } ifelse
+        setrgbcolor
+    } {
+        usecolor greyscale eq {
+            Depth -1 eq {
+                0
+            } {
+                1 Depth bandwidth idiv greys mod greys div sub .7 mul .3 add
+            } ifelse
+            setgray
+        } {
+            Depth -1 eq {
+                0
+            } {
+                1 Depth bandwidth idiv 2 mod sub
+            } ifelse
+            setgray
+        } ifelse
+    } ifelse
+} bind def
+
+/grid {
+    /dsize size dup add cvi def
+    0 size hoog {
+        /y exch def
+        0 size breed {
+            /x exch def
+            x dsize div dup cvi ne
+            y dsize div dup cvi ne
+            first
+            or or {
+                /fx xdiff x mul breed div x1 add def
+                /fy ydiff y mul hoog  div y1 add def
+                useset mandelset eq { mandel } { julia } ifelse
+                setcolors
+                x y moveto
+                size 0 rlineto
+                0 size rlineto
+                size neg 0 rlineto
+                closepath fill
+            } if
+        } for
+    } for
+} bind def
+
+/size maxsize cvi def
+/first true def
+{
+  grid
+  /first false def
+  /size size 2 div cvi def
+  size minsize lt { exit } if
+} bind loop
+
+/inch {72 mul} def
+/Times-Roman findfont 50 scalefont setfont
+7 inch 7.5 inch moveto
+(EEMBC) show
+
+showpage

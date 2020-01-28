@@ -1,0 +1,20 @@
+Generic:
+========
+	All benchmarks are now forced to a single image per algorithm.
+	Execution of different datasets is done via a command line flag (-data<N>).
+
+	Ghostscript build and run only enabled when OAFULL is defined on the make command line
+	make TOOLCHAIN=gcc OAFULL=1
+
+ Important: Several compilers including gcc on some platforms do not have a definition of the function hypot in math.h.
+ If math.h does not have a definition for hypot, please define NEED_HYPOT=1 to get alternative definition from ghsotscript headers.
+
+Benchmark Specific:
+===================
+	Ghostscript:
+		. Fixed issues that resulted in failure when gcc was used with optimization
+		. Fixed issues that affected RVDS-armcc and GreenHills-ppc compilers
+		. Tested with doublecheck.
+		. Not running deskjet and laserjet devices
+		. Changed mandel run to output 300dpi 
+

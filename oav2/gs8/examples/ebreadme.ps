@@ -1,0 +1,230 @@
+%!PS
+%%Title: textprint.ps
+
+/Courier findfont 12 scalefont setfont
+/colwid (m) stringwidth pop def
+36 756 moveto
+256 string
+{ %exec
+    { %loop over file
+       dup currentfile exch readstring exch
+       { %loop FF
+          (\f) search exch
+          { %loop LF
+             (\n) search exch
+             { %loop CR
+                (\r) search exch
+                { %loop TAB
+                   (\t) search exch
+                   { %loop BS
+                      (\b) search exch
+                      show
+                      not { exit } if
+                      pop currentpoint exch colwid sub exch moveto
+                   } loop %BS
+                   not { exit } if
+                   pop currentpoint exch 36 sub colwid div .49 add cvi
+                   8 add dup 8 mod sub colwid mul 36 add exch moveto
+                } loop %TAB
+                not { exit } if
+                pop 36 currentpoint exch pop moveto
+             } loop %CR
+             not { exit } if
+             pop 36 currentpoint exch pop
+             11 sub dup 25 le { %if
+                pop showpage 756
+             } if
+             moveto
+          } loop %LF
+          not { exit } if
+          pop showpage 36 756 moveto
+       } loop %FF
+       not { exit } if
+    } loop %over file
+    pop showpage
+} bind exec
+ 
+VI documentation
+=================
+Sampling modules:
+ logger-1plane-main.vi
+ logger-2planes-main.vi
+ logger-3planes-main.vi
+ These sampling modules work as follows:
+ 1. Rename the daq card being used to DAQ
+ 2. All channels to be measured are differential, connect as follows
+	a. Trigger channel is at DAQ/ai0
+	b. Current channels are to be connected to ai1/ai3/ai5 for 
+rail1/rail2/rail3
+	c. Voltage channels are to be connected to ai2/ai4/ai6 for 
+rail1/rail2/rail3
+ 3. Follow the example at util/make/levels.txt to set the voltage levels for all 
+chnnels and for the trigger
+ 4. Invoke the module with the following parameters
+	a. /output=<full path to output xml file>				
+	: this will be the file where all output samples are saved.
+	b. /autogo								
+	: to make the module quit when done
+	c. /rate=$FREQ1								
+	: to determine sampling frequency
+	d. /info="$INFOTAG"							
+	: to setup misc information such as company name etc.
+	e. /input=<full path to file with levels>				
+	: this will read in the voltage levels from the file
+ 5. The module will wait for trigger to be in range of trigger-on values, then 
+start sampling until trigger is in range of trigger-off.
+ All values will be logged to the file defined at /output.
+
+Analysis modules:
+ Anaylzer-main-2rails.vi
+ Anaylzer-main-3rails.vi
+ Anaylzer-main.vi
+ Invoke an analysis module to analyze the values obtained with a sampling module 
+with the following parameters:
+	a. /input=<full path to xml file written by corresponding sampling 
+module>	
+		: This will set the input file with all the samples
+	b. /output=<full path to output text file>				
+	: This will set the output file to write to
+	c. /autogo								
+	: This will make the module quit when done.
+	d. /its=<benchmark iterations per second>				
+	: This will set iterations per second, so that energy per 	
+	iteration can be calculated
+	e. /levels=<full path to file with levels>				
+	: This will make sure no samples analyzed past trigger.
+	f. optional: /iterations=<max number of iterations to analyze>		
+	: This will set specific number of iterations to analyze
+
+Other Helper scripts:
+====================
+Calc Power.vi							
+	: Calculate power from reistor, voltage and current channels.
+Convert to text.vi						
+	: Convert binary and xml file to excel readable text file (activate 
+analyzer module in manual mode)
+Extract number of samples.vi					
+	: Find number of samples in file
+Statistics.vi							
+	: calculate avg, min, max, RMS and std dev.
+Stats to String.vi						
+	: convert stats to a string
+detect trigger off in next iteration.vi				
+	: detect if trigger in range in samples
+detect trigger off.vi						
+	: detect if trigger in range in samples
+detect trigger on.vi						
+	: detect if trigger in range in samples
+file properties.vi						
+	: get several global values form sampling file
+parse info from command line.vi					
+	: parse a command line and get params
+parse_command_line.vi						
+	: if misc info is given in command line, break to multi line
+string to range.vi						
+	: add min/max suffix
+trigger debug.vi						
+	: find min/max to debug trigger (set debug to on in sampling module to 
+use)
+voltage levels.vi						
+	: helper
+SignalsToWaveformChannels.vi					
+	: -|
+5SignalsToWaveformChannels.vi					
+	:  | - aggregate sampled signals to save into file, calculating current
+7SignalsToWaveformChannels.vi					
+	: -|
+Setup Rail 1.vi							
+	: -|
+Setup Rail 2.vi							
+	:  | - setup for sampling
+Setup Rail 3.vi							
+	: -|
+get file data 2 rails.vi					
+	: -|
+get file data 3 rails.vi					
+	:  | - organize and split signals from file
+get file data.vi						
+	: -|
+levels from file 2 rails.vi					
+	: -|
+levels from file 3 rails.vi					
+	:  | - parse a file with voltage level info, output for 1/2/3 rails
+levels from file.vi						
+	: -|
+
+Full list of command line options:
+==================================
+/waveform					
+	: show waveforms in sampling module
+/append						
+	: not used.
+/output=filename				
+	: output filename
+/autogo						
+	: operate in script mode, and quit when done
+/v-{max/min}=value				
+	: set voltage levels for voltage rail 1 
+/c-{max/min}=value				
+	: set voltage levels for current rail 1 
+/t-{max/min}=value				
+	: set voltage levels for trigger
+/ton-{max/min}=value				
+	: set voltage levels for trigger on
+/toff-{max/min}=value				
+	: set voltage levels for trigger off
+/cres=value (current resistor)			
+	: set value for current resistor rail 1
+/rate=value (sampling rate)				
+	: set sampling rate to use
+/its=values (iterations per second)		
+	: set iterations per second for analysis module
+/input=filename					
+	: input filename
+/levels=filename				
+	: file with voltage levels, required when using more then one rail
+	: this will override any command line values for voltage levels
+/iterations=value				
+	: max iterations to analyze for analysis module
+/info=";" separated string			
+	: misc benchmark and company information
+
+Troubleshooting
+================
+1. Input values not read, or output file not created
+	Labview only accepts full windows pathnames. 
+	Fix: All the parameters to labview therefor need to be the full path 
+	name.
+2. Sampling fails due to buffer overrun (trying to read samples but they are no 
+longer in the buffer)
+	This error is caused by the host computer not being fast enough to keep 
+up with the sampling.
+	Fix:
+	a. Stop displaying the waveforms (do not send /waveform flag to the 
+sampling module, or turn off by hand).
+	b. Choose a lower sampling frequency.
+	c. In the sampling module, increase the number of samples in the 
+sampling loop.
+	d. Get a faster host machine.
+3. I want to see all the sampled values
+	Download 
+ftp://ftp.ni.com/contrib/epd/0A7D8CA1FA4E41CFE0440003BA7CCD71/ExcelTDM.z
+ip, and install the plugin.
+	This excel plugin will enable you to load TDM files directly into Excel.
+	Use the new toolbar to import the file.
+	Alternatively, use the analysis module in manual mode, and turn the 
+"write to measurement file" on.
+	This will create a text file with all the sampled values that you can 
+load in any text editor.
+4. DAQ not found
+	Use the NI measurement and automation explorer to rename the daq card to 
+DAQ. 
+	Default name is dev<N> where N changes depends on other deviecs on the 
+system.
+	To change, select the "NI-DAQmx Devices" under "Devices and Interfaces", 
+	right click the DAQ card you wish to use, and choose rename from the 
+menu.
+5. Std deviation of the energy is too big
+	Try increasing the number of benchmark iterations
+
+%%EOF

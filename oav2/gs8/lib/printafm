@@ -1,0 +1,7 @@
+#!/bin/sh
+# $Id: printafm 6300 2005-12-28 19:56:24Z giles $
+# Print the metrics from a font in AFM format.  Usage:
+#	printafm fontname
+# Output goes to stdout.
+
+exec gs -q -dNODISPLAY -- printafm.ps "$@"

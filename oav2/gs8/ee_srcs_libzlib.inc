@@ -1,0 +1,13 @@
+gs8/zlib/zutil.c
+gs8/zlib/adler32.c
+gs8/zlib/deflate.c
+gs8/zlib/compress.c
+gs8/zlib/trees.c
+gs8/zlib/crc32.c
+gs8/zlib/inffast.c
+gs8/zlib/inflate.c
+gs8/zlib/inftrees.c
+gs8/zlib/uncompr.c
+gs8/zlib/infutil.c
+gs8/zlib/infblock.c
+gs8/zlib/infcodes.c

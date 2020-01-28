@@ -1,0 +1,1950 @@
+/**
+@file
+$RCSfile: changelog.txt,v $
+
+@brief Overview of developer level changes to Test Harness and makefile build system.
+
+@author Rick Foos, ECL, LLC 
+
+    CVS : $Revision: 1.2 $
+          $Date: 2006/03/09 17:30:41 $
+          $Author: rick $
+          
+@note This file has some minor formatting additions for ECL internal documentation.
+It is readable as text, this is just an explaination for the extra characters.
+
+@remark Release Procedure for changelog:
+-# Generate as part of harness documentation.
+-# edit changelog.html in dreamweaver.
+-# Process file with clean up tags, \<a\>.
+-# Save and move to /release/v2/eembc2 directory for packaging.
+
+@verbatim
+ Copyright (c) 1998-2005 by the EDN Embedded Microprocessor 
+ Benchmark Consortium (EEMBC), Inc. All Rights Reserved.
+@endverbatim
+*/
+
+/** @page changelog Change Log
+@addindex changelog Change Log
+
+@section V2_0_ORC5 V2_0_ORC5
+- Office Automation Release Candidate 5
+
+@section V2_0_0_B17 V2_0_0_B17
+- Office Automation Release Candidate 5
+
+The code under this version control tag is released is 2.0OCR5 on the
+EEMBC web site.
+
+- GCC 4.0.2 Warning. The __USE_MISC define in features.h can cause recursive
+conflicts for the types ulong, ushort, and uint. Change the cooresponding
+NEED_xxx variables in thconfig.h. In general, the NEED_ulong will go away.
+
+Example code from sys/types.h:
+@code
+#ifdef __USE_MISC
+/* Old compatibility names for C types.  */
+typedef unsigned long int ulong;
+typedef unsigned short int ushort;
+typedef unsigned int uint;
+#endif
+@endcode
+
+- Remove test cmyk driver test files.
+	- office/runv2x86.mak
+
+- Remove from test jig.
+	- office/gs8/jasper-1.701.0/src/: Makefile.in, appl/Makefile,
+	  libjasper/include/jasper/jas_config.h,
+	  libjasper/include/jasper/jas_config.h.in
+
+- GCC 4.01 Compiler Test Jig
+	- office/gs8/jasper-1.701.0/autogen.sh
+
+- GCC 4.0.2-8 Compiler Test Jig
+	- office/gs8/jasper-1.701.0/: Makefile, Makefile.am, Makefile.in,
+	  aclocal.m4, config.log, config.status, configure, libtool,
+	  src/Makefile, src/Makefile.in, src/appl/Makefile,
+	  src/appl/Makefile.am, src/appl/Makefile.in,
+	  src/libjasper/Makefile, src/libjasper/Makefile.am,
+	  src/libjasper/Makefile.in, src/libjasper/base/Makefile,
+	  src/libjasper/base/Makefile.am, src/libjasper/base/Makefile.in,
+	  src/libjasper/bmp/Makefile, src/libjasper/bmp/Makefile.am,
+	  src/libjasper/bmp/Makefile.in, src/libjasper/include/Makefile,
+	  src/libjasper/include/Makefile.in,
+	  src/libjasper/include/jasper/Makefile,
+	  src/libjasper/include/jasper/Makefile.in,
+	  src/libjasper/jp2/Makefile, src/libjasper/jp2/Makefile.am,
+	  src/libjasper/jp2/Makefile.in, src/libjasper/jpc/Makefile,
+	  src/libjasper/jpc/Makefile.am, src/libjasper/jpc/Makefile.in,
+	  src/libjasper/jpg/Makefile, src/libjasper/jpg/Makefile.am,
+	  src/libjasper/jpg/Makefile.in, src/libjasper/mif/Makefile,
+	  src/libjasper/mif/Makefile.am, src/libjasper/mif/Makefile.in,
+	  src/libjasper/pgx/Makefile, src/libjasper/pgx/Makefile.am,
+	  src/libjasper/pgx/Makefile.in, src/libjasper/pnm/Makefile,
+	  src/libjasper/pnm/Makefile.am, src/libjasper/pnm/Makefile.in,
+	  src/libjasper/ras/Makefile, src/libjasper/ras/Makefile.am,
+	  src/libjasper/ras/Makefile.in, src/msvc/Makefile,
+	  src/msvc/Makefile.in
+
+- CVS eol verification.
+	- techtag/th/src/thstdlib.h
+
+- Handle automake errors better for end user
+	- techtag/util/psnr/autoconf.sh, util/psnr/autoconf.sh
+
+- Older automake doesn't automatically include SUBDIR in compiler include.
+	- techtag/util/psnr/Makefile.am, util/psnr/Makefile.am
+
+- Capitalize ERROR string so consistent grep key can be used
+against all log files.
+	- techtag/util/awk/extractpsnr.awk, util/awk/extractpsnr.awk
+
+- Add install, uninstall rules. Add error checks so that make install doesn't fail blocking psnr build.
+	- techtag/util/psnr/dox/Makefile.am, util/psnr/dox/Makefile.am
+
+- Add support for quoted strings to check_compiler rule.
+	- techtag/util/make/makefile, util/make/makefile
+
+- Add host debug script to generate Ghostscript parms for debug output.
+	- office/gs8-gdb.sh
+
+- Ghostscript GPROF profile accumulation scripts.
+	- techtag/util/tchain/gprof-accum.awk,
+	  techtag/util/tchain/gprof-accum.sh,
+	  techtag/util/tchain/gprof-key.sh,
+	  techtag/util/tchain/gprof-sort.sh, util/tchain/gprof-accum.awk,
+	  util/tchain/gprof-accum.sh, util/tchain/gprof-key.sh,
+	  util/tchain/gprof-sort.sh
+
+- Initial add for RC5 updates.
+	- doc/PortingGuideAndReleaseNotes.rtf
+
+- Documentation update.
+	- techtag/util/perl/cvs2cl.html, util/perl/cvs2cl.html
+
+- Clarify the logic around thstdint.h include path.
+	- office/gs8/src/stdint_.h
+
+- Start updates from RC4, and add RC5.
+	- changelog.txt
+
+- First version scripts to categorize gprof data from Ghostscript.
+	- techtag/util/tchain/gprof-key.sh,
+	  techtag/util/tchain/gprof-sort.sh, util/tchain/gprof-key.sh,
+	  util/tchain/gprof-sort.sh
+
+- Route both stderr and stdout to results file. Some versions route printf's to stderr.
+	- techtag/util/make/gdb.sh, util/make/gdb.sh
+
+- Restore quoted string to build for tools directory.
+	- techtag/util/make/vc.mak, util/make/vc.mak
+
+- Add flag for split blksize/blkcnt.
+	- techtag/util/make/gccppc.mak, util/make/gccppc.mak
+
+- Add ARM (gnuarm.org) toolchain file for gcc builds.
+	- techtag/util/make/gccarm.mak, util/make/gccarm.mak
+
+- Convert cd;make to make -C.
+	- techtag/util/makefile, util/makefile
+
+- Split e_blksize and e_blkcnt from autoconf defines, some compilers define one and not the other. The stat structure options for blksize and blkcnt were split into two defines. One compiler was found that implemented one without the other.
+ If you needed to modify the blksize define before, you will also need to modify the blkcnt define. If you were using defaults, there is no porting change required.
+	- techtag/: th/x86/al/thconfig.h, th/x86/al/thtypes.h,
+	  th_lite/x86/al/thconfig.h, th_lite/x86/al/thtypes.h
+
+- Add test files from Shay Gal-On.
+	- office/: gs8/examples/3dcolor.ps, gs8/examples/fractal-fern.ps,
+	  runv2x86.mak
+
+- Remove makerule warning found in testing.
+	- office/: depgen_gcc.cml, depgen_vc.cml
+
+- Modify workspace for PSNR move to utilities.
+	- office/officev2.dsw
+
+	- techtag/util/c/win32/uudecode.dsp, util/c/win32/uudecode.dsp:
+	  Update from PSNR porting to MSVC.
+
+- Force EXEEXT to .exe for EEMBC compatibility.
+	- techtag/util/psnr/Makefile.am, util/psnr/Makefile.am
+
+- Allow for compilers without O_BINARY.
+	- techtag/util/psnr/libtiff/tif_open.c,
+	  util/psnr/libtiff/tif_open.c
+
+- Full working tiffg4 version, modified psnr output to add more single file types.
+	- techtag/util/psnr/Makefile.am, techtag/util/psnr/psnr.c,
+	  techtag/util/psnr/tiffcmp.c, techtag/util/psnr/dox/Doxyfile.in,
+	  techtag/util/psnr/dox/Makefile.am,
+	  techtag/util/psnr/dox/index.dox, util/psnr/Makefile.am,
+	  util/psnr/psnr.c, util/psnr/tiffcmp.c, util/psnr/dox/Doxyfile.in,
+	  util/psnr/dox/Makefile.am, util/psnr/dox/index.dox
+
+- First Portable revision, with installed documentation, and MSVC/Windows compatibility. EEMBC Ignore Data/Time differences.
+	  - techtag/util/psnr/Makefile.am, techtag/util/psnr/autoconf.sh,
+	  techtag/util/psnr/configure.ac, techtag/util/psnr/mkproto.awk,
+	  techtag/util/psnr/psnr.c, techtag/util/psnr/tiffcmp.c,
+	  util/psnr/Makefile.am, util/psnr/autoconf.sh,
+	  util/psnr/configure.ac, util/psnr/mkproto.awk, util/psnr/psnr.c,
+	  util/psnr/tiffcmp.c, techtag/util/psnr/dox/Doxyfile.in,
+	  techtag/util/psnr/dox/Makefile.am,
+	  techtag/util/psnr/libtiff/tif_open.c,
+	  techtag/util/psnr/libtiff/tif_unix.c,
+	  techtag/util/psnr/libtiff/tiff.h,
+	  techtag/util/psnr/win32/libtiff.dsp,
+	  techtag/util/psnr/win32/psnr.dsp,
+	  techtag/util/psnr/win32/tiffcmp.dsp, util/psnr/dox/Doxyfile.in,
+	  util/psnr/dox/Makefile.am, util/psnr/libtiff/tif_open.c,
+	  util/psnr/libtiff/tif_unix.c, util/psnr/libtiff/tiff.h,
+	  util/psnr/win32/libtiff.dsp, util/psnr/win32/psnr.dsp,
+	  util/psnr/win32/tiffcmp.dsp
+
+- Add extra dependencies for psnr.h, and libtiff/g3states.h
+	- techtag/util/psnr/Makefile.am, util/psnr/Makefile.am,
+	  techtag/util/psnr/libtiff/Makefile.am,
+	  util/psnr/libtiff/Makefile.am
+
+- Remove office/psnr from techtag.
+	- makefile
+
+- Add rule for bin/psnr.
+	- techtag/util/makefile, util/makefile
+
+- Add autconf to optionally regenerate Makefile. Autoreconf recommended.
+	- techtag/util/psnr/autoconf.sh, util/psnr/autoconf.sh
+
+- Rename to standard and update to Doxygen 1.4.4.
+	- office/gs8/dox/DoxyFile
+
+- Updates for standalone psnr run, and new util location of psnr.
+	- office/: depgenv2_host.cml, officev2.dsw, resultsv2x86.mak
+
+- Add psnr.exe to build.
+	- techtag/util/makefile, util/makefile
+
+- Complete Autoconf conversion and install.
+	- techtag/util/psnr/Makefile.am, techtag/util/psnr/configure.ac,
+	  techtag/util/psnr/proto.h, techtag/util/psnr/dox/Doxyfile.in,
+	  techtag/util/psnr/dox/Makefile.am,
+	  techtag/util/psnr/dox/autoconf.sh,
+	  techtag/util/psnr/dox/configure.ac, util/psnr/Makefile.am,
+	  util/psnr/configure.ac, util/psnr/proto.h,
+	  util/psnr/dox/Doxyfile.in, util/psnr/dox/Makefile.am,
+	  util/psnr/dox/autoconf.sh, util/psnr/dox/configure.ac
+
+- Convert to Automake noinst library.
+	- techtag/util/psnr/libtiff/Makefile.am,
+	  techtag/util/psnr/libtiff/g3states.h,
+	  util/psnr/libtiff/Makefile.am, util/psnr/libtiff/g3states.h
+
+- Convert -occ option to GCC compatible.
+	- techtag/util/perl/makerule.pl, util/perl/makerule.pl
+
+- Initial add of psnr with libtiff
+	- techtag/util/psnr/mkproto.awk, techtag/util/psnr/mkproto.sh,
+	  techtag/util/psnr/proto.h, techtag/util/psnr/psnr.c,
+	  techtag/util/psnr/tiffcmp.c, techtag/util/psnr/dox/Doxyfile.in,
+	  techtag/util/psnr/dox/Makefile.am,
+	  techtag/util/psnr/dox/autoconf.sh,
+	  techtag/util/psnr/dox/configure.ac,
+	  techtag/util/psnr/dox/index.dox,
+	  techtag/util/psnr/libtiff/Makefile.aix,
+	  techtag/util/psnr/libtiff/Makefile.alpha,
+	  techtag/util/psnr/libtiff/Makefile.apollo,
+	  techtag/util/psnr/libtiff/Makefile.gcc,
+	  techtag/util/psnr/libtiff/Makefile.hpux,
+	  techtag/util/psnr/libtiff/Makefile.lcc,
+	  techtag/util/psnr/libtiff/Makefile.mpw,
+	  techtag/util/psnr/libtiff/Makefile.next,
+	  techtag/util/psnr/libtiff/Makefile.sco,
+	  techtag/util/psnr/libtiff/Makefile.sgi,
+	  techtag/util/psnr/libtiff/Makefile.sun,
+	  techtag/util/psnr/libtiff/README,
+	  techtag/util/psnr/libtiff/g3states.h, util/psnr/mkproto.awk,
+	  util/psnr/mkproto.sh, util/psnr/proto.h, util/psnr/psnr.c,
+	  util/psnr/tiffcmp.c, util/psnr/dox/Doxyfile.in,
+	  util/psnr/dox/Makefile.am, util/psnr/dox/autoconf.sh,
+	  util/psnr/dox/configure.ac, util/psnr/dox/index.dox,
+	  util/psnr/libtiff/Makefile.aix, util/psnr/libtiff/Makefile.alpha,
+	  util/psnr/libtiff/Makefile.apollo,
+	  util/psnr/libtiff/Makefile.gcc, util/psnr/libtiff/Makefile.hpux,
+	  util/psnr/libtiff/Makefile.lcc, util/psnr/libtiff/Makefile.mpw,
+	  util/psnr/libtiff/Makefile.next, util/psnr/libtiff/Makefile.sco,
+	  util/psnr/libtiff/Makefile.sgi, util/psnr/libtiff/Makefile.sun,
+	  util/psnr/libtiff/README, util/psnr/libtiff/g3states.h,
+	  techtag/util/psnr/libtiff/mkg3states.c,
+	  techtag/util/psnr/libtiff/mkspans.c,
+	  techtag/util/psnr/libtiff/t4.h,
+	  techtag/util/psnr/libtiff/tif_apple.c,
+	  techtag/util/psnr/libtiff/tif_atari.c,
+	  techtag/util/psnr/libtiff/tif_aux.c,
+	  techtag/util/psnr/libtiff/tif_ccittrle.c,
+	  techtag/util/psnr/libtiff/tif_close.c,
+	  techtag/util/psnr/libtiff/tif_compress.c,
+	  techtag/util/psnr/libtiff/tif_dir.c,
+	  techtag/util/psnr/libtiff/tif_dirinfo.c,
+	  techtag/util/psnr/libtiff/tif_dirread.c,
+	  techtag/util/psnr/libtiff/tif_dirwrite.c,
+	  techtag/util/psnr/libtiff/tif_dumpmode.c,
+	  techtag/util/psnr/libtiff/tif_error.c,
+	  techtag/util/psnr/libtiff/tif_fax3.c,
+	  techtag/util/psnr/libtiff/tif_fax3.h,
+	  techtag/util/psnr/libtiff/tif_fax4.c,
+	  techtag/util/psnr/libtiff/tif_flush.c,
+	  techtag/util/psnr/libtiff/tif_getimage.c,
+	  techtag/util/psnr/libtiff/tif_jpeg.c,
+	  techtag/util/psnr/libtiff/tif_lzw.c,
+	  techtag/util/psnr/libtiff/tif_msdos.c,
+	  techtag/util/psnr/libtiff/tif_next.c,
+	  techtag/util/psnr/libtiff/tif_open.c,
+	  techtag/util/psnr/libtiff/tif_packbits.c,
+	  techtag/util/psnr/libtiff/tif_print.c,
+	  techtag/util/psnr/libtiff/tif_read.c,
+	  techtag/util/psnr/libtiff/tif_strip.c,
+	  techtag/util/psnr/libtiff/tif_swab.c,
+	  techtag/util/psnr/libtiff/tif_thunder.c,
+	  techtag/util/psnr/libtiff/tif_tile.c,
+	  techtag/util/psnr/libtiff/tif_unix.c,
+	  techtag/util/psnr/libtiff/tif_version.c,
+	  techtag/util/psnr/libtiff/tif_vms.c,
+	  techtag/util/psnr/libtiff/tif_warning.c,
+	  techtag/util/psnr/libtiff/tif_write.c,
+	  techtag/util/psnr/libtiff/tiff.h,
+	  techtag/util/psnr/libtiff/tiffcomp.h,
+	  techtag/util/psnr/libtiff/tiffconf.h,
+	  techtag/util/psnr/libtiff/tiffio.h,
+	  techtag/util/psnr/libtiff/tiffiop.h,
+	  techtag/util/psnr/win32/psnr.dsp, util/psnr/libtiff/mkg3states.c,
+	  util/psnr/libtiff/mkspans.c, util/psnr/libtiff/t4.h,
+	  util/psnr/libtiff/tif_apple.c, util/psnr/libtiff/tif_atari.c,
+	  util/psnr/libtiff/tif_aux.c, util/psnr/libtiff/tif_ccittrle.c,
+	  util/psnr/libtiff/tif_close.c, util/psnr/libtiff/tif_compress.c,
+	  util/psnr/libtiff/tif_dir.c, util/psnr/libtiff/tif_dirinfo.c,
+	  util/psnr/libtiff/tif_dirread.c,
+	  util/psnr/libtiff/tif_dirwrite.c,
+	  util/psnr/libtiff/tif_dumpmode.c, util/psnr/libtiff/tif_error.c,
+	  util/psnr/libtiff/tif_fax3.c, util/psnr/libtiff/tif_fax3.h,
+	  util/psnr/libtiff/tif_fax4.c, util/psnr/libtiff/tif_flush.c,
+	  util/psnr/libtiff/tif_getimage.c, util/psnr/libtiff/tif_jpeg.c,
+	  util/psnr/libtiff/tif_lzw.c, util/psnr/libtiff/tif_msdos.c,
+	  util/psnr/libtiff/tif_next.c, util/psnr/libtiff/tif_open.c,
+	  util/psnr/libtiff/tif_packbits.c, util/psnr/libtiff/tif_print.c,
+	  util/psnr/libtiff/tif_read.c, util/psnr/libtiff/tif_strip.c,
+	  util/psnr/libtiff/tif_swab.c, util/psnr/libtiff/tif_thunder.c,
+	  util/psnr/libtiff/tif_tile.c, util/psnr/libtiff/tif_unix.c,
+	  util/psnr/libtiff/tif_version.c, util/psnr/libtiff/tif_vms.c,
+	  util/psnr/libtiff/tif_warning.c, util/psnr/libtiff/tif_write.c,
+	  util/psnr/libtiff/tiff.h, util/psnr/libtiff/tiffcomp.h,
+	  util/psnr/libtiff/tiffconf.h, util/psnr/libtiff/tiffio.h,
+	  util/psnr/libtiff/tiffiop.h, util/psnr/win32/psnr.dsp
+
+- Create example toolchain file for Time and PSNR generation without object and exe files.
+	- techtag/util/make/psnr.mak.example, util/make/psnr.mak.example
+
+
+
+@section V2_0_0_B16 V2_0_0_B16
+- Office Automation Release Candidate 4
+
+	The code under this version control tag is released is 2.0OCR4 on the
+	EEMBC web site. 
+
+@section V2_0_0_B15 V2_0_0_B15
+- Office Automation Release Candidate 3
+
+	The code under this version control tag is released is 2.0OCR3 on the
+	EEMBC web site. 
+
+- thal.c : Add al_power_start, al_power_finish
+Add PowerTAG calls to signal start and signal finish. These are disabled,
+and outside the timing loop if EE_POWERTAG is FALSE (default).
+
+Porting: For power measurement, a 20ms delay routine is required, and code
+to level trigger a GPIO pin for NI Power measurement system.
+
+- psnr.c : Add and enhance psnr for office.
+
+
+@section V2_0_0_B14 V2_0_0_B14
+- Office Automation Release Candidate 2
+
+	The code under this version control tag is released is 2.0OCR2 on the
+	EEMBC web site. 
+- makefile : subcomittee makefile cheader: target adds a make for deleted
+depgen.cml files. 
+
+	When building new example files, or other dependents, cheader.sh 
+	deletes the targets.mak files if there are any changes. This forces
+	the makefile to regerate them from a makerule run. This was not
+	triggered from the cheader step, and required a second make invocation
+	to pick this up when targets were initially included. An Additional make
+	step was included to generate new targets files.
+- thstat.h  Warning, the redefines to sys/stat.h defines cause compiler
+warnings, but changing to undef before define caused compilation errors in
+gsdevio.h.
+- pointio.c : Bezier V2 change hardcoded e_f64 declarations to Scalar
+
+This correctly reflects the return code. Some platforms do not have 64 bit
+floats, and this allows the OOB definitions to compile correctly.
+
+- thcfg.h: Change default TARGET_TIMER_INTRUSIVE to false
+
+Most platforms have non-intrusive timers, and this should be false by
+default -- ADI
+
+- thal.c: Remove heap.h include, fix vnsprintf
+
+fix vnsprintf string terminator problem.
+al_main, define i for arg processing.
+
+
+
+
+
+- thconfig.h doscan.c : Add definition HAVE_CTYPE_H
+- thconfig.h thstring.h : Add definition HAVE_DECL_STRDUP
+
+Avoid extern returning int warnings on some compilers.
+thal.c will usually point out this problem.
+
+- thconfig.h thunistd.h : Add definition HAVE_DECL_SETMODE
+
+Some compilers have an existing setmode declaration that interferes with the
+default.
+- th th_lite makefile : Change standard header for documentation.
+
+Documentation cleanup, and standard header changes for future Version 2
+projects.  Makefile modified to pick up available documentation
+directories with standard files and formats.  This provides automation,
+and limits scope to relevant projects.
+
+Porting: Impact, None.
+
+- th_lite/x86/al/thal.c : al_main, add trap for -autogo in argv.
+
+Consumer filters fail in th_lite if -autogo is passed by mistake. TH Regular strips
+these arguments before benchmark execution. TH Lite declares argv as const,
+so a modification to allow portable argument deletion involves a change to 
+all benchmarks.
+
+Instead, a simple strcmp detector, with warning message. The text will include
+Failure: so that awk script will report error in run.
+
+Impact: None, porting enhancement.
+
+- runx86.mak : Add RUN_LASTOUT to make run targets
+
+A simulator was found that displayed all console output to standard error.
+The result was that all results files were empty, and scores not collected.
+
+A RUN_LASTOUT variable was added after the stdout redirection to the log file
+in all run steps. The definition of this variable is in the toolchain file.
+
+To capture both stdout and stderr to the run log file, set:
+@code
+RUN_LASTOUT="2\>&1"
+@endcode
+
+Impact: None. Porting enhancement.
+
+- thlib.c : Change createvalist return to *valist.
+
+the new createvalist routine is for a portable method of passing valist.
+The return of valist is sometimes an array that some compielers do not support.
+The routine, and all references were converted to pointer returns, and the
+args valist is now a static variable.
+
+Impact: None. Portability.
+
+- fileio.c : Fix single character buffer overrun.
+
+In ee_fname_resolver, for empty path names tmpbuf incremented past the end
+of string. Added a test for empty string before increment.
+
+One compiler failed in mp2encode data4, data5 because of value after end of string.
+This, combined with Valgrind fix clears all problems related to empty path names.
+
+Impact: None. Bug fix.
+
+- thfl.c : Fix Valgrind reports from Ghostscript run.
+
+The epn routine returns a malloc'ed path section of a file. When there is no path,
+a calloc(1,1) was used to create a null string. Other routines compared this string
+to single characters 
+using if (string == ':'). The ':' is interpreted as a two byte integer. Changing this to 
+calloc(sizeof(int),1) corrects the Valgrind problem for all compilers.
+
+All compilers correctly executed this comparison, this is ONLY for Valgrind.
+
+Impact: None.
+- thconfig.h : Add autoconf, and th NEED flags.
+
+For newlib, and toolchains without new functions:
+ NEED_LINK (tied to unlink without flag), HAVE_WRITE, HAVE_LSEEK, were added.
+
+Impact: Porting Options
+
+- TH Regular / TH Lite : Added th_read, th_write, th_lseek
+This removes stubs in libjasper jas_stream.c. It will clarify port of compilers
+that have streams calls, but not the older file calls.
+
+Three new thconfig settings are added: HAVE_READ, HAVE_WRITE, and HAVE_LSEEK
+
+Impact: Porting, Minimal
+
+@section V2_0_0_B13 V2_0_0_B13
+- Office Automation Release Candidate 1
+- thfcntl.h : Added redirector for fcntl.h
+Some compilers do not have fcntl.h, and this provides the needed definitions
+to compile Ghostscript.
+
+Impact: Porting.
+
+- thal.c: HOST_EXAMPLE_CODE is no longer default enabled.
+
+Enough people are using the examples for embedded that it did not make sense to enable this by default.
+The ifdef logic was changed so that thconfig.h definitions controlled the relevant code blocks.
+
+For example, the clock function is still used for timing if HAVE_CLOCK is true.
+
+Impact: None. Enhancement for porting.
+
+- fileio.c : Added ee_gets
+Will need to add th_gets to strip eol characters for text and mpeg2enc bmarks.
+
+- cinit.sh : Enhance init_single.c for unified dataset initialization.
+
+cheader.sh generates the file [libname]_single.c. Since Cheader contains the DATA declaration,
+and the filename, this information can now be used by the benchmarks for opening files with
+USE_TH_FILEIO true or false.
+
+The benchmark can get the associated file name by:\n
+extern char *DATANAME;\n
+
+The benchmark can load this file into the library by calling:\n
+init_single();\n
+
+For makefile and IDE builds, the [libname]_single.c file is included into the project.
+The library builds can exclude this file, or allow multiple symbol definitions. The
+object file from the benchmark will always take precedence.
+
+In the EEMBC build, the DATA_x definition is always passed to all files. The default value
+in \<libname\>_init.c is DATA_1.
+
+A log file is created with the DATA_x to Filename mapping: [libname].log
+
+Impact: None. Enhancement
+
+- psnr.sh : Fix for sed 4.1.2
+
+When using | as or function, | cannot be used as seperator.
+
+dkey functions extraction data and psnr from filenames stopped working.
+
+Impact: None. Portability.
+
+- thal.c, thconfig.h: Added vsnprintf
+vsnprintf is not ansi or posix but is used by Ghostscript. Two flags HAVE_VSPRINTF, and
+HAVE_VNSPRINTF were added. If the tool chain does not have vsnprintf, but does have vsprintf
+the vsnprinf function is implemented in thal.c.
+
+Impact: Minimal Porting. New function support for vsnprintf.
+
+- th_lite thlib.c: Bug 277: al_exit called incorrectly from __assertfail and __fatal.
+
+Changed al_exit calls to th_exit calls, similar to TH Regular calls to t_exit.
+
+Impact: Bug Fix. Only impacts HAVE_ASSERT_H=0, and NDEBUG compilation. All other cases
+unchanged.
+
+- thtypes.h: Add additional option for eVC definitions of FILE types.
+
+eVC differs from MSVC when defining off_t, ino_t, and fsize_t. Add condition for eVC to allow
+thtypes.h to define and redirect these definitions.
+
+Impact: None. Porting enhancement.
+
+- threent.h: If not defined in stdio.h, Add definition for PATH_MAX and L_tmpname.
+
+Some compilers, in some header file recursions do not define PATH_MAX or L_tmpname. If this
+condition occurs, errors were found upon threent.h include. These are defined to default
+values if they do not exist.
+
+- Impact: None. Porting enhancement.
+
+- doscan.c, thconfig.h: Added NEED_WCHAR_T
+
+Some tool chain header files do not define wchar_t, needed by some parts of doscan processing.
+A new tool chain option was added to allow this to be typedef'ed inside of doscan. By default,
+this is a short int (two characters).
+
+Impact: Minimal. Porting enhancement new configuration option.
+
+- fileio.c, thstdio.h, thunistd.h: Add th_open call, and re-direction.
+
+While this is not required for linking the ghostscript base, some of the underlying libraries
+called open which produced link warnings.
+
+Original redirection in thstdio.h was incorrect. open and close moved to thunistd.h.
+
+Impact: None. Warning message removal.
+
+- office/gs8 Replaced \<assert.h\> includes with thassert.h
+
+Tool chains which do not support assert.h failed in compilation. Since there is no standard
+include set for this (most compilers have assert.h), this file was included at will, particularly
+in the jasper routines.
+
+The easiest modification was a conversion to thassert.h which handles all cases.
+
+Impact: None. Porting enhancement.
+
+@section V2_0_0_B12 V2_0_0_B12
+- Version 2 Office Automation Beta
+- office/gs8/eembc.sh, Makefile.in, configure.ac: Notes and example added for cross-compilation.
+
+For development and porting, an enhanced autoconf build is available. This is a step between
+the build method of the original AFPL code base, and the EEMBC build.
+
+Cross-compilation is support in Autoconf is not straightforward and requires and the
+Ghostscript build requires some non-standard options for this to work. An example
+of how to cross-compile Ghostscript is included.
+
+Impact: None. Porting enhancement.
+
+- thconfig.h: Added uint64 examples for Solaris.
+
+Solaris GCC 3.3.x did not define the int64_t or uint64_t. Solaris GCC 3.4 does define
+these types. Since this is a bug, and the bug is fixed in 3.4, a note was included
+to describe what to do in this case. 
+
+This is also an additional example of how to handle data types in thstdint.h. These
+data types are very important to Ghostscript compilation, and the definitions need
+to be correct. The thstdint.h definitions reflect this, and numerous compiler errors
+are produced if the definition set is not correct. This significantly saves on run
+time debugging down in Ghostscript to find data type conflicts.
+
+Impact: Porting. Solaris GCC specifically, but example applies to any compiler that
+does not have stdint.h.
+
+- thtime.h, thal.c: Added gettimeofday to re-direction.
+
+This routine is called out in several locations. Added to harness re-direction.
+
+Impact: Porting. Set HAVE_GETTIMEOFDAY in thconfig.h depending on compiler 
+capabilities.
+
+- iterationsv2x86.mak: Compiler options for GCC
+
+Specific compiler options are required to execute GCC Ghostscript benchmarks
+on Linux and Cygwin (Windows). Solaris does not have this issue.
+
+These options are defined in the Iterations file to be only applicable
+to Office.  The WARNING_OPTIONS define in util/make/gcc.mak is
+OVERRIDDEN by this definition.  If you need to change compiler options,
+you need to do this in the Office Iterations file.
+
+Impact: Porting. Setting compiler options outside the Tool Chain file.
+
+- office/gs8/src/gsline.c: Floating Point Warning for Ghostscript.
+
+Ghostscript contains some custom roundoff routines for floating point numbers.
+These are difficult to compile, and simulate in a cross environment.
+
+When the problem occurs, random numbers are returned in the affected variables
+so it is difficult to tell whether this is a compiler problem, or simulator problem.
+
+In the original code base, there was no windback of errors explaining this
+problem, a segmentation fault was taken early in the initialization.
+
+A warning message if this condition is suspected is added, and the
+program is allowed to continue. This warning appears as:
+
+@verbatim
+Failure: Roundoff error in pgs-\>ctm see update_ctm. gs8/src/gsline.c : 360
+ 
+xxyy: -2.672140e+154, 0.000000e+00 fabs(xxyy): -2.672202e+154, 3.337611e-308
+xyyx: -2.672140e+154, 4.243992e-314 fabs(xyyx): -2.672202e+154, 3.337611e-308
+txty: -2.672140e+154, 4.243992e-314 fabs(txty): -2.672202e+154, 3.337611e-308
+
+*** Possible Tool chain porting issue or compiler option ***i
+@endverbatim
+
+The terminology (i.e.  xxyy) refers to the pgs-\>ctm data structure
+element that exhibits this problem in early execution.  While the code
+corrects the error and returns, the roundoff problem will cause other
+failures.
+
+Since this error involved 8 layers of breakpoints to isolate, the warning
+message should save anyone involved a good bit of time trying to find this.
+
+Impact: None. Porting advisory for Ghostscript for Cross Compilers and Simulators.
+
+- thtypes.h: Moved from Functional Layer to Adaptation Layer.
+There are tool chain dependencies that will require porting. This file no longer re-directs
+types to eembc, it takes existing types and uses them to define the standard eembc types.
+
+Impact: Porting. Consolidation of existing definitions into the Adaptation Layer.
+Better control of porting.
+
+- thconfig.h: LONG_MAX and CHAR_BIT 
+If the toolchain does not have limits.h, the harness requires that
+LONG_MAX, and CHAR_BIT are defined correctly. This definition
+is associated with HAVE_LIMITS_H in thconfig.h.
+
+Impact: Porting. Consolidation of existing definitions into the Adaptation Layer.
+Better control of porting.
+
+- thstdint.h: HAVE_48 and HAVE_24 removed.
+These are non-standard types, and not used in the benchmarks.
+
+To avoid libc header file recursions, the EEMBC data types default to
+those found in stdint.h, or inttypes.h. These types are defined in a number of
+locations and are exposed in different header files leading to conflicts.
+
+Redirection to EEMBC data types was removed as there is an established standard.
+
+Impact: Porting. In most cases this will remove any need to define EEMBC data types.
+
+- thtime.h, thconfig.h: Redirection for time.h, sys/time.h
+Added configuration options:
+HAVE_TIME_H, HAVE_SYS_TIME_H, HAVE_TIME, NEED_TIME
+
+This handles all cases of the time and localtime functions in libc.
+The NEED variant is for libc's that do not have a time symbol, or
+reference a time symbol based on linker actions.
+
+The internal functions, ee_time, and ee_localtime are implemented in thfl.c.
+
+Impact: Porting. Minor, evaluate tool chain's time and localtime capability.
+
+- fileio.c: ee_link function.
+A function for link (to go with unlink) has been added.
+This is provided to resolve symbols in newlib cross compiler linkage.
+
+The definitions for link and unlink are in thunistd.h.
+
+Impact: Porting, tool chain functions.
+
+- thcfg.h, thconfig.h, thal.c, fileio.c: HAVE_LINK, NEED_LINK
+The link function is called and re-directed to the harness.
+If your libc has a link function, define HAVE_TIME.
+
+If your libc requires a link symbol internally called, NEED_TIME will
+define a function call redirecting this to al_time in the harness.
+
+Impact: Porting, tool chain function.
+
+- thcfg.h, thconfig.h, thal.c, thfl.c: HAVE_TIME, NEED_TIME
+The time function is called and re-directed to the harness.
+If your libc has a time function, define HAVE_TIME.
+
+If your libc requires a time symbol internally called, NEED_TIME will
+define a function call redirecting this to al_time in the harness.
+
+Impact: Porting, tool chain function.
+
+- thcfg.h, thconfig.h, thal.c, thfl.c: HAVE_CLOCK, NEED_CLOCK
+The clock function is called and re-directed to the harness.
+If your libc has a clock function, define HAVE_CLOCK.
+
+If your libc requires a clock symbol internally called, NEED_CLOCK will
+define a function call redirecting this to al_clock in the harness.
+
+Impact: Porting, tool chain function.
+
+
+- util/make/gcc.mak: Compiler Option modified.
+
+Remove -W option. Fails in gs8/src/gdevpng.c
+with thstdint.h conflicting with types.h.
+
+The -W option is not clear on operation, so it was removed globally.
+
+Impact: Porting, Review tool chain file compiler options.
+
+- depgen.cml: All depgen files modified to excluded new re-direct files.
+
+The makerule program prints non-fatal errors when header files are not found.
+The new redirection headers were added to these files.
+
+Impact: Porting If you have created new depgen files, you should review
+the gcc file and apply the appropriate updtates.
+
+- crc.c, thlib.h: th_crcbuffer Compute crc16 of a buffer. 
+
+A CRC is calculated of an input buffer. 
+Multiple buffer CRC checking is also supported for streaming 
+output data. 
+
+For a single buffer the input CRC MUST be 0, and the final 
+CRC result is returned.
+
+In the muliple buffer case, the input CRC is used as an intermediate
+value for calculating the final CRC result.
+The first buffer is passed with a inputCRC 
+of 0 as in the single buffer case. The subsequent buffers are
+passed with the CRC result of the previous buffer calculation. 
+
+The caller must save the CRC result value and pass it 
+back in inputCRC for the additional buffers.
+
+The original usage is that this routine is called 
+after a th_fsize and th_fread of a file into a buffer. The size and
+buffer parameters are compatible with th_fsize and th_fread types.
+
+@note A special case where the caller passes a NULL buffer AND size 0
+returns 0.
+
+@remark Addressability is not assumed, but the data is assumed to be
+unpacked.  Packing can be handled by using crc16, or crc32 routines.  A
+Local fix is allowed.  However, it is likely that other dependencies
+have already caused the buffer to be unpacked.  When porting, You must
+ensure that the buffer is packed before applying a local fix.  When
+calculating CRC's on packed data, you may also have endian issues.
+
+Impact: None. New feature.
+
+- thlib.h, fileio.h: Tool chain incompatibilities.
+
+A new tool chain added for testing had a fatal compile problem
+involving overloaded C++ classes with the existing header files.  This
+problem was identified to be in thlib.h and fileio.h, which define
+required harness data structures.
+
+Using the new redirection headers cleared this problem, and increase
+the ability to port code to the harness on future tool chains.
+
+-# All new redirection header files correctly wrap declarations in extern "C".
+-# thlib.h, fileio.h used externally were replaced by thstdio.h, and other 
+appropriate headers where problems occured.
+-# thlib.h was upgraded to use new redirection files, maintaining a single
+definition point for each harness API routine.
+
+Impact: None. Backwards compatible header file changes in some benchmarks that
+need to be noted. No code changes required.
+
+- therrno.h: Add re-director for errno.h functions.
+
+Additional porting found references to errno.h.  These functions were
+previously in fileio.h, but a number of conflicts and workarounds in
+porting needed to be in place for this to work.
+
+Including all of fileio.h functions, in code where only errno.h is needed
+was not possible without even more workarounds. Splitting these functions
+into a format compatible with standard compiler headers allowed porting
+to continue.
+
+Impact: None. New feature. References to fileio.h in benchmark code
+should be reviewed and therrno.h should be included instead for specific
+functionality.
+
+- thstdlib.h: Add re-director for stdlib.h functions.
+
+Malloc functions are re-directed by thmalloc.h, a subset of stdlib.h. 
+The random number functions also needed external redirection to maintain
+backwards compatibility. 
+
+A new thstdlib.h file provides this functionality.
+
+Impact: None. New feature.
+
+- thshare.bat: Script to copy shared files between harnesses.
+
+A copy of this file is in the th, and th_lite directories.
+The script does a copy of all of the shared files to the "other" harness.
+It can be used for porting in the case where you are using the x86 platform
+definitions and want to run both regular and lite. It can easily be modified for
+other platforms.
+
+Impact: Enhancement. Porting both TH Regular and TH Lite simplified.
+
+- IMPORTANT: Shared source files between TH Regular, and TH Lite.
+All of the new header files are identical between TH Regular and TH Lite.
+At this point, there are a number of shared source files and with a few
+modifications others were included to the shared source file list.
+
+This does NOT mean that they can be compiled into a seperate library. The configuration
+and porting information are still required at compile time. This does mean that these 
+source files can be copied between the harnesses, if necessary, and increases the
+functional compatibility between the harnesses in development.
+
+The following files are shared source. M denotes an existing file. A denotes a new
+harness file, that is also shared.
+
+@verbatim
+M src/crc.c
+M src/doscan.c
+M src/fileio.c
+M src/fileio.h
+M src/heap.h
+M src/printfe.c
+M src/printfe.h
+M src/rand.c
+M src/ssubs.c
+M  src/ssubs.h
+M  src/thal.h
+M  src/thassert.h
+A  src/thdirent.h
+M  src/therror.h
+A  src/thmalloc.h
+A  src/threent.h
+M  src/thstat.h
+M  src/thstdio.h
+A  src/thstring.h
+A  src/thtypes.h
+M  src/thunistd.h
+*A src/thstdlib.h
+*A src/therrno.h
+M  src/thvinfo.h
+M  src/uuencode.c
+M  src/uuencode.h
+M  src/thvinfo.h
+*M src/heap.c
+M  x86/al/dirent_msvc.h
+M  x86/al/dirent_msvc.c
+M  x86/al/eembc_dt.h
+M  x86/al/heapport.h
+A  x86/al/thconfig.h
+A  x86/al/thstdint.h
+
+M - Modifications to existing file.
+A - New file in Test Harness
+* - Added since original note written (description is above this note.)
+
+@endverbatim
+
+Impact: Easier porting to both harness versions.
+
+- depgen.cml: New exclude files added.
+
+The new harness files have been added to all depgen.cml files.
+
+After "-g verify.h", the following files are in place:
+thstdint.h, thstat.h, thunistd.h, thdirent.h, thmalloc.h, thconfig.h
+
+Impact: Minor. Porting using new .cml files need to add new harness header files.
+
+- thstdint.h: New file with header file redirection.
+
+This new file is an essential part of porting.
+
+-# Contains all Integer types previously defined in eembc_dt.h.
+-# EE_REDIRECT capabilities added.
+
+Impact: Moderate. Required file for porting, all integer type definitions for the
+architecture reside here.
+
+- thlib.c: New functions and stat changes.
+
+Impact: None.
+
+- thlib.h: Rewritten for header file redirection.
+
+All new redirection files included to maintain a single point of function definition.
+Only harness internal, and non-standard functions remain in thlib.h.
+
+EE_REDIRECT is FALSE inside harness.
+
+Impact: Moderate Review required headers, and determine if a smaller set of new
+redirection headers are adequate.
+
+- threent.h: New file
+Data types for stdio reside here.
+
+Impact: Minor. Not user modifyable, and not normally included at application level.
+
+- thstat.h: New file with header file redirection
+Stat structure and function declarations.
+
+-# struct ee_stat changed to struct th_stat
+-# EE_REDIRECT capabilities added
+-# Functions and prototypes for stat functions included.
+
+Impact: Review any stat.h includes, and ensure redirection is correct. See thal.h to 
+review remapping to libc, or harness.
+
+- thstdio.h: Rewritten for this release.
+Now can be included inside harness or inside benchmark.
+
+-# Non-stdio functions moved to other files.
+-# EE_REDIRECT capabilities added.
+-# Breakout of stdio FILE to threent, and dirent data to thdirent.h.
+
+Impact: Minor. Review any new usage of thstdio.h
+
+- thstring.h: New file with header file redirection
+
+Harness functions from string.h.
+
+EE_REDIRECT capabilities added.
+
+Impact: Review any new files for harness supported string functions.
+
+- thtypes.h: New file with header file redirection
+
+Integer type definitions found in stdint.h or inttypes.h mapped to system types.
+
+Impact: Minor. Check for any conflicts. See thstdint.h for porting.
+
+- thunistd.h: New file with header file redirection.
+
+Prototypes and data normally found in unistd.h.
+
+EE_REDIRECT capabilities added.
+
+- uuencode.c, uuencode.h: Moved thlib.h to uuencode.c
+
+Resolve header file conflicts from new files.
+
+Impact: None.
+
+- thfl.c, thfli.h: Stat functions, and new Process I/O functions.
+New function definitions added for popen/pclose.
+
+Impact: Review redirections of popen/pclose in benchmark code and thal.c
+
+- thdirent.h: New file
+Dirent functions and data declarations moved here. Redirection with EE_REDIRECT.
+
+Impact: Minor. Review dirent function capabilities on libc, and any potential conflicts.
+
+- thal.h: New functions and headers.
+stdarg.h is now controlled by HAVE_STDARG_H. New process I/O functions.
+
+Impact: Minor. Review va_list definitions and usage.
+
+- fileio.h: Redirection functions.
+FILE data types for stdio were broken out into threent.h. This is based on the normal C file for this breakout, reent.h.
+
+Stat data types for stat functions moved to thstat.h. Stat structure added fileds st_atime,
+st_mtime, st_ctime. 
+
+Impact: Minor. Review usage of stat structure time fields.
+
+- fileio.c: Added New Functions for Process I/O.
+
+Added Pipe functions ee_popen and ee_pclose, stat structure conversions, and HAVE_BCOPY redirect for
+memcpy.
+
+Impact: Review tool chain libc for popen/pclose functionality. Review compilation with stat
+functions.
+
+- doscan.c: fileio.h included, strtol reprototyping
+Fileio.h is now included to pick up ee_putc. Strtol, and Strtoul prototype changes to clear warnings on
+MSVC. GCC warnings still exist, but not ass severe.
+
+Impact: Minor: Review if platform has had previous problems with strtol.
+
+- fileio.h: Data types removed for header file redirection.
+Header files defining dirent, and FILE were moved to thdirent.h, and threent.h.
+
+Impact: Minor. External benchmark includes may need to include new header files.
+ 
+- struct ee_stat renamed to th_stat
+Reflects promotion of stat structure to harness API, and declarations of th_stat
+function and struct in external API interfaces.
+
+Usage definition USE_EE_STAT renamed to USE_TH_STAT.
+
+Impact: Any porting usage of USE_EE_STAT needs to be updated.
+
+- New thconfig.h: Break out autoconf definitions from thcfg.h.
+
+Isolation from harness internal defines required for re-direction of benchmark source code.
+Overrides in harness.h are still maintained.
+
+Many new definitions added, and most compilers will need some modifications here.
+
+Impact: Moderate. Porting now requires updates to both thcfg.h, and thconfig.h.
+
+- New functions: th_popen, th_pclose.
+
+Internal harness function is stub with correct error codes. 
+If available in libc, use the libc version.
+
+Impact: Minor, Maintain HAVE_POPEN, HAVE_PCLOSE in thconfig.h
+
+- cinit.sh: Add thcfg.h include to multifile generators.
+The thcfg.h dependency, and the USE_TH_FILEIO flag need to be included into
+the multifile library generation option of cinit.sh. This forces a re-build
+on the \<library\>_init.c files when harness changes are made.
+
+Impact: Bug Fix
+
+- thfl.c, extracttime.awk: Bug 274: Precision in log files is not large enough for reporting results on simulators.
+
+Floating point results in harness and summary log now use %18.9 format. This
+was %12.3f for some results which was not adequate for simulator cycles.
+
+Impact: None.
+
+- thunistd.h: Re-direction file for unistd.h or io.h.
+
+Handles fsync, read, isatty, setmode, fstat, dup, open, close.
+There is no standard (ANSI or otherwise) to find these definitions.
+
+Impact: Minor. Handled by harness, check redirections in thal.c based on
+your tool chain capabilities.
+
+- thconfig.h: Added HAVE_DLFCN_H, HAVE_DOPRNT, HAVE_INTTYPES_H, HAVE_IO_H,
+HAVE_LIBM, HAVE_MEMORY_H, HAVE_STDBOOL_H, HAVE_STDDEF_H, HAVE_STDLIB_H, 
+HAVE_STDINT_H, HAVE_STRINGS_H, HAVE_STRING_H, HAVE_VLA, HAVE_WINDOWS_H
+
+Configuration definition additions for JPEG 2000.
+
+Impact: Needs to address re-direction and code changes for these options
+for your tool chain.
+
+- fileio.h, thstat.h: Breakout definitions related to stat.h.
+
+Subset related to stat.h.
+
+Impact: None.
+
+- EE_REDIRECT: Define new option to re-direct libc functions via #define to harness.
+
+This trigger re-direction header files to #define libc functions to test harness.
+This is only to be used in specific cases where the harness header files cannot be included
+into a block of code that requires re-direction.
+
+Minimizes source code changes.
+
+Impact: Minimal. Ensure that thcfg.h inclusion does not override this definition.
+
+- thlib.h, thmalloc.h: Break out malloc functions and re-direction.
+
+Allow includes without other harness headers to define thlib functions for
+malloc, and optional re-direction.
+
+Impact: None. Subset of existing thlib.
+
+- thconfig.h: Add HAVE_ISDIGIT
+
+Bug 273 in networking QOS. Consistent method for adding required functions.
+Almost every tool chain has this. 
+
+Impact: None. 
+
+- thconfig.h: Add HAVE_NDIR_H
+
+None: New definition. Default 0.
+
+- thcfg.h, thconfig.h: Break out Tool Chain header file and function
+definitions.
+
+This allows a central place for tool chain specific header file
+definitions, and a file that can be included into non-eembc
+configuration structures.
+
+Impact: None. Location of definitions has changed.
+
+@section V2_0_0_B11C V2_0_0_B11C
+- Consumer Version 2 Release 
+
+In this final release, two changes have been made.
+
+-# The print statements inside the timing loop of MPEG 4 Decode are now
+outside the timing loop.
+
+-# The MPEG 2 Encoder FDCT initialization is now outside of the timing
+loop.
+
+@verbatim
+The prefix character in the following list has these meanings:
+M - File modified
+A - File added
+R - File removed
+
+M mpeg/mpeg2enc/bmark.c
+M mpeg/mpeg2enc/bmark_lite.c
+M mpeg/mpeg2enc/mpeg2enc.c
+M mpeg/mpeg2enc/enc_global.h
+M mpeg4/mp4decode/bmark.c
+M mpeg4/mp4decode/bmark_lite.c
+M mpeg4/mp4decode/xvid_decraw.c
+M resultsv2x86.mak
+@endverbatim
+
+@section V2_0_0_B11B V2_0_0_B11B
+- Consumer Version 2 Release Candidate 6
+
+It consists of CR5 (B11A) + Build changes to run MPEG2 Encoder with int FDCT, 32 Bit FDCT.
+
+The MPEG 2 encoder now runs with the Integer FDCT, and 32 bit floating
+point FDCT.
+
+The 32 bit Floating Point runs are OPTIONAL for certification and
+scoring.  They are automated in the makefile build for your
+convenience.
+
+The following files have changed to incorporate this feature, and
+documentation updates for the production release.
+
+The Double-Ended Signal Quality Measurement, or "Round-Trip"
+methodology for PSNR generation is preserved by adding new reference
+files for each version of the MPEG 2 Encoder FDCT.
+
+@note Some CRC stability problems between different tool chains was
+found in the 32 Bit Floating Point FDCT for MPEG 2 decoding.  The
+initialization of the look up table, outside the timing loop, was
+restored to 64 Bit Floating Point to correct this potential problem.
+
+@verbatim
+The prefix character in the following list has these meanings:
+M - File modified
+A - File added
+R - File removed
+
+M depgenv2_gcc.cml
+M depgenv2_vc.cml
+M dirsv2x86.mak
+M iterationsv2x86.mak
+M psnr.sh
+M resultsv2x86.mak
+M runv2x86.mak
+M doc/PSNRGuide.rtf
+A libmpeg/graphic_mp2enf32.mpeg
+A libmpeg/graphic_mp2enf64.mpeg
+A libmpeg/graphic_mp2enfix.mpeg
+R libmpeg/graphic_mpeg2enc.mpeg
+A libmpeg/marsface_mp2enf32.mpeg
+A libmpeg/marsface_mp2enf64.mpeg
+A libmpeg/marsface_mp2enfix.mpeg
+R libmpeg/marsface_mpeg2enc.mpeg
+A libmpeg/railgrind_mp2enf32.mpeg
+A libmpeg/railgrind_mp2enf64.mpeg
+A libmpeg/railgrind_mp2enfix.mpeg
+R libmpeg/railgrind_mpeg2enc.mpeg
+A libmpeg/sign_mp2enf32.mpeg
+A libmpeg/sign_mp2enf64.mpeg
+A libmpeg/sign_mp2enfix.mpeg
+R libmpeg/sign_mpeg2enc.mpeg
+A libmpeg/zoom_mp2enf32.mpeg
+A libmpeg/zoom_mp2enf64.mpeg
+A libmpeg/zoom_mp2enfix.mpeg
+R libmpeg/zoom_mpeg2enc.mpeg
+M libmpeg/win32/libmpeg.dsp
+M mpeg/common/algo.h
+M mpeg/mpeg2dec/mpeg2dec.c
+M mpeg/mpeg2enc/fdctint.c
+M mpeg/mpeg2enc/fdctref.c
+M mpeg/mpeg2enc/mpeg2enc.c
+M mpeg/mpeg2enc/win32/mpeg2enc.dsp
+M mpeg/mpeg2enc/win32/mpeg2enc_lite.dsp
+@endverbatim
+
+
+
+@section V2_0_0_B11A V2_0_0_B11A
+- Version 2 Consumer Release Candidate 5
+
+It consists of CR4 (B11) + Final Docs, and MPEG 2 Integer FDCT Final
+Documentation.
+
+File changes:
+@verbatim
+mpeg/common/algo.h
+mpeg/mpeg2enc/enc_config.h
+mpeg/mpeg2enc/fdctint.c
+mpeg/mpeg2enc/fdctref.c
+mpeg/mpeg2enc/win32/mpeg2enc.dsp
+libmpeg/graphic_mpeg2enc.mpeg
+libmpeg/marsface_mpeg2enc.mpeg
+libmpeg/railgrind_mpeg2enc.mpeg
+libmpeg/sign_mpeg2enc.mpeg
+libmpeg/zoom_mpeg2enc.mpeg
+doc/medialibrary.rtf
+doc/releasenotes.rtf
+doc/MP3-DigitalEntertainmentMark.doc
+doc/MP3-DigitalEntertainmentMark.rtf
+doc/MPEG2-Encode-DigitalEntertainmentMark.doc
+doc/MPEG2-Encode-DigitalEntertainmentMark.rtf
+@endverbatim
+
+- New build flags for MPEG 2 Encoder FDCT
+@verbatim
+MPEG 2 Encoder FDCT Configuration
+FDCT			FDCTINT 	FDCTF32
+64 Bit Double	false		false
+32 Bit Float	false		true
+Integer			true		don't care
+Default(Integer)true		false
+@endverbatim
+The Original FDCT used 64 bit doubles for calculations in fdctref.c. 
+This was modified to support 32 bit floats for calculations (FDCTF32). 
+Next, this was modified to support an integer algorithm in fdctint.c.
+
+We define these always to true or false so they may be overridef easily
+from the compiler command line.
+
+- psnr.sh : Fix for sed 4.1.2
+
+When using | as or function, | cannot be used as seperator.
+
+dkey functions extraction data and psnr from filenames stopped working.
+
+Impact: None. Portability
+
+
+@section V2_0_0_B11 V2_0_0_B11
+- Version 2 Consumer Release Candidate 3, and Release Candidate 4
+
+- doc/PortingGuideAndReleaseNotes.rtf: Details added psnr processing.
+
+The initial debugging and customization of PSNR post processing requires additional
+detailed information. Based on several support issues, information was added
+to provide relevant details. This required a more detailed explaination of
+the makefile build procedures than is commonly needed for platform porting.
+
+Updates to 22.3 on the makefile build process needed to understand
+PSNR post processing.
+
+Added details to section 20.2 on Consumer Post Processing related to PSNR.
+
+Impact: None. 
+
+@section V2_0_0_B10 V2_0_0_B10
+- Version 2 Consumer Release Candidate 2
+
+- makefile, dirsx86.mak dirsv2x86.mak: Move clean, cleanlogs, mkdir, rmdir to makefile.
+
+The targets in dirs are common between all subcommittees.  These common
+sections have been moved to the makefile, and dirs now reflects unique
+variables for each subcommittee.
+
+Impact: User defined dirs files must be edited to remove make targets rmdir, mkdir.
+
+- makefile: Avoid makerule on clean, distclean, cleanrule, cleanlogs
+
+Do not include generated files when using make targets involving clean.
+This is done using gnu make specific MAKECMDGOALS variable.
+
+Impact: None.
+
+- heap.c, heap.h, thfl.c, thlib.c: Match Lite/Regular heap, add
+heap_reset to lite.
+
+The heap managers between regular and lite now match with the only
+exception being the use of mem_base and mem_size.  This small section
+is commented and ifdef'ed to show the difference.
+
+Several routines in lite were moved to from thlib.c and heap.c to
+thfl.c to achieve this close match.
+
+Impact: None.
+
+- heap.c: Fix realloc bug in regular and lite.
+
+The harness has had a bug in realloc where the initial buffer is corrupt on some embedded compilers.
+V2 uses realloc more extensively, and this fix is required for cjpeg.
+
+Impact: CJPEG CRC's on some platforms will now be correct.
+
+- thfl.c: epn NULL return modified to return malloc'ed 0 string.
+
+th_free was always being executed on epn return value. Changing epn to work
+as advertised cleared problems with less code than modifying all callers.
+
+Impact: Builds with Harness heap manager work correctly with RAM file system.
+
+- thlib.c, heap.c: ifdef for th_strdup checks for heap manager first.
+
+The HAVE_STRDUP function test was causing libc strdup to be called when
+harness heap manager in use. This caused resulting th_free calls to fail on
+memory allocated by strdup.
+
+Impact: Builds with Harness heap manager work correctly with RAM file system.
+
+- makefile: Execute cheader in top level makefile for all-lite, all-regular.
+
+The cheader step takes a while, and generally only needs to be run
+once.  To avoid the second cheader run on make all, we do not force it
+in the lower level steps.
+
+all: cheader all-regular all-lite
+
+This has caused confusion as some would like to just run:
+make all-lite on the first build step.
+
+Additionally, since we are releasing at V2, the VER=v2 should be the default
+setting.
+
+Impact: None. Backwards compatible update.
+
+@section V2_0_0_B9 V2_0_0_B9
+- Release name alias for consumer: 2.0CR1
+
+The tag name, R1 has already been used for networking. There will be more V2
+Release Candidates in the future, so a different convention is needed.
+
+The B9 CVS tag is 2.0CR1. The Consumer Benchmark Versions reflect R1. 
+
+The Test Harness Version for R1 Networking was 4.2R1. We also need a convention
+here. For this case, we will increment the minor version.
+
+The CR1 test harness version is 4.3R1.
+
+These are noted internally at ECL, and CVS tags will progress through
+Bxx until final 2.0.0 release of Networking, Consumer, and Office.  At
+that point, CVS tags will move to V2_0_1 based names.
+
+- makefile, consumer/resultsv2x86.mak: PSNR Summary Logs.
+
+The top level makefile now searches and if found processes
+\<toolchain\>\<ver\>_psnr.log files.
+
+Impact: None. New feature for Consumer V2.
+
+- uuencode.c: Length parameter in uu_send_buf, and encode int-\>size_t
+Compilers with 16 bit integers will overflow on large file sizes.
+POSIX file sizes are size_t, so int arguments for size converted to size_t.
+
+The size argument th_send_buf_as_file was already defined to be size_t,
+so this is a bug fix.
+
+Impact: None. Bug Fix
+
+- mpeg2enc, mpeg2dec, thal.c: Moved GetFileSize into th_fsize.
+The GetFileSize routine is a utility with POSIX standard method to get file
+size. The required stat.h include caused problems in several compilers.
+
+This POSIX standard function has been moved down to thal.c, where
+several options for returning file size exist.
+
+Impact: None. Bug Fix.
+
+- thcfg.h: HAVE_STAT_H restored.
+Some tool chains have stat.h, but not sys/stat.h. The define has been restored
+with a default value of 0.
+
+In the harness, thal.c uses this variable.
+
+Impact: None.
+
+- fileio.c: ee_fread, ee_fwrite return value, size and count changed to size_t
+
+POSIX compliance, and required for platforms with 16 bit ints, and 32
+bit size_t.  Files associated with passing parameters to these routines
+also changed.
+
+Impact: None. Bug fix.
+
+- fileio.c: Seek, and ee_fwrite incorrectly set file-\>size.
+
+The Test Harness File System architecture was originally based on
+read-only files preserving the nature and performance of constant
+arrays of data to the benchmarks.  Writeable files were added for new
+benchmarks in Consumer and Office, and these were implemented as
+pre-defined memory arrays of a pre-determined maximum size.
+
+With the addition of Ghostscript, more sophisticated benchmarks in
+consumer, and significantly larger input data sets, there is a new
+requirement for dynamic allocation to extend the size of writeable
+files.
+
+These files appear in consumer as temporary spill files, and in Office
+as a new file caching mechanism in addition to the compressed memory
+band files used for run time processing.
+
+The new ee_expand function has ramifications in Seek, as well as fwrite
+functions.  In the B8 release, several issues were identified and these
+have been fixed by corrections to ee_extend.  These side effects are
+noted here as test cases for future releases.
+
+-# JPEG CRC's will fail on larger files (DATA_9) if file-\>size is
+incorrect.  The verification test is a memset in ee_extend which
+gurantees that non-zero space is in place after the file end.
+-# MP3 will fail with "Could not find header information" if the seek
+command cannot index into unwritten writeable file space.
+
+This architecture change preserves read-only and contiguous files, so
+it is unique from other libc implementations.  The list of specific
+problems are presented to speed up debug of other side effects.
+
+Impact: No Impact, bug fixes. If specific problems noted above are occuring, 
+on new environments, report them agains Harness File System for further
+review.
+
+- gcc.mak: Add Solaris OBJOUT space for /usr/ccs/bin/as
+The assembler in some versions of binutils does not accept the -o option
+from gcc without spaces on Solaris.
+
+The error returned is:
+@verbatim
+/usr/ccs/bin/as: error: no input filename given
+usage: /usr/ccs/bin/as [-V] [-Q{y,n}] [-f[O][if]#] [-q] [-s]
+          [-S] [-K {pic,PIC}] [-o objfile] [-L] [-T]
+          [-P [[-Ipath] [-Dname] [-Dname=def] [-Uname]]...]
+          [-m [-Ym,path]] [-n] [-ul] [-xF] [-xarch=v7] [-xarch=v8] [-xarch=v8a]
+          [-xarch=v8plus] [-xarch=v8plusa] [-xarch=v8plusb]  [-xarch=v9] 
+          [-xarch=v9a] [-xarch=v9b]  [-xcode={pic13,pic32}] file.s...
+@endverbatim
+
+The current gcc.mak has comments marked for Solaris containing the needed
+changes to build the benchmarks. A new comment section was added for this
+update.
+
+Impact: Solaris builds should be checked for OBJOUT problem, and modified
+if necessary.
+
+- thcfg.h, fileio.c: Added HAVE_MEMCPY, HAVE_BCOPY
+The ee_fread and ee_fwrite used while loops to move data between the user
+and the Harness File System. A memcpy/bcopy call would be more efficient,
+and thus the harness behaviour would be less intrusive.
+
+Two new configuration options are added: 
+-# HAVE_MEMCPY default true.
+-# HAVE_BCOPY default false.
+
+The associated code in fileio.c reflects these settings, and will use
+a while loop if none of these functions are available.
+
+Impact: None. 
+
+- thcfg.h, doscan.c: Added HAVE_STRTOLL, HAVE_STRTOD to harness.
+
+The doscan function supports up to 64 bit doubles, integers.
+The floating point formatting is already controlled by FLOAT_SUPPORT.
+
+There are cases where:
+-# Compiler has 64 bit data type, but does not have strtoll.
+-# Compiler has floating point, but does not have strtod.
+
+Modify these defines as needed in thcfg.h as needed. The defaults are that
+you have these functions.
+
+The usage in the harness of HAVE_STRTOLL is also controlled by HAVE_64. If you
+don't have 64 bit types, the eembc_dt.h HAVE_64 will disable the strtoll call.
+
+Impact: Minor. Only a few compilers will have this problem. The MPEG 2 benchmarks
+is the only place this is important.
+
+- thfl.c, fileio.c: directory command works on harness file system.
+
+To debug the dirent functions required by office, a test program was
+needed to verify the POSIX compliance of opendir, readdir, etc.  This
+also will be used for:
+
+-# the POSIX implementation of stat family functions.
+-# verifying host vs. harness toolchain behaviour of filesystem calls.
+-# verification of harness file system initialization, and contents.
+-# verification of thal.c redirection of file system calls.
+
+Since the code was already written, is small, and has future uses for
+everyone: It is now available in th lite and regular as ee_exec_ls.  It
+works through thal.c as an application (th calls).
+
+TH regular already has a DIR command used on the deprecated file
+system.  DIR was enhanced to include a call to ee_exec_ls.  
+
+ee_exec_ls behavior is directly effected by USE_TH_FILEIO.  If
+USE_TH_FILEIO is false on a host system, files will be displayed from
+the HOST filesystem.
+
+While the exec keyword suggests a libc method which unifies command
+line functions and C callable functions, there are no immediate needs
+to add user commands to the harness.
+
+Impact: None.
+
+- th_lite added ssubs.c ssubs.h: string functions for ee_exec_ls
+Moved ssubs to th_lite.  String functions to support ee_exec_ls in
+fileio.c.  These will be in sync with th regular.
+
+string functions from thfl.c will be moved to ssubs for consistency.
+
+Impact: None. Release requires harness.mak rebuild which picks up these new files.
+
+- fileio.c doscan.c: Fixed th_getc calls when sscanf internal file is used.
+
+The doscan routines were calling th_getc, irregardless of whether an
+internal file was built by sscanf, vsscanf.  The FILE structure is
+different between libc and harness, and passing a bad FILE structure to
+getc fails. 
+
+The Harness File System ee_getc will work on the internal file independant
+of USE_TH_FILEIO.
+
+All scanf functions are routed to three vscanf functions in thal.c, so it
+is not clear when internal file generation has occurred.
+
+Added internal flag in fileio.c and test in doscan.c to see if caller
+came from sscanf function.  If so, internal filesystem getc calls are
+used in doscan.
+
+Normal benchmark runs use ee_FILE, and do not see the bug.
+
+Impact: None.
+
+- depgen.cml, makefile: File System Library Build changes.
+
+Replaced BMDEPS with ARDEPS dependency for library section.
+
+The build and rebuild of Harness File Libraries is the most time consuming part of the build.
+Currently 2G virtual memory is consumed, and a low memory system can take hours
+to rebuild. The intent of the file system libraries was that they were to be built once,
+and then become independant of the harness and benchmark code.
+
+The original file libraries contained dependencies back to the
+harness header files, regularly changed in porting. The only dependency was on
+e_u8, essentially a char. A new 'cheader -e' option was implemented to remove
+
+The -e option of cheader is used to removed eembc header file dependencies from
+libraries. Library generation can proceed using char's unless there is a 
+special case. There are no other eembc dependencies in the file system libraries.
+
+The libraries were not segregated in depgen files, within the Library Section, 
+and BMDEPS dependencies to harness files were applied. The BMDEPS dependency list adds test harness dependencies, causing library rebuild
+on harness changes that are no longer included into the library. 
+
+The depgen files have File Library Section.  The BMDEPS dependency was
+removed with the -ax option in depgen.cml files.  The ARDEPS dependency
+is added with -a for the File Library Section.
+
+A new makefile definition of ARDEPS includes the TARGETFILE and makerule.pl.
+
+Impact: Compilers that do not have 8 bit chars AND have a supported 8 bit
+typedef need to:
+Change cheaderv2.sh to remove the -e option:
+@code
+Change:
+CHEADER='../util/bin/cheader.exe -e'
+to:
+CHEADER='../util/bin/cheader.exe'
+@endcode
+The correct dependencies will be picked up by makerule, and no further
+modifications are needed.
+
+- consumer/cheaderv2.sh: Changed modulo on libyuv/graphic%3d.yuv from 5 to 1
+Building 5 frames at a time of graphic was consuming a lot of virtual memory,
+and spilling into slow swap/page space.
+
+Reducing the number of frames per compile speeds up the build as the compiler
+stays in memory.
+
+Impact: None.
+
+@section V2_0_0_B8 V2_0_0_B8
+- subcommittee makefile: clean function changed.
+
+The subcommittee makefile uses $(MAKECMDGOALS) to test for clean command,
+and if true, does not include the target file. This avoids unnecessary
+makerule generations as include causes the dependency target to be executed
+if the included file does not exist.
+
+Impact: None (unless using different make than gnu)
+
+- th_x/fileio.c: Added writeable file block allocation.
+Writeable files in previous versions needed to be created with the maximum
+size by th_fcreate. Any writes beyond this limit would fail.
+
+Temporary files during benchmark runs execeeded these limits in unpredicatble
+ways. The th_fwrite function was enhanced to realloc the file size in blocks
+of 0x40000 when the end of file is reached. th_fcreate was enanced to
+free and re-size the file when called for an existing writeable file, as in
+multiple runs with th regular. This also ensures that consequetive runs will
+have the same realloc performance penalty.
+
+Impact: None. Performance differences on existing benchmarks did not reach
+any of these limits. New benchmarks using this will be baselined with
+realloc overhead.
+
+- util/shell/cinit.sh: Generate *_single.c files.
+A new file \<library\>_single.c file is optionally generated by cinit.sh.
+
+This file contains a list of all files with #ifdef DATA_x wrappers.
+calling single_\<library\> will initialize a single data file
+controlled by the DATA_x define. 
+
+Impact: None, part of build. Warning, adding data files will change these
+definitions, which must be kept in sync with the depgen*.cml files.
+
+- th/src/uuencode.c: Fixed bug in uu_std table.
+
+The termination character in the uu_std[65] table was incorrect. Removing
+this corrected uudecode problems for mpeg files.
+
+th_send_buf_as_file in th lite was moved to thlib.c. uuencode.c and uuencode.h
+are now identical in both harnesses.
+
+Impact: MPEG 2 files generated in PSNR are now correct.
+
+@warning If you are building uudecode from source for windows, make sure the
+optput file is opened in stream mode "wb". Otherwise invalid files will be
+produced. "wb" is safe on Unix, it has no effect.
+
+- consumer/runv2x86.mak: mpeg2enc_MPEG ignores stderr output.
+
+The shell variable mpeg2enc_MPEG assignment is made with the shell command ls.
+The first assignment is made prior to mpeg file generation, and returns
+an error message. There is no easy way to supress this initial message, and
+subsequently allow error messages later when we want to see them.
+
+The initial error message caused confusion, so stderror output from this 
+variable assignment is routed to /dev/null.
+
+Impact: Errors in mpeg2enc mpeg file generation will not be displayed from
+ls.
+
+- uudecode.exe: Added Host built uudecode utility.
+
+The top level make, in addition to cheader, now builds a uudecode, and
+uuencode utility for Host processing of benchmark log files. This
+utility is automatically picked up by util/awk/uudecode.awk, and used
+irregardless of whether a local uudecode exists.
+
+The base code was taken from the sharutils-4.2 package. This is the
+standard source base used to provide uudecode on Unix based systems.
+
+The code was modified for portability as follows:
+-# i18n (internalization) was removed.  The host compiler is not
+required to have these libraries installed.
+-# getopt is handled by a local version (util/c/win32).  The host
+compiler is not required to have these libraries installed.
+-# alloca calls were replaced by malloc/free.  The alloca call is nice,
+because it automatically frees space at the end of the subroutine.  It
+is not POSIX, listed as deprecated, and is not available on all
+compilers.
+
+The uuencode utility is included for completeness, but is not used in
+this release.
+
+@note If you do NOT want to use the uudecode utility in PSNR calculation, 
+modify util/awk/uudecode.awk to point to your utility.
+
+Impact: Minor. The util/bin/uudecode.exe utility is used instead of any
+locally available uudecode utility.
+
+- makefile: Fixed clean, cleancheader rule.
+
+The make cleancheader rule, and also clean returned error -1 if
+cheader.sh was not present. The cleancheader function was new in
+B7, and this represents a bug fix.
+
+Impact: None. Bug fix.
+
+- thcfg.h, thal.c: USE_TH_HARNESS_POLL
+Currently, BMDEBUG causes the i_harness_poll function in th regular to
+poll stdin, which hangs forever.
+
+The correct implemention for Visual C (_kb_hit, getch) is implemented.
+
+The gcc code has an example curses implementation, which require LINKER_LAST=-lcurses.
+This is not portable to many tool chains, so the default USE_TH_HARNESS_POLL=0
+disables this.
+
+th_harness_poll is not used consistently through the benchmarks, and is disabled
+in almost all cases. TH Lite never activelly uses th_harness_poll.
+
+Since al_con_chars_avail is still active and incorrect, some
+corrections were made and comments provided for clarification.  It
+happens to work, in th regular because it is not used in the command
+line processing (cooked mode only).
+
+Impact: Technically, no impact since the existing code was
+incorrect, and noted to use hardware specific routines.
+
+BMDEBUG runs, that would like to use th_harness_poll need to check
+curses implementation, and build with -lcurses being the LAST linker
+directive. This is NOT a change from the previous code, it always
+suggested modifications in thal.c.
+
+- util/perl/makerule.mak, makefile: Added host utilities build.
+
+Impact: targets$(VER)_host.mak will be created. If there is no
+depgen${VER}_host.cml, a stub file will be created. Otherwise, a 
+full targets_xxx.mak file will be built using makerule.
+
+- Modified comments for internal documentation.
+
+Modified the text in some comments to make them more readable, and consistent.
+
+Impact: none
+
+- Removed ascii.h
+
+Impact: None, scanned all files and ascii.h was never included.
+
+- thcfg.h: New options in autoconf section for scanf, stat.
+
+-# HAVE_VSCANF
+-# HAVE_VSSCANF
+-# HAVE_VFSCANF
+-# HAVE_STAT_H Removed. At best, this is a direct include of \<sys/stat.h\> which contains
+the definitions that we need.
+-# HAVE_SYS_STAT_H Added to replace HAVE_STAT_H.
+-# HAVE_STRUCT_STAT_ST_BLKSIZE 
+-# HAVE_STRUCT_STAT_ST_BLOCKS
+-# HAVE_VPRINTF
+-# HAVE_LIMITS_H If HAVE_LIMITS_H is false, CHAR_BIT must be defined correctly to run doscan.c.
+
+The default CHAR_BIT is 8, and most will not have problems. 
+
+@warning If you have 16 bit chars, and do not have limits.h, you MUST
+correct CHAR_BIT, or else doscan functions will be unpredictable.
+
+- util/make/gdb.sh: Added example to invoke debugger from toolchain file.
+
+This is an example of how GDB can be executed in the makefile
+environment.  This is applicable to any debugger based execution from
+host to target.
+
+This method is directly useful for simulation, and on reference boards
+that support gdb protocols.  It is indirectly useful as an example for
+other debuggers.
+
+Impact: None.
+
+- makefile: Added cleanlogs command.
+
+The cleanlogs command will delete all result log files for a toolchain.
+
+It is also implemented in the top level make. In this case
+results for ALL toolchains will be cleaned.
+
+Impact: None. New feature.
+
+- doscan.c: Replaced Unix V5 based doscan with Newlib Berkeley based vfscanf.
+
+libc usually implements the scan function as a part of vfscanf.  These
+implementaitons always use internal utilities for fileio and
+reentrency.  The EEMBC ported version uses th_getc, which is portable
+to both internal and external file systems.
+
+Impact: Resolves several reported problems in mpeg2enc. 
+
+New option HAVE_LIMIT_H added in thcfg to pick up CHAR_BITS.  The
+CHAR_BITS definition is in thcfg for those who do not have limits.h,
+and have CHAR_BITS of a different size than 8.
+
+- New harness call: th_vfprintf
+
+Available in harness to support th_fprintf. Added to API for
+consistency.
+
+Impact: None. 
+
+- fileio.c: modified ee_gets to convert CRLF to LF.
+
+MPEG2ENC CRC's between Host and Harness file system runs were
+different because of this bug.
+
+Impact: fixes some binary differences in files with mixed text/binary
+data.
+
+- New harness calls: th_scanf, th_sscanf, th_fscanf, th_vscanf, th_vsscanf, 
+th_vfscanf
+
+Impact: None.
+
+In thal.c, an optional redirection to compiler libraries is performed.
+Some of the vscanf calls may not be available. Previous versions used #defines
+in fileio.h to redirect these calls.
+
+Internal doscan.c fixes have been applied. This is reliant of va_args from the
+tool chain, as these macros are architecture dependent.
+
+- consumer/office depgen.cml: Fixed to correctly include LINKER_LAST.
+
+The toolchain file defines LINKER_LAST to specify any libraries that need to
+be included as the last part of a link.
+
+Currently, -lm is used generically in some tool chains.  While
+this is not always needed in all cases, when -lm is needed some tool
+chains always require this to be specified/re-specified on the last
+step.
+
+Impact: None. 
+
+@section V2_0_0_B7 V2_0_0_B7
+- util/awk/uudecode.awk: Added utility for multi-file uudecoding.
+
+Impact: None. Only used in new PSNR feature.
+
+- thal.c,tmain.c: Corrected logic for setjmp/longjmp for normal vs. 
+stub mode operation.
+
+Found compilation errors when performing direct tests of jmp_buf. 
+Added integer flag to perform the same test.
+
+Impact: none.
+
+- util/awk/extracttime.awk: Fixed Actual/Expected CRC extract to log
+file.
+
+Impact: none.
+
+- consumer/psnr: PSNR for YUV12 files.
+
+Impact: none, new feature.
+
+- consumer/mpeg: Recode uuencode control, Added encode CRC, encode
+output xxx_mpeg2enc.mpeg.
+
+Impact: None. Only used in new PSNR feature.
+
+- util/make/makefile, cheaderxx.sh: Added clean function, and
+EXTRA_CHEADER variable to makefile (pass arguments to cheader).  shell
+files.
+
+Adds clean support to files generated by cheader.  EXTRA_CHEADER=skip
+speeds up Windows build as cygwin is launching a process for each unix
+command in the script.
+
+Fixed old skip function that fails on several shells:
+[ "$1" != "" ] && (echo "Skip CHEADER scan...";exit)
+
+Impact: None. Bug Fix
+
+- thvinfo.h: updated to 4.2B7, displayed in log files.
+
+- consumer/cjpeg: Upgraded to V2
+
+- consumer/libbmp: Added for cjpeg/djpeg
+
+- consumer/libjpeg: Added for cjpeg/djpeg
+
+- thcfg.h,thal.c: Added USE_EE_STAT, HAVE_STAT_H, HAVE_SYS_STAT_H, same usage
+and impact as DIRENT. Used in consumer/cjpeg, and office/gs8.
+
+- thcfg.h,thal.c: Added USE_EE_DIRENT to handle benchmark stub call case used
+in Ghostscript, and benchmark harness call case for other benchmarks using the 
+harness dirent.
+
+Impact: Embedded will probably always USE_EE_DIRENT, host programs will need
+to be consistent (dirent or ee_dirent) in the definition of dirent structures.
+For tools which have dirent, thal.c may need modification when fields of
+dirent are mapped back to ee_dirent in al_readdir.
+
+- fileio.h: ee_dirent changed from typedef to struct definition.  POSIX
+compatibility requires this.
+
+Impact: ee_dirent definitions will need to be preceeded
+by struct (i.e. struct ee_dirent *xxx;)
+
+@section V2_0_0_B6 V2_0_0_B6
+- office/gs8: Added AFPL Ghostscript code base,
+
+- office/ditherv2: Converted Dither to V2 harness, and viewable data files.
+
+- thcfg.h: Renamed HAVE_MALLOC_H to HAVE_MALLOC
+Reason: Incorrect autoconf usage for defining malloc function
+availability.  Since a number of Autoconf definitions are required in
+thcfg to support Ghostscript, a correction now will lessen confusion in
+the future.
+
+Impact: Code that conditionally compiles based on the harness heap settings may
+need to be updated.
+
+- changelog.txt: Added per Bug 244
+
+Summary: Test Harness Lite changes not documented\n
+Reporter Name: Ron Olson\n
+Description: Changes to test harness x86/al files should be documented in
+Porting Guide and Release Notes. Example HAVE_MALLOC_H changed to HAVE_MALLOC.
+
+*/

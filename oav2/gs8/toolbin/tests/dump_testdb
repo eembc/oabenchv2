@@ -1,0 +1,50 @@
+#!/usr/bin/env python
+# -*- Mode: python -*-
+
+#    Copyright (C) 2001 Artifex Software Inc.
+# 
+# This software is provided AS-IS with no warranty, either express or
+# implied.
+# 
+# This software is distributed under license and may not be copied,
+# modified or distributed except as expressly authorized under the terms
+# of the license contained in the file LICENSE in this distribution.
+# 
+# For more information about licensing, please refer to
+# http://www.ghostscript.com/licensing/. For information on
+# commercial licensing, go to http://www.artifex.com/licensing/ or
+# contact Artifex Software, Inc., 101 Lucas Valley Road #110,
+# San Rafael, CA  94903, U.S.A., +1(415)492-9861.
+
+# $Id: dump_testdb 6300 2005-12-28 19:56:24Z giles $
+
+#
+# dump_testdb [<dbfile>]
+#
+# dumps (prints out) the contents of the testdatadb
+
+import string, sys, anydbm, gsconf
+
+def compare_field_2(s1, s2):
+    if string.split(s1,' ')[1] < string.split(s2,' ')[1]:
+    	return -1
+    else:
+    	return 1
+
+if len(sys.argv) == 2:
+    print "opening ", sys.argv[1]
+    db = anydbm.open(sys.argv[1])
+else:
+    db = anydbm.open(gsconf.testdatadb)
+
+# collect the database as strings
+dump = []
+for k in db.keys():
+    dump.append('%s %s' % (db[k], k))
+
+# Sort on field 2 (the file name)
+dump.sort(compare_field_2)
+
+# Print the sorted list
+for line in dump:
+    print line

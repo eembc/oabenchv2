@@ -1,0 +1,40 @@
+%!
+0 1 10 {
+gsave
+90 rotate 18 -594 translate
+/size 12 def
+/height 558 def
+/deltaY size 1.2 mul def
+/col2 size 15 mul def
+/M { y moveto } bind def
+/H { /y height deltaY sub def } bind def
+/D { /y y deltaY sub def y 0 lt {P} if 0 M} bind def
+/L { show D } bind def
+/P { showpage 90 rotate 18 -594 translate H 0 M} bind def
+/N /Times-Bold findfont size scalefont def
+/T (ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefihjklmnopqrstuvwxyz 0123456789 `' @%&$) def
+
+H 0 M
+/Fonts [ FontDirectory {pop =string cvs dup length string copy} forall ] def
+/n Fonts length def
+/gap n 2 idiv def
+{gap 0 gt not {exit}if
+ /i gap def
+    {i n lt not {exit}if
+     /j i gap sub def
+	{j 0 ge not {exit}if
+         /k j gap add def
+	 Fonts j get Fonts k get le
+	    {exit}{Fonts j Fonts k get Fonts k Fonts j get put put}ifelse
+	 /j j gap sub def
+        } loop
+     /i i 1 add def
+    } loop
+ /gap gap 2 idiv def
+}loop
+Fonts
+{dup N setfont show cvn findfont size scalefont setfont col2 M T L } forall
+showpage
+grestore
+} for
+%%EOF

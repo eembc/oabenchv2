@@ -1,0 +1,1038 @@
+cp jpeg/jcomapi.c ./obj/jcomapi.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jcomapi.o -c ./obj/jcomapi.c
+rm -f ./obj/jcomapi.c
+cp jpeg/jutils.c ./obj/jutils.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jutils.o -c ./obj/jutils.c
+rm -f ./obj/jutils.c
+cp jpeg/jmemmgr.c ./obj/jmemmgr.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jmemmgr.o -c ./obj/jmemmgr.c
+rm -f ./obj/jmemmgr.c
+cp jpeg/jerror.c ./obj/jerror.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jerror.o -c ./obj/jerror.c
+rm -f ./obj/jerror.c
+./obj/echogs -e .dev -w- -l-obj ./obj/jpegc0 ./obj/jcomapi.o ./obj/jutils.o ./obj/jmemmgr.o ./obj/jerror.o
+cp jpeg/jcapimin.c ./obj/jcapimin.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jcapimin.o -c ./obj/jcapimin.c
+rm -f ./obj/jcapimin.c
+cp jpeg/jcapistd.c ./obj/jcapistd.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jcapistd.o -c ./obj/jcapistd.c
+rm -f ./obj/jcapistd.c
+cp jpeg/jcinit.c ./obj/jcinit.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jcinit.o -c ./obj/jcinit.c
+rm -f ./obj/jcinit.c
+cp jpeg/jccoefct.c ./obj/jccoefct.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jccoefct.o -c ./obj/jccoefct.c
+rm -f ./obj/jccoefct.c
+cp jpeg/jccolor.c ./obj/jccolor.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jccolor.o -c ./obj/jccolor.c
+rm -f ./obj/jccolor.c
+cp jpeg/jcdctmgr.c ./obj/jcdctmgr.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jcdctmgr.o -c ./obj/jcdctmgr.c
+rm -f ./obj/jcdctmgr.c
+cp jpeg/jchuff.c ./obj/jchuff.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jchuff.o -c ./obj/jchuff.c
+rm -f ./obj/jchuff.c
+cp jpeg/jcmainct.c ./obj/jcmainct.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jcmainct.o -c ./obj/jcmainct.c
+rm -f ./obj/jcmainct.c
+cp jpeg/jcmarker.c ./obj/jcmarker.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jcmarker.o -c ./obj/jcmarker.c
+rm -f ./obj/jcmarker.c
+cp jpeg/jcmaster.c ./obj/jcmaster.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jcmaster.o -c ./obj/jcmaster.c
+rm -f ./obj/jcmaster.c
+cp jpeg/jcparam.c ./obj/jcparam.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jcparam.o -c ./obj/jcparam.c
+rm -f ./obj/jcparam.c
+cp jpeg/jcprepct.c ./obj/jcprepct.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jcprepct.o -c ./obj/jcprepct.c
+rm -f ./obj/jcprepct.c
+cp jpeg/jcsample.c ./obj/jcsample.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jcsample.o -c ./obj/jcsample.c
+rm -f ./obj/jcsample.c
+cp jpeg/jfdctint.c ./obj/jfdctint.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jfdctint.o -c ./obj/jfdctint.c
+rm -f ./obj/jfdctint.c
+./obj/echogs -e .dev -w- -l-obj ./obj/jpege6 ./obj/jcapimin.o ./obj/jcapistd.o ./obj/jcinit.o
+./obj/echogs -e .dev -a-  ./obj/jpege6 -include ./obj/jpegc0.dev
+./obj/echogs -e .dev -a-  ./obj/jpege6 -obj ./obj/jccoefct.o ./obj/jccolor.o ./obj/jcdctmgr.o
+./obj/echogs -e .dev -a-  ./obj/jpege6 -obj ./obj/jchuff.o ./obj/jcmainct.o ./obj/jcmarker.o ./obj/jcmaster.o
+./obj/echogs -e .dev -a-  ./obj/jpege6 -obj ./obj/jcparam.o ./obj/jcprepct.o ./obj/jcsample.o ./obj/jfdctint.o
+cp ./obj/jpege6.dev ./obj/jpege_0.dev
+cp ./obj/jpege_0.dev ./obj/jpege.dev
+./obj/echogs -e .dev -w- -l-obj ./obj/sdcte ./obj/sdctc.o ./obj/sjpegc.o ./obj/sdcte.o ./obj/sjpege.o
+./obj/echogs -e .dev -a-  ./obj/sdcte -include ./obj/jpege.dev
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/sdeparam.o -c ./src/sdeparam.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/sdcparam.o -c ./src/sdcparam.c
+./obj/echogs -e .dev -w- -l-obj ./obj/sdeparam ./obj/sdeparam.o ./obj/sdcparam.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zfdcte.o -c ./src/zfdcte.c
+./obj/echogs -e .dev -w- -l-obj ./obj/dcte -include ./obj/sdcte ./obj/sdeparam
+./obj/echogs -e .dev -a-  ./obj/dcte -obj ./obj/zfdcte.o
+./obj/echogs -e .dev -a-  ./obj/dcte -oper zfdcte
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src -Ijpeg -DSHARE_JPEG=0  -o ./obj/sdctd.o -c ./src/sdctd.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src -Ijpeg -DSHARE_JPEG=0  -o ./obj/sjpegd.o -c ./src/sjpegd.c
+cp jpeg/jdapimin.c ./obj/jdapimin.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jdapimin.o -c ./obj/jdapimin.c
+rm -f ./obj/jdapimin.c
+cp jpeg/jdapistd.c ./obj/jdapistd.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jdapistd.o -c ./obj/jdapistd.c
+rm -f ./obj/jdapistd.c
+cp jpeg/jdinput.c ./obj/jdinput.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jdinput.o -c ./obj/jdinput.c
+rm -f ./obj/jdinput.c
+cp jpeg/jdphuff.c ./obj/jdphuff.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jdphuff.o -c ./obj/jdphuff.c
+rm -f ./obj/jdphuff.c
+cp jpeg/jdcoefct.c ./obj/jdcoefct.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jdcoefct.o -c ./obj/jdcoefct.c
+rm -f ./obj/jdcoefct.c
+cp jpeg/jdcolor.c ./obj/jdcolor.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jdcolor.o -c ./obj/jdcolor.c
+rm -f ./obj/jdcolor.c
+cp jpeg/jddctmgr.c ./obj/jddctmgr.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jddctmgr.o -c ./obj/jddctmgr.c
+rm -f ./obj/jddctmgr.c
+cp jpeg/jdhuff.c ./obj/jdhuff.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jdhuff.o -c ./obj/jdhuff.c
+rm -f ./obj/jdhuff.c
+cp jpeg/jdmainct.c ./obj/jdmainct.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jdmainct.o -c ./obj/jdmainct.c
+rm -f ./obj/jdmainct.c
+cp jpeg/jdmarker.c ./obj/jdmarker.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jdmarker.o -c ./obj/jdmarker.c
+rm -f ./obj/jdmarker.c
+cp jpeg/jdmaster.c ./obj/jdmaster.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jdmaster.o -c ./obj/jdmaster.c
+rm -f ./obj/jdmaster.c
+cp jpeg/jdpostct.c ./obj/jdpostct.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jdpostct.o -c ./obj/jdpostct.c
+rm -f ./obj/jdpostct.c
+cp jpeg/jdsample.c ./obj/jdsample.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jdsample.o -c ./obj/jdsample.c
+rm -f ./obj/jdsample.c
+cp jpeg/jidctint.c ./obj/jidctint.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -Ijpeg  -o ./obj/jidctint.o -c ./obj/jidctint.c
+rm -f ./obj/jidctint.c
+./obj/echogs -e .dev -w- -l-obj ./obj/jpegd6 ./obj/jdapimin.o ./obj/jdapistd.o ./obj/jdinput.o ./obj/jdphuff.o
+./obj/echogs -e .dev -a-  ./obj/jpegd6 -include ./obj/jpegc0.dev
+./obj/echogs -e .dev -a-  ./obj/jpegd6 -obj ./obj/jdcoefct.o ./obj/jdcolor.o
+./obj/echogs -e .dev -a-  ./obj/jpegd6 -obj ./obj/jddctmgr.o ./obj/jdhuff.o ./obj/jdmainct.o ./obj/jdmarker.o
+./obj/echogs -e .dev -a-  ./obj/jpegd6 -obj ./obj/jdmaster.o ./obj/jdpostct.o ./obj/jdsample.o ./obj/jidctint.o
+cp ./obj/jpegd6.dev ./obj/jpegd_0.dev
+cp ./obj/jpegd_0.dev ./obj/jpegd.dev
+./obj/echogs -e .dev -w- -l-obj ./obj/sdctd ./obj/sdctc.o ./obj/sjpegc.o ./obj/sdctd.o ./obj/sjpegd.o
+./obj/echogs -e .dev -a-  ./obj/sdctd -include ./obj/jpegd.dev
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/sddparam.o -c ./src/sddparam.c
+./obj/echogs -e .dev -w- -l-obj ./obj/sddparam ./obj/sddparam.o ./obj/sdcparam.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zfdctd.o -c ./src/zfdctd.c
+./obj/echogs -e .dev -w- -l-obj ./obj/dctd -include ./obj/sdctd ./obj/sddparam
+./obj/echogs -e .dev -a-  ./obj/dctd -obj ./obj/zfdctd.o
+./obj/echogs -e .dev -a-  ./obj/dctd -oper zfdctd
+./obj/echogs -e .dev -w- -l-obj ./obj/dct -include ./obj/dcte ./obj/dctd
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gscolor1.o -c ./src/gscolor1.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsht1.o -c ./src/gsht1.c
+./obj/echogs -e .dev -w- -l-obj ./obj/cmyklib ./obj/gscolor1.o ./obj/gsht1.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxicolor.o -c ./src/gxicolor.c
+./obj/echogs -e .dev -w- -l-obj ./obj/colimlib ./obj/gxicolor.o
+./obj/echogs -e .dev -a-  ./obj/colimlib -imageclass 4_color
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zcolor1.o -c ./src/zcolor1.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zht1.o -c ./src/zht1.c
+./obj/echogs -e .dev -w- -l-obj ./obj/cmykread ./obj/zcolor1.o ./obj/zht1.o
+./obj/echogs -e .dev -a-  ./obj/cmykread -oper zcolor1 zht1
+./obj/echogs -e .dev -w- -l-obj ./obj/color -include ./obj/cmyklib ./obj/colimlib ./obj/cmykread
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zupath.o -c ./src/zupath.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevhit.o -c ./src/gdevhit.c
+./obj/echogs -e .dev -w- -l-obj ./obj/upath ./obj/zupath.o ./obj/ibnum.o ./obj/gdevhit.o
+./obj/echogs -e .dev -a-  ./obj/upath -oper zupath_l2
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsdps1.o -c ./src/gsdps1.c
+./obj/echogs -e .dev -w- -l-obj ./obj/dps2lib ./obj/gsdps1.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zcharx.o -c ./src/zcharx.c
+./obj/echogs -e .dev -w- -l-obj ./obj/dps2read ./obj/ibnum.o ./obj/zcharx.o
+./obj/echogs -e .dev -a-  ./obj/dps2read -include ./obj/dps2int
+./obj/echogs -e .dev -a-  ./obj/dps2read -oper ireclaim_l2 zcharx
+./obj/echogs -e .dev -a-  ./obj/dps2read -ps gs_dps2
+./obj/echogs -e .dev -w- -l-obj ./obj/dpsand2 -include ./obj/btoken ./obj/color ./obj/upath ./obj/dps2lib ./obj/dps2read
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zdevice2.o -c ./src/zdevice2.c
+./obj/echogs -e .dev -w- -l-obj ./obj/pagedev ./obj/zdevice2.o ./obj/zmedia2.o
+./obj/echogs -e .dev -a-  ./obj/pagedev -oper zdevice2_l2 zmedia2_l2
+./obj/echogs -e .dev -a-  ./obj/pagedev -ps gs_setpd
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxclipm.o -c ./src/gxclipm.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gximage3.o -c ./src/gximage3.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gximage4.o -c ./src/gximage4.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxmclip.o -c ./src/gxmclip.c
+./obj/echogs -e .dev -w- -l-obj ./obj/imasklib ./obj/gxclipm.o ./obj/gximage3.o ./obj/gximage4.o ./obj/gxmclip.o
+./obj/echogs -e .dev -a-  ./obj/imasklib -imagetype 3 4
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gscolor2.o -c ./src/gscolor2.c
+./obj/echogs -e .dev -w- -l-obj ./obj/psl2cs ./obj/gscolor2.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gspcolor.o -c ./src/gspcolor.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsptype1.o -c ./src/gsptype1.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxclip2.o -c ./src/gxclip2.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxp1fill.o -c ./src/gxp1fill.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxpcmap.o -c ./src/gxpcmap.c
+./obj/echogs -e .dev -w- -l-obj ./obj/patlib -include ./obj/cmyklib ./obj/imasklib ./obj/psl2cs
+./obj/echogs -e .dev -a-  ./obj/patlib -obj ./obj/gspcolor.o ./obj/gsptype1.o ./obj/gxclip2.o
+./obj/echogs -e .dev -a-  ./obj/patlib -obj ./obj/gxmclip.o ./obj/gxp1fill.o ./obj/gxpcmap.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zpcolor.o -c ./src/zpcolor.c
+./obj/echogs -e .dev -w- -l-obj ./obj/patread ./obj/zpcolor.o
+./obj/echogs -e .dev -a-  ./obj/patread -oper zpcolor_l2
+./obj/echogs -e .dev -w- -l-obj ./obj/pattern -include ./obj/patlib ./obj/patread
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/imain.o -c ./src/imain.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/imainarg.o -c ./src/imainarg.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/idisp.o -c ./src/idisp.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/icontext.o -c ./src/icontext.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/interp.o -c ./src/interp.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zfile.o -c ./src/zfile.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zfileio.o -c ./src/zfileio.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/ziodevsc.o -c ./src/ziodevsc.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zvmem.o -c ./src/zvmem.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zbfont.o -c ./src/zbfont.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zchar.o -c ./src/zchar.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zcolor.o -c ./src/zcolor.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zdevice.o -c ./src/zdevice.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zfont.o -c ./src/zfont.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zgstate.o -c ./src/zgstate.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zdfilter.o -c ./src/zdfilter.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zht.o -c ./src/zht.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zimage.o -c ./src/zimage.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zmatrix.o -c ./src/zmatrix.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zpaint.o -c ./src/zpaint.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zpath.o -c ./src/zpath.c
+./obj/echogs -e .dev -w- -l-obj ./obj/psbase ./obj/imain.o ./obj/imainarg.o ./obj/gsargs.o ./obj/idisp.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/gconfig.o ./obj/gscdefs.o ./obj/iconfig.o ./obj/iccinit1.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/stub_autoconf.o ./obj/iapi.o ./obj/icontext.o ./obj/idebug.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/idict.o ./obj/idparam.o ./obj/idstack.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/iinit.o ./obj/interp.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/iparam.o ./obj/ireclaim.o ./obj/iplugin.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/iscan.o ./obj/iscannum.o ./obj/istack.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/iutil.o ./obj/sa85d.o ./obj/scantab.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/sfilter1.o ./obj/sstring.o ./obj/stream.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/zarith.o ./obj/zarray.o ./obj/zcontrol.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/zdict.o ./obj/zfile.o ./obj/zfile1.o ./obj/zfileio.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/zfilter.o ./obj/zfproc.o ./obj/zgeneric.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/ziodev.o ./obj/ziodevsc.o ./obj/zmath.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/zmisc.o ./obj/zpacked.o ./obj/zrelbit.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/zstack.o ./obj/zstring.o ./obj/zsysvm.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/ztoken.o ./obj/ztype.o ./obj/zvmem.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/zbfont.o ./obj/zchar.o ./obj/zcolor.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/zdevice.o ./obj/zfont.o ./obj/zfontenum.o ./obj/zgstate.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/zdfilter.o ./obj/zht.o ./obj/zimage.o ./obj/zmatrix.o
+./obj/echogs -e .dev -a-  ./obj/psbase -obj ./obj/zpaint.o ./obj/zpath.o
+./obj/echogs -e .dev -a-  ./obj/psbase -oper zarith zarray zcontrol1 zcontrol2 zcontrol3
+./obj/echogs -e .dev -a-  ./obj/psbase -oper zdict1 zdict2 zfile zfile1 zfileio1 zfileio2
+./obj/echogs -e .dev -a-  ./obj/psbase -oper zfilter zfproc zgeneric ziodev zmath
+./obj/echogs -e .dev -a-  ./obj/psbase -oper zmisc zpacked zrelbit zstack zstring zsysvm
+./obj/echogs -e .dev -a-  ./obj/psbase -oper ztoken ztype zvmem zbfont zchar zcolor
+./obj/echogs -e .dev -a-  ./obj/psbase -oper zdevice zfont zfontenum zgstate1 zgstate2 zgstate3
+./obj/echogs -e .dev -a-  ./obj/psbase -oper zdfilter zht zimage zmatrix
+./obj/echogs -e .dev -a-  ./obj/psbase -oper zpaint zpath pantone
+./obj/echogs -e .dev -a-  ./obj/psbase -iodev stdin stdout stderr lineedit statementedit
+./obj/echogs -e .dev -a-  ./obj/psbase -include ./obj/isupport ./obj/nobtoken ./obj/nousparm
+./obj/echogs -e .dev -a-  ./obj/psbase -include ./obj/rld ./obj/rle ./obj/sfile ./obj/dscparse
+./obj/echogs -e .dev -a-  ./obj/psbase -replace ./obj/gsiodevs
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zpath1.o -c ./src/zpath1.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gspath1.o -c ./src/gspath1.c
+./obj/echogs -e .dev -w- -l-obj ./obj/path1lib ./obj/gspath1.o
+./obj/echogs -e .dev -w- -l-obj ./obj/path1 ./obj/zpath1.o
+./obj/echogs -e .dev -a-  ./obj/path1 -include ./obj/path1lib
+./obj/echogs -e .dev -a-  ./obj/path1 -oper zpath1
+./obj/echogs -e .dev -w- -l-obj ./obj/psl1 -include ./obj/psbase ./obj/bcp ./obj/path1 ./obj/type1
+./obj/echogs -e .dev -a-  ./obj/psl1 -emulator PostScript PostScriptLevel1
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxi12bit.o -c ./src/gxi12bit.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxiscale.o -c ./src/gxiscale.c
+./obj/echogs -e .dev -w- -l-obj ./obj/psl2lib ./obj/gxi12bit.o ./obj/gxiscale.o
+./obj/echogs -e .dev -a-  ./obj/psl2lib -imageclass 0_interpolate 2_fracs
+./obj/echogs -e .dev -a-  ./obj/psl2lib -include ./obj/colimlib ./obj/psl2cs
+./obj/echogs -e .dev -a-  ./obj/psl2lib -replace ./obj/no12bit
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zcolor2.o -c ./src/zcolor2.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zcsindex.o -c ./src/zcsindex.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zht2.o -c ./src/zht2.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zimage2.o -c ./src/zimage2.c
+./obj/echogs -e .dev -w- -l-obj ./obj/psl2read ./obj/zcolor2.o ./obj/zcsindex.o ./obj/zht2.o ./obj/zimage2.o
+./obj/echogs -e .dev -a-  ./obj/psl2read -include ./obj/psl2int ./obj/dps2read
+./obj/echogs -e .dev -a-  ./obj/psl2read -oper zcolor2_l2 zcsindex_l2
+./obj/echogs -e .dev -a-  ./obj/psl2read -oper zht2_l2
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zcssepr.o -c ./src/zcssepr.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gscsepr.o -c ./src/gscsepr.c
+./obj/echogs -e .dev -w- -l-obj ./obj/seprlib ./obj/gscsepr.o ./obj/gsnamecl.o ./obj/gsncdemo.o
+./obj/echogs -e .dev -w- -l-obj ./obj/sepr ./obj/zcssepr.o ./obj/zfsample.o
+./obj/echogs -e .dev -a-  ./obj/sepr -oper zcssepr_l2
+./obj/echogs -e .dev -a-  ./obj/sepr -oper zfsample
+./obj/echogs -e .dev -a-  ./obj/sepr -include ./obj/func4 ./obj/seprlib
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zchar32.o -c ./src/zchar32.c
+./obj/echogs -e .dev -w- -l-obj ./obj/type32 ./obj/zchar32.o ./obj/zfont32.o
+./obj/echogs -e .dev -a-  ./obj/type32 -oper zchar32 zfont32
+./obj/echogs -e .dev -a-  ./obj/type32 -ps gs_res gs_typ32
+./obj/echogs -e .dev -w- -l-obj ./obj/psl2 -include ./obj/dpsand2
+./obj/echogs -e .dev -a-  ./obj/psl2 -include ./obj/cidfont ./obj/cie ./obj/cmapread ./obj/compfont
+./obj/echogs -e .dev -a-  ./obj/psl2 -include ./obj/dct ./obj/filter ./obj/iodevice
+./obj/echogs -e .dev -a-  ./obj/psl2 -include ./obj/pagedev ./obj/pattern ./obj/psl1 ./obj/psl2lib ./obj/psl2read
+./obj/echogs -e .dev -a-  ./obj/psl2 -include ./obj/sepr ./obj/type32 ./obj/type42
+./obj/echogs -e .dev -a-  ./obj/psl2 -emulator PostScript PostScriptLevel2
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zcspixel.o -c ./src/zcspixel.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gscpixel.o -c ./src/gscpixel.c
+./obj/echogs -e .dev -w- -l-obj ./obj/cspixlib ./obj/gscpixel.o
+./obj/echogs -e .dev -w- -l-obj ./obj/cspixel ./obj/zcspixel.o
+./obj/echogs -e .dev -a-  ./obj/cspixel -oper zcspixel
+./obj/echogs -e .dev -a-  ./obj/cspixel -include ./obj/cspixlib
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsclipsr.o -c ./src/gsclipsr.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gscdevn.o -c ./src/gscdevn.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxdevndi.o -c ./src/gxdevndi.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gscolor3.o -c ./src/gscolor3.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsptype2.o -c ./src/gsptype2.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsshade.o -c ./src/gsshade.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxshade.o -c ./src/gxshade.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxshade1.o -c ./src/gxshade1.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxshade4.o -c ./src/gxshade4.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxshade6.o -c ./src/gxshade6.c
+./obj/echogs -e .dev -w- -l-obj ./obj/shadelib ./obj/gscolor3.o ./obj/gsfunc3.o ./obj/gsptype2.o ./obj/gsshade.o
+./obj/echogs -e .dev -a-  ./obj/shadelib -obj ./obj/gxshade.o ./obj/gxshade1.o ./obj/gxshade4.o ./obj/gxshade6.o
+./obj/echogs -e .dev -a-  ./obj/shadelib -include ./obj/funclib ./obj/patlib
+./obj/echogs -e .dev -w- -l-obj ./obj/psl3lib ./obj/gsclipsr.o ./obj/gscdevn.o ./obj/gxdevndi.o
+./obj/echogs -e .dev -a-  ./obj/psl3lib -include ./obj/imasklib ./obj/shadelib
+./obj/echogs -e .dev -a-  ./obj/psl3lib -include ./obj/gxfapiu
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zcsdevn.o -c ./src/zcsdevn.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zimage3.o -c ./src/zimage3.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zmisc3.o -c ./src/zmisc3.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zcolor3.o -c ./src/zcolor3.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zshade.o -c ./src/zshade.c
+./obj/echogs -e .dev -w- -l-obj ./obj/psl3read ./obj/zcsdevn.o ./obj/zfunc3.o ./obj/zfsample.o
+./obj/echogs -e .dev -a-  ./obj/psl3read ./obj/zimage3.o ./obj/zmisc3.o ./obj/zcolor3.o ./obj/zshade.o
+./obj/echogs -e .dev -a-  ./obj/psl3read -oper zcsdevn
+./obj/echogs -e .dev -a-  ./obj/psl3read -oper zfsample
+./obj/echogs -e .dev -a-  ./obj/psl3read -oper zimage3 zmisc3 zcolor3_l3 zshade
+./obj/echogs -e .dev -a-  ./obj/psl3read -functiontype 2 3
+./obj/echogs -e .dev -a-  ./obj/psl3read -ps gs_ll3
+./obj/echogs -e .dev -a-  ./obj/psl3read -include ./obj/frsd ./obj/fzlib
+./obj/echogs -e .dev -w- -l-obj ./obj/psl3 -include ./obj/psl2 ./obj/cspixel ./obj/frsd ./obj/func
+./obj/echogs -e .dev -a-  ./obj/psl3 -include ./obj/psl3lib ./obj/psl3read
+./obj/echogs -e .dev -a-  ./obj/psl3 -emulator PostScript PostScriptLevel2 PostScriptLevel3
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxi16bit.o -c ./src/gxi16bit.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gstrans.o -c ./src/gstrans.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gximag3x.o -c ./src/gximag3x.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevp14.o -c ./src/gdevp14.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevbbox.o -c ./src/gdevbbox.c
+./obj/echogs -e .dev -a-  ./obj/bboxutil ./obj/gdevbbox.o
+./obj/echogs -e .dev -w- -l-obj ./obj/translib ./obj/gstrans.o ./obj/gximag3x.o ./obj/gxblend.o ./obj/gdevp14.o 
+./obj/echogs -e .dev -a-  ./obj/translib -imagetype 3x
+./obj/echogs -e .dev -a-  ./obj/translib -include ./obj/cspixlib ./obj/bboxutil
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/ztrans.o -c ./src/ztrans.c
+./obj/echogs -e .dev -w- -l-obj ./obj/transpar ./obj/ztrans.o
+./obj/echogs -e .dev -a-  ./obj/transpar -oper ztrans1 ztrans2
+./obj/echogs -e .dev -a-  ./obj/transpar -include ./obj/psl2read ./obj/translib
+./obj/echogs -e .dev -w- -l-obj ./obj/pdfread ./obj/gxi16bit.o
+./obj/echogs -e .dev -a-  ./obj/pdfread -replace ./obj/no16bit
+./obj/echogs -e .dev -a-  ./obj/pdfread -include ./obj/frsd ./obj/func4 ./obj/fzlib
+./obj/echogs -e .dev -a-  ./obj/pdfread -include ./obj/transpar
+./obj/echogs -e .dev -a-  ./obj/pdfread -ps pdf_ops gs_l2img
+./obj/echogs -e .dev -a-  ./obj/pdfread -ps pdf_rbld
+./obj/echogs -e .dev -a-  ./obj/pdfread -ps pdf_base pdf_draw pdf_font pdf_main pdf_sec
+./obj/echogs -e .dev -w- -l-obj ./obj/cff -include ./obj/psl2int -ps gs_css_e gs_cff
+./obj/echogs -e .dev -w- -l-obj ./obj/ttfont -include ./obj/macglyph ./obj/type42
+./obj/echogs -e .dev -a-  ./obj/ttfont -ps gs_wan_e gs_agl gs_ttf
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zicc.o -c ./src/zicc.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src -Iicclib   -o ./obj/gsicc.o -c ./src/gsicc.c
+./obj/echogs -e .dev -w- -l-obj ./obj/sicclib ./obj/gsicc.o
+./obj/echogs -e .dev -a-  ./obj/sicclib -include ./obj/icclib.dev
+./obj/echogs -e .dev -w- -l-obj ./obj/icc ./obj/zicc.o
+./obj/echogs -e .dev -a-  ./obj/icc -oper zicc_ll3
+./obj/echogs -e .dev -a-  ./obj/icc -ps gs_icc
+./obj/echogs -e .dev -a-  ./obj/icc -include ./obj/sicclib ./obj/cie
+./obj/echogs -e .dev -w- -l-obj ./obj/pdf -include ./obj/psbase ./obj/dps2lib
+./obj/echogs -e .dev -a-  ./obj/pdf -include ./obj/dps2read ./obj/pdffonts ./obj/psl3
+./obj/echogs -e .dev -a-  ./obj/pdf -include ./obj/psl2lib ./obj/pdfread ./obj/cff
+./obj/echogs -e .dev -a-  ./obj/pdf -include ./obj/fmd5 ./obj/farc4 ./obj/ttfont ./obj/type2
+./obj/echogs -e .dev -a-  ./obj/pdf -include ./obj/icc
+./obj/echogs -e .dev -a-  ./obj/pdf -functiontype 4
+./obj/echogs -e .dev -a-  ./obj/pdf -emulator PDF
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zdpnext.o -c ./src/zdpnext.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsdps.o -c ./src/gsdps.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gximage2.o -c ./src/gximage2.c
+./obj/echogs -e .dev -w- -l-obj ./obj/dpslib ./obj/gsdps.o ./obj/gximage2.o
+./obj/echogs -e .dev -a-  ./obj/dpslib -imagetype 2
+./obj/echogs -e .dev -a-  ./obj/dpslib -include ./obj/cspixlib
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zdps.o -c ./src/zdps.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zcontext.o -c ./src/zcontext.c
+./obj/echogs -e .dev -w- -l-obj ./obj/dps -include ./obj/dpslib ./obj/psl2
+./obj/echogs -e .dev -a-  ./obj/dps -obj ./obj/zdps.o ./obj/zcontext.o
+./obj/echogs -e .dev -a-  ./obj/dps -oper zcontext1 zcontext2 zdps
+./obj/echogs -e .dev -a-  ./obj/dps -ps gs_dps
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsalphac.o -c ./src/gsalphac.c
+./obj/echogs -e .dev -w- -l-obj ./obj/dpnxtlib ./obj/gsalphac.o
+./obj/echogs -e .dev -a- -l-comp ./obj/dpnxtlib alpha
+./obj/echogs -e .dev -w- -l-obj ./obj/dpsnext -include ./obj/dps ./obj/dpnxtlib
+./obj/echogs -e .dev -a-  ./obj/dpsnext -obj ./obj/zdpnext.o
+./obj/echogs -e .dev -a-  ./obj/dpsnext -oper zdpnext
+./obj/echogs -e .dev -a-  ./obj/dpsnext -ps gs_dpnxt
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./src -I./obj -I./obj -I./src  -o ./obj/zfapi.o -c ./src/zfapi.c
+./obj/echogs -e .dev -w- -l-obj ./obj/fapi ./obj/zfapi.o
+./obj/echogs -e .dev -a-  ./obj/fapi -oper zfapi
+./obj/echogs -e .dev -a-  ./obj/fapi -ps gs_fntem gs_fapi
+./obj/echogs -e .dev -a-  ./obj/fapi -include ./obj/fapiu
+./obj/echogs -e .dev -a-  ./obj/fapi -include ./obj/fapif
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevbmp.o -c ./src/gdevbmp.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevbmpc.o -c ./src/gdevbmpc.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpccm.o -c ./src/gdevpccm.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevprn.o -c ./src/gdevprn.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxclist.o -c ./src/gxclist.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxclbits.o -c ./src/gxclbits.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxclpage.o -c ./src/gxclpage.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxclrast.o -c ./src/gxclrast.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxclread.o -c ./src/gxclread.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxclrect.o -c ./src/gxclrect.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxclutil.o -c ./src/gxclutil.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxclimag.o -c ./src/gxclimag.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxclpath.o -c ./src/gxclpath.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxdhtserial.o -c ./src/gxdhtserial.c
+./obj/echogs -e .dev -w- -l-obj ./obj/clist ./obj/gxclist.o ./obj/gxclbits.o ./obj/gxclpage.o
+./obj/echogs -e .dev -a-  ./obj/clist -obj ./obj/gxclrast.o ./obj/gxclread.o ./obj/gxclrect.o
+./obj/echogs -e .dev -a-  ./obj/clist -obj ./obj/gxclutil.o ./obj/gsparams.o
+./obj/echogs -e .dev -a-  ./obj/clist -obj ./obj/gsroptab.o ./obj/stream.o
+./obj/echogs -e .dev -a-  ./obj/clist -obj ./obj/gxclimag.o ./obj/gxclpath.o ./obj/gxdhtserial.o
+./obj/echogs -e .dev -a-  ./obj/clist -include ./obj/clmemory
+./obj/echogs -e .dev -a-  ./obj/clist -include ./obj/cfe ./obj/cfd ./obj/rle ./obj/rld ./obj/psl2cs
+./obj/echogs -e .dev -w- -l-obj ./obj/page ./obj/gdevprn.o
+./obj/echogs -e .dev -a-  ./obj/page -include ./obj/clist
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/bmpmono ./obj/gdevbmp.o ./obj/gdevbmpc.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/bmpgray ./obj/gdevbmp.o ./obj/gdevbmpc.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/bmpsep1 ./obj/gdevbmp.o ./obj/gdevbmpc.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/bmpsep8 ./obj/gdevbmp.o ./obj/gdevbmpc.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/bmp16 ./obj/gdevbmp.o ./obj/gdevbmpc.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/bmp256 ./obj/gdevbmp.o ./obj/gdevbmpc.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/bmp16m ./obj/gdevbmp.o ./obj/gdevbmpc.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/bmp32b ./obj/gdevbmp.o ./obj/gdevbmpc.o ./obj/gdevpccm.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevdjet.o -c ./src/gdevdjet.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevdljm.o -c ./src/gdevdljm.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpcl.o -c ./src/gdevpcl.c
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/deskjet ./obj/gdevdjet.o ./obj/gdevdljm.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/djet500 ./obj/gdevdjet.o ./obj/gdevdljm.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/laserjet ./obj/gdevdjet.o ./obj/gdevdljm.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/ljetplus ./obj/gdevdjet.o ./obj/gdevdljm.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/ljet2p ./obj/gdevdjet.o ./obj/gdevdljm.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/ljet3 ./obj/gdevdjet.o ./obj/gdevdljm.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/ljet3d ./obj/gdevdjet.o ./obj/gdevdljm.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/ljet4 ./obj/gdevdjet.o ./obj/gdevdljm.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/ljet4d ./obj/gdevdjet.o ./obj/gdevdljm.o ./obj/gdevpcl.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevlj56.o -c ./src/gdevlj56.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpxut.o -c ./src/gdevpxut.c
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/lj5mono ./obj/gdevlj56.o ./obj/gdevpxut.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/lj5gray ./obj/gdevlj56.o ./obj/gdevpxut.o ./obj/gdevpcl.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevcdj.o -c ./src/gdevcdj.c
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/cdeskjet ./obj/gdevcdj.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/cdjcolor ./obj/gdevcdj.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/cdjmono ./obj/gdevcdj.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/cdj550 ./obj/gdevcdj.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/pj ./obj/gdevcdj.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/pjxl ./obj/gdevcdj.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/pjxl300 ./obj/gdevcdj.o ./obj/gdevpcl.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevupd.o -c ./src/gdevupd.c
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/uniprint ./obj/gdevupd.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src -Iijs  -o ./obj/gdevijs.o -c ./src/gdevijs.c
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/ijs ./obj/gdevijs.o ./obj/ijs.o ./obj/ijs_client.o ./obj/ijs_exec_unix.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevbj10.o -c ./src/gdevbj10.c
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/bj10e ./obj/gdevbj10.o
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/bj200 ./obj/gdevbj10.o
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/bjc600 ./obj/gdevcdj.o ./obj/gdevpcl.o
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/bjc800 ./obj/gdevcdj.o ./obj/gdevpcl.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevfax.o -c ./src/gdevfax.c
+./obj/echogs -e .dev -w- -l-obj ./obj/fax ./obj/gdevfax.o
+./obj/echogs -e .dev -a-  ./obj/fax -include ./obj/cfe
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/faxg3 -include ./obj/fax
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/faxg32d -include ./obj/fax
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/faxg4 -include ./obj/fax
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpcx.o -c ./src/gdevpcx.c
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pcxmono ./obj/gdevpcx.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pcxgray ./obj/gdevpcx.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pcx16 ./obj/gdevpcx.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pcx256 ./obj/gdevpcx.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pcx24b ./obj/gdevpcx.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pcxcmyk ./obj/gdevpcx.o ./obj/gdevpccm.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpbm.o -c ./src/gdevpbm.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevppla.o -c ./src/gdevppla.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevmpla.o -c ./src/gdevmpla.c
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pbm ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pbmraw ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pgm ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pgmraw ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pgnm ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pgnmraw ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pnm ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pnmraw ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/ppm ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/ppmraw ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pkm ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pkmraw ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pksm ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pksmraw ./obj/gdevpbm.o ./obj/gdevppla.o ./obj/gdevmpla.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevtfax.o -c ./src/gdevtfax.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevtifs.o -c ./src/gdevtifs.c
+./obj/echogs -e .dev -w- -l-obj ./obj/tiffs ./obj/gdevtifs.o
+./obj/echogs -e .dev -a-  ./obj/tiffs -include ./obj/page
+./obj/echogs -e .dev -w- -l-obj ./obj/tfax ./obj/gdevtfax.o
+./obj/echogs -e .dev -a-  ./obj/tfax -include ./obj/cfe ./obj/lzwe ./obj/rle
+./obj/echogs -e .dev -a-  ./obj/tfax -include ./obj/fax ./obj/tiffs
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/tiffcrle -include ./obj/tfax
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/tiffg3 -include ./obj/tfax
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/tiffg32d -include ./obj/tfax
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/tiffg4 -include ./obj/tfax
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/tifflzw -include ./obj/tfax
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/tiffpack -include ./obj/tfax
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevtfnx.o -c ./src/gdevtfnx.c
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/tiff12nc ./obj/gdevtfnx.o
+./obj/echogs -e .dev -a-  ./obj/tiff12nc -include ./obj/tiffs
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/tiff24nc ./obj/gdevtfnx.o
+./obj/echogs -e .dev -a-  ./obj/tiff24nc -include ./obj/tiffs
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevtsep.o -c ./src/gdevtsep.c
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/tiffgray ./obj/gdevtsep.o
+./obj/echogs -e .dev -a-  ./obj/tiffgray -include ./obj/tiffs
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/tiff32nc ./obj/gdevtsep.o
+./obj/echogs -e .dev -a-  ./obj/tiff32nc -include ./obj/tiffs
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/tiffsep ./obj/gdevtsep.o ./obj/gdevdevn.o ./obj/gsequivc.o
+./obj/echogs -e .dev -a-  ./obj/tiffsep -include ./obj/tiffs
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpsim.o -c ./src/gdevpsim.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpsu.o -c ./src/gdevpsu.c
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/psmono ./obj/gdevpsim.o ./obj/gdevpsu.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/psgray ./obj/gdevpsim.o ./obj/gdevpsu.o
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/psrgb ./obj/gdevpsim.o ./obj/gdevpsu.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevbit.o -c ./src/gdevbit.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevdcrd.o -c ./src/gdevdcrd.c
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/bit ./obj/gdevbit.o ./obj/gdevdcrd.o
+./obj/echogs -e .dev -a-  ./obj/bit -include ./obj/cielib
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/bitrgb ./obj/gdevbit.o ./obj/gdevdcrd.o
+./obj/echogs -e .dev -a-  ./obj/bitrgb -include ./obj/cielib
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/bitcmyk ./obj/gdevbit.o ./obj/gdevdcrd.o
+./obj/echogs -e .dev -a-  ./obj/bitcmyk -include ./obj/cielib
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src -Ilibpng -Izlib -DSHARE_LIBPNG=0  -o ./obj/gdevpng.o -c ./src/gdevpng.c
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/png48 ./obj/gdevpng.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -a-  ./obj/png48 -include ./obj/libpng
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/png16m ./obj/gdevpng.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -a-  ./obj/png16m -include ./obj/libpng
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pnggray ./obj/gdevpng.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -a-  ./obj/pnggray -include ./obj/libpng
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pngmono ./obj/gdevpng.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -a-  ./obj/pngmono -include ./obj/libpng
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/png256 ./obj/gdevpng.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -a-  ./obj/png256 -include ./obj/libpng
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/png16 ./obj/gdevpng.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -a-  ./obj/png16 -include ./obj/libpng
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/pngalpha ./obj/gdevpng.o ./obj/gdevpccm.o
+./obj/echogs -e .dev -a-  ./obj/pngalpha -include ./obj/libpng
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevjpeg.o -c ./src/gdevjpeg.c
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/jpeg ./obj/gdevjpeg.o
+./obj/echogs -e .dev -a-  ./obj/jpeg -include ./obj/sdcte
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-include -l./obj/page -l-obj ./obj/jpeggray ./obj/gdevjpeg.o
+./obj/echogs -e .dev -a-  ./obj/jpeggray -include ./obj/sdcte
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdf.o -c ./src/gdevpdf.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdfb.o -c ./src/gdevpdfb.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdfc.o -c ./src/gdevpdfc.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdfd.o -c ./src/gdevpdfd.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdfe.o -c ./src/gdevpdfe.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdfg.o -c ./src/gdevpdfg.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdfi.o -c ./src/gdevpdfi.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src -Ijpeg -DSHARE_JPEG=0  -o ./obj/gdevpdfj.o -c ./src/gdevpdfj.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdfk.o -c ./src/gdevpdfk.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdfm.o -c ./src/gdevpdfm.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdfo.o -c ./src/gdevpdfo.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdfp.o -c ./src/gdevpdfp.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdft.o -c ./src/gdevpdft.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdfr.o -c ./src/gdevpdfr.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -Isrc/source/libraries -Isrc/library/source  -DJAS_CONFIGURE  -o ./obj/gdevpdfu.o -c ./src/gdevpdfu.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdfv.o -c ./src/gdevpdfv.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -Isrc/source/libraries -Isrc/library/source  -DJAS_CONFIGURE  -o ./obj/gdevpsdi.o -c ./src/gdevpsdi.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -Isrc/source/libraries -Isrc/library/source  -DJAS_CONFIGURE  -o ./obj/gdevpsdp.o -c ./src/gdevpsdp.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpsds.o -c ./src/gdevpsds.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src -Ijpeg -DSHARE_JPEG=0  -o ./obj/gdevpsdu.o -c ./src/gdevpsdu.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevvec.o -c ./src/gdevvec.c
+./obj/echogs -e .dev -w- -l-obj ./obj/vector ./obj/gdevvec.o
+./obj/echogs -e .dev -a-  ./obj/vector -include ./obj/bboxutil ./obj/sfile
+./obj/echogs -e .dev -w- -l-obj ./obj/psdf ./obj/gdevpsdi.o ./obj/gdevpsdp.o
+./obj/echogs -e .dev -a-  ./obj/psdf -obj ./obj/gdevpsds.o ./obj/gdevpsdu.o
+./obj/echogs -e .dev -a-  ./obj/psdf -obj ./obj/scfparam.o ./obj/sdcparam.o ./obj/sdeparam.o
+./obj/echogs -e .dev -a-  ./obj/psdf -obj ./obj/spprint.o ./obj/spsdf.o ./obj/sstring.o
+./obj/echogs -e .dev -a-  ./obj/psdf -obj ./obj/gsparamx.o
+./obj/echogs -e .dev -a-  ./obj/psdf -include ./obj/vector.dev ./obj/pngp.dev ./obj/seexec.dev
+./obj/echogs -e .dev -a-  ./obj/psdf -include ./obj/sdcte.dev ./obj/slzwe.dev ./obj/szlibe.dev
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdt.o -c ./src/gdevpdt.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdtb.o -c ./src/gdevpdtb.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdtc.o -c ./src/gdevpdtc.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdtd.o -c ./src/gdevpdtd.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdte.o -c ./src/gdevpdte.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdtf.o -c ./src/gdevpdtf.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdti.o -c ./src/gdevpdti.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdts.o -c ./src/gdevpdts.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdtt.o -c ./src/gdevpdtt.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpdtw.o -c ./src/gdevpdtw.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxfcopy.o -c ./src/gxfcopy.c
+./obj/echogs -e .dev -w- -l-obj ./obj/fcopy ./obj/gxfcopy.o
+./obj/echogs -e .dev -w- -l-obj ./obj/pdxtext ./obj/gdevpdt.o ./obj/gdevpdtb.o
+./obj/echogs -e .dev -a-  ./obj/pdxtext ./obj/gdevpdtc.o ./obj/gdevpdtd.o ./obj/gdevpdte.o
+./obj/echogs -e .dev -a-  ./obj/pdxtext ./obj/gdevpdtf.o
+./obj/echogs -e .dev -a-  ./obj/pdxtext ./obj/gdevpdti.o
+./obj/echogs -e .dev -a-  ./obj/pdxtext 
+./obj/echogs -e .dev -a-  ./obj/pdxtext 
+./obj/echogs -e .dev -a-  ./obj/pdxtext ./obj/gdevpdts.o ./obj/gdevpdtt.o
+./obj/echogs -e .dev -a-  ./obj/pdxtext ./obj/gdevpdtv.o ./obj/gdevpdtw.o
+./obj/echogs -e .dev -a-  ./obj/pdxtext 
+./obj/echogs -e .dev -a-  ./obj/pdxtext ./obj/gsfont0c.o
+./obj/echogs -e .dev -a-  ./obj/pdxtext -include ./obj/fcopy ./obj/psf
+./obj/echogs -e .dev -w- -l-obj ./obj/pdtext -include ./obj/pdxtext
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/pdfwrite ./obj/gdevpdf.o ./obj/gdevpdfb.o
+./obj/echogs -e .dev -a-  ./obj/pdfwrite ./obj/gdevpdfc.o ./obj/gdevpdfd.o ./obj/gdevpdfe.o
+./obj/echogs -e .dev -a-  ./obj/pdfwrite ./obj/gdevpdfg.o
+./obj/echogs -e .dev -a-  ./obj/pdfwrite ./obj/gdevpdfi.o ./obj/gdevpdfj.o ./obj/gdevpdfk.o
+./obj/echogs -e .dev -a-  ./obj/pdfwrite ./obj/gdevpdfm.o
+./obj/echogs -e .dev -a-  ./obj/pdfwrite ./obj/gdevpdfo.o ./obj/gdevpdfp.o ./obj/gdevpdft.o
+./obj/echogs -e .dev -a-  ./obj/pdfwrite ./obj/gdevpdfr.o
+./obj/echogs -e .dev -a-  ./obj/pdfwrite ./obj/gdevpdfu.o ./obj/gdevpdfv.o
+./obj/echogs -e .dev -a-  ./obj/pdfwrite 
+./obj/echogs -e .dev -a-  ./obj/pdfwrite ./obj/gsflip.o
+./obj/echogs -e .dev -a-  ./obj/pdfwrite ./obj/scantab.o ./obj/sfilter2.o
+./obj/echogs -e .dev -a-  ./obj/pdfwrite -ps gs_pdfwr
+./obj/echogs -e .dev -a-  ./obj/pdfwrite -include ./obj/cmyklib ./obj/cfe ./obj/lzwe
+./obj/echogs -e .dev -a-  ./obj/pdfwrite -include ./obj/rle ./obj/sdcte ./obj/sdeparam
+./obj/echogs -e .dev -a-  ./obj/pdfwrite -include ./obj/smd5 ./obj/szlibe
+./obj/echogs -e .dev -a-  ./obj/pdfwrite -include ./obj/psdf
+./obj/echogs -e .dev -a-  ./obj/pdfwrite -include ./obj/pdtext
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevps.o -c ./src/gdevps.c
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/pswrite ./obj/gdevps.o ./obj/gdevpsu.o ./obj/scantab.o ./obj/sfilter2.o
+./obj/echogs -e .dev -a-  ./obj/pswrite -include ./obj/psdf
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/ps2write
+./obj/echogs -e .dev -a-  ./obj/ps2write -include ./obj/pdfwrite.dev
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/epswrite ./obj/gdevps.o ./obj/gdevpsu.o ./obj/scantab.o ./obj/sfilter2.o
+./obj/echogs -e .dev -a-  ./obj/epswrite -include ./obj/psdf
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevpx.o -c ./src/gdevpx.c
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/pxlmono ./obj/gdevpx.o ./obj/gdevpxut.o
+./obj/echogs -e .dev -a-  ./obj/pxlmono -include ./obj/vector
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/pxlcolor ./obj/gdevpx.o ./obj/gdevpxut.o
+./obj/echogs -e .dev -a-  ./obj/pxlcolor -include ./obj/vector
+./obj/echogs -e .dev -w- -l-dev2 -b -s -l-obj ./obj/bbox ./obj/gdevbbox.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevclj.o -c ./src/gdevclj.c
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/cljet5 ./obj/gdevclj.o ./obj/gdevpcl.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevcljc.o -c ./src/gdevcljc.c
+./obj/echogs -e .dev -w- -l-dev -b -s -l-include -l./obj/page -l-obj ./obj/cljet5c ./obj/gdevcljc.o ./obj/gdevpcl.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevdevn.o -c ./src/gdevdevn.c
+./obj/echogs -e .dev -w- -l-dev -b -s -l-obj ./obj/spotcmyk ./obj/gdevdevn.o
+./obj/echogs -e .dev -w- -l-dev -b -s -l-obj ./obj/devicen ./obj/gdevdevn.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src -Iicclib   -o ./obj/gdevxcf.o -c ./src/gdevxcf.c
+./obj/echogs -e .dev -w- -l-dev -b -s -l-obj ./obj/xcf ./obj/gdevxcf.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src -Iicclib   -o ./obj/gdevpsd.o -c ./src/gdevpsd.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src -Iicclib   -o ./obj/gsequivc.o -c ./src/gsequivc.c
+./obj/echogs -e .dev -w- -l-dev -b -s -l-obj ./obj/psdcmyk ./obj/gdevpsd.o ./obj/gdevdevn.o ./obj/gsequivc.o
+./obj/echogs -e .dev -w- -l-dev -b -s -l-obj ./obj/psdrgb ./obj/gdevpsd.o ./obj/gdevdevn.o ./obj/gsequivc.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsalpha.o -c ./src/gsalpha.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsbitops.o -c ./src/gsbitops.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gschar.o -c ./src/gschar.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gscolor.o -c ./src/gscolor.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gscoord.o -c ./src/gscoord.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gscspace.o -c ./src/gscspace.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsovrc.o -c ./src/gsovrc.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxoprect.o -c ./src/gxoprect.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsdevice.o -c ./src/gsdevice.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsdevmem.o -c ./src/gsdevmem.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsdparam.o -c ./src/gsdparam.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsdfilt.o -c ./src/gsdfilt.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsfont.o -c ./src/gsfont.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsht.o -c ./src/gsht.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gshtscr.o -c ./src/gshtscr.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsimage.o -c ./src/gsimage.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsistate.o -c ./src/gsistate.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsline.o -c ./src/gsline.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gspaint.o -c ./src/gspaint.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gspath.o -c ./src/gspath.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsstate.o -c ./src/gsstate.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gstext.o -c ./src/gstext.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevmrun.o -c ./src/gdevmrun.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gshtx.o -c ./src/gshtx.c
+./obj/echogs -e .dev -w- -l-obj ./obj/libs ./obj/gpmisc.o ./obj/stream.o
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gsalloc.o ./obj/gsalpha.o
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gsbitcom.o ./obj/gsbitops.o ./obj/gsbittab.o
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gscedata.o ./obj/gscencs.o ./obj/gschar.o ./obj/gscolor.o
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gscoord.o ./obj/gscparam.o ./obj/gscspace.o ./obj/gsovrc.o ./obj/gxoprect.o
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gsdevice.o ./obj/gsdevmem.o ./obj/gsdparam.o ./obj/gsdfilt.o
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gsfname.o ./obj/gsfont.o ./obj/gsgdata.o ./obj/gsgcache.o
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gsht.o ./obj/gshtscr.o ./obj/gswts.o
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gsimage.o ./obj/gsimpath.o ./obj/gsinit.o
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gsiodev.o ./obj/gsistate.o ./obj/gsline.o
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gsmalloc.o ./obj/gsmatrix.o ./obj/gsmemlok.o
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gsmemory.o ./obj/gsmemret.o ./obj/gsmisc.o ./obj/gsnotify.o ./obj/gslibctx.o 
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gspaint.o ./obj/gsparam.o ./obj/gspath.o
+./obj/echogs -e .dev -a-  ./obj/libs ./obj/gsserial.o ./obj/gsstate.o ./obj/gstext.o ./obj/gsutil.o
+./obj/echogs -e .dev -a- -l-comp ./obj/libs overprint
+./obj/echogs -e .dev -a- -l-comp ./obj/libs pdf14trans
+./obj/echogs -e .dev -a-  ./obj/libs -init gshtscr
+./obj/echogs -e .dev -a-  ./obj/libs -include ./obj/gsiodevs
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxacpath.o -c ./src/gxacpath.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxccache.o -c ./src/gxccache.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxccman.o -c ./src/gxccman.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxchar.o -c ./src/gxchar.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxcht.o -c ./src/gxcht.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxclip.o -c ./src/gxclip.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxcmap.o -c ./src/gxcmap.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxcpath.o -c ./src/gxcpath.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxdcconv.o -c ./src/gxdcconv.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxdcolor.o -c ./src/gxdcolor.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxhldevc.o -c ./src/gxhldevc.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxfill.o -c ./src/gxfill.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxfdrop.o -c ./src/gxfdrop.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxht.o -c ./src/gxht.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxhtbit.o -c ./src/gxhtbit.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxwts.o -c ./src/gxwts.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxidata.o -c ./src/gxidata.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxifast.o -c ./src/gxifast.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gximage.o -c ./src/gximage.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gximage1.o -c ./src/gximage1.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gximono.o -c ./src/gximono.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxipixel.o -c ./src/gxipixel.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxpaint.o -c ./src/gxpaint.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxpcopy.o -c ./src/gxpcopy.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxsample.o -c ./src/gxsample.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gxstroke.o -c ./src/gxstroke.c
+./obj/echogs -e .dev -w- -l-obj ./obj/libx ./obj/gxacpath.o ./obj/gxbcache.o ./obj/gxccache.o
+./obj/echogs -e .dev -a-  ./obj/libx ./obj/gxccman.o ./obj/gxchar.o ./obj/gxcht.o
+./obj/echogs -e .dev -a-  ./obj/libx ./obj/gxclip.o ./obj/gxcmap.o ./obj/gxcpath.o
+./obj/echogs -e .dev -a-  ./obj/libx ./obj/gxdcconv.o ./obj/gxdcolor.o ./obj/gxhldevc.o
+./obj/echogs -e .dev -a-  ./obj/libx ./obj/gxfill.o ./obj/gxfdrop.o ./obj/gxht.o ./obj/gxhtbit.o
+./obj/echogs -e .dev -a-  ./obj/libx ./obj/gxwts.o ./obj/gxidata.o ./obj/gxifast.o ./obj/gximage.o
+./obj/echogs -e .dev -a-  ./obj/libx ./obj/gximage1.o ./obj/gximono.o ./obj/gxipixel.o
+./obj/echogs -e .dev -a-  ./obj/libx ./obj/gxpaint.o ./obj/gxpath.o ./obj/gxpath2.o
+./obj/echogs -e .dev -a-  ./obj/libx ./obj/gxpcopy.o ./obj/gxpdash.o ./obj/gxpflat.o
+./obj/echogs -e .dev -a-  ./obj/libx ./obj/gxsample.o ./obj/gxstroke.o ./obj/gxsync.o ./obj/vdtrace.o
+./obj/echogs -e .dev -a-  ./obj/libx -imageclass 1_simple 3_mono
+./obj/echogs -e .dev -a-  ./obj/libx -imagetype 1 mask1
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevabuf.o -c ./src/gdevabuf.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevdbit.o -c ./src/gdevdbit.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevddrw.o -c ./src/gdevddrw.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevdflt.o -c ./src/gdevdflt.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevdgbr.o -c ./src/gdevdgbr.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevnfwd.o -c ./src/gdevnfwd.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevmem.o -c ./src/gdevmem.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevplnx.o -c ./src/gdevplnx.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevm1.o -c ./src/gdevm1.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevm2.o -c ./src/gdevm2.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevm4.o -c ./src/gdevm4.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevm8.o -c ./src/gdevm8.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevm16.o -c ./src/gdevm16.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevm24.o -c ./src/gdevm24.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevm32.o -c ./src/gdevm32.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevm40.o -c ./src/gdevm40.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevm48.o -c ./src/gdevm48.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevm56.o -c ./src/gdevm56.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevm64.o -c ./src/gdevm64.c
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gdevdsha.o -c ./src/gdevdsha.c
+./obj/echogs -e .dev -w- -l-obj ./obj/libd ./obj/gdevabuf.o ./obj/gdevdbit.o ./obj/gdevddrw.o ./obj/gdevdflt.o
+./obj/echogs -e .dev -a-  ./obj/libd ./obj/gdevdgbr.o ./obj/gdevnfwd.o ./obj/gdevmem.o ./obj/gdevplnx.o
+./obj/echogs -e .dev -a-  ./obj/libd ./obj/gdevm1.o ./obj/gdevm2.o ./obj/gdevm4.o ./obj/gdevm8.o
+./obj/echogs -e .dev -a-  ./obj/libd ./obj/gdevm16.o ./obj/gdevm24.o ./obj/gdevm32.o ./obj/gdevmpla.o
+./obj/echogs -e .dev -a-  ./obj/libd ./obj/gdevm40.o ./obj/gdevm48.o ./obj/gdevm56.o ./obj/gdevm64.o
+./obj/echogs -e .dev -a-  ./obj/libd ./obj/gdevdsha.o
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsnorop.o -c ./src/gsnorop.c
+./obj/echogs -e .dev -w- -l-obj ./obj/noroplib ./obj/gsnorop.o
+./obj/echogs -e .dev -w- -l-obj ./obj/libcore
+./obj/echogs -e .dev -a-  ./obj/libcore -dev2 nullpage
+./obj/echogs -e .dev -a-  ./obj/libcore -include ./obj/libs ./obj/libx ./obj/libd
+./obj/echogs -e .dev -a-  ./obj/libcore -include ./obj/iscale ./obj/no16bit ./obj/no12bit ./obj/noroplib
+./obj/echogs -e .dev -a-  ./obj/libcore -include ./obj/strdline
+./obj/genconf ./obj/devs.tr -h ./obj/gconfxx.h -p "%s&s&&" -pl "&-l%s&s&&" -pL "&-L%s&s&&" -ol ./obj/ld.tr
+./obj/echogs -a ./obj/gconfxx.h 
+./obj/geninit -I ./lib/ gs_init.ps ./obj/gconfxx.h ./obj/gs_init.ps
+./obj/mkromfs -o ./obj/gsromfs.c -c -X .svn Resource/CMap/ Resource/ColorSpace/ Resource/Decoding/ Resource/Fonts/ Resource/Procset/ Resource/IdiomSet/ Resource/CIDFont/ -d lib/ -P ./obj/ gs_init.ps -P ./lib/ Fontmap cidfmap xlatmap FAPIcidfmap FAPIconfig FAPIfontmap -P examples/ 3dcolor.ps Rotate-fontlist2.ps fractal-fern.ps EEMBCJournalPage1.ps doretree.ps golfer.eps
+writing node 'Resource/CMap/78-EUC-H' len=14341
+writing node 'Resource/CMap/78-EUC-V' len=2145
+writing node 'Resource/CMap/78-H' len=14210
+writing node 'Resource/CMap/78-RKSJ-H' len=14374
+writing node 'Resource/CMap/78-RKSJ-V' len=2151
+writing node 'Resource/CMap/78-V' len=2121
+writing node 'Resource/CMap/78ms-RKSJ-H' len=16137
+writing node 'Resource/CMap/78ms-RKSJ-V' len=3183
+writing node 'Resource/CMap/83pv-RKSJ-H' len=6213
+writing node 'Resource/CMap/90ms-RKSJ-H' len=5148
+writing node 'Resource/CMap/90ms-RKSJ-UCS2' len=112437
+writing node 'Resource/CMap/90ms-RKSJ-V' len=3204
+writing node 'Resource/CMap/90msp-RKSJ-H' len=5077
+writing node 'Resource/CMap/90msp-RKSJ-V' len=3186
+writing node 'Resource/CMap/90pv-RKSJ-H' len=6989
+writing node 'Resource/CMap/90pv-RKSJ-UCS2' len=2165
+writing node 'Resource/CMap/90pv-RKSJ-UCS2C' len=102902
+writing node 'Resource/CMap/90pv-RKSJ-V' len=2663
+writing node 'Resource/CMap/Add-H' len=14400
+writing node 'Resource/CMap/Add-RKSJ-H' len=14595
+writing node 'Resource/CMap/Add-RKSJ-V' len=2777
+writing node 'Resource/CMap/Add-V' len=2747
+writing node 'Resource/CMap/Adobe-CNS1-0' len=2784
+writing node 'Resource/CMap/Adobe-CNS1-1' len=2968
+writing node 'Resource/CMap/Adobe-CNS1-2' len=2989
+writing node 'Resource/CMap/Adobe-CNS1-3' len=3094
+writing node 'Resource/CMap/Adobe-CNS1-4' len=3115
+writing node 'Resource/CMap/Adobe-CNS1-5' len=3115
+writing node 'Resource/CMap/Adobe-CNS1-B5pc' len=8266
+writing node 'Resource/CMap/Adobe-CNS1-ETenms-B5' len=8686
+writing node 'Resource/CMap/Adobe-CNS1-H-CID' len=2229
+writing node 'Resource/CMap/Adobe-CNS1-H-Host' len=8701
+writing node 'Resource/CMap/Adobe-CNS1-H-Mac' len=8232
+writing node 'Resource/CMap/Adobe-CNS1-UCS2' len=259849
+writing node 'Resource/CMap/Adobe-GB1-0' len=2222
+writing node 'Resource/CMap/Adobe-GB1-1' len=2384
+writing node 'Resource/CMap/Adobe-GB1-2' len=3386
+writing node 'Resource/CMap/Adobe-GB1-3' len=3385
+writing node 'Resource/CMap/Adobe-GB1-4' len=3967
+writing node 'Resource/CMap/Adobe-GB1-5' len=4072
+writing node 'Resource/CMap/Adobe-GB1-GBK-EUC' len=94141
+writing node 'Resource/CMap/Adobe-GB1-GBpc-EUC' len=4537
+writing node 'Resource/CMap/Adobe-GB1-H-CID' len=2293
+writing node 'Resource/CMap/Adobe-GB1-H-Host' len=94650
+writing node 'Resource/CMap/Adobe-GB1-H-Mac' len=4419
+writing node 'Resource/CMap/Adobe-GB1-UCS2' len=233988
+writing node 'Resource/CMap/Adobe-Japan1-0' len=2273
+writing node 'Resource/CMap/Adobe-Japan1-1' len=2274
+writing node 'Resource/CMap/Adobe-Japan1-2' len=2314
+writing node 'Resource/CMap/Adobe-Japan1-3' len=2325
+writing node 'Resource/CMap/Adobe-Japan1-4' len=2827
+writing node 'Resource/CMap/Adobe-Japan1-5' len=3226
+writing node 'Resource/CMap/Adobe-Japan1-6' len=3457
+writing node 'Resource/CMap/Adobe-Japan1-90ms-RKSJ' len=6664
+writing node 'Resource/CMap/Adobe-Japan1-90pv-RKSJ' len=8753
+writing node 'Resource/CMap/Adobe-Japan1-H-CID' len=2448
+writing node 'Resource/CMap/Adobe-Japan1-H-Host' len=6934
+writing node 'Resource/CMap/Adobe-Japan1-H-Mac' len=5703
+writing node 'Resource/CMap/Adobe-Japan1-PS-H' len=23311
+writing node 'Resource/CMap/Adobe-Japan1-PS-V' len=13657
+writing node 'Resource/CMap/Adobe-Japan1-UCS2' len=194633
+writing node 'Resource/CMap/Adobe-Japan2-0' len=2091
+writing node 'Resource/CMap/Adobe-Korea1-0' len=2368
+writing node 'Resource/CMap/Adobe-Korea1-1' len=3059
+writing node 'Resource/CMap/Adobe-Korea1-2' len=3058
+writing node 'Resource/CMap/Adobe-Korea1-H-CID' len=1934
+writing node 'Resource/CMap/Adobe-Korea1-H-Host' len=16277
+writing node 'Resource/CMap/Adobe-Korea1-H-Mac' len=11542
+writing node 'Resource/CMap/Adobe-Korea1-KSCms-UHC' len=16169
+writing node 'Resource/CMap/Adobe-Korea1-KSCpc-EUC' len=11818
+writing node 'Resource/CMap/Adobe-Korea1-UCS2' len=154897
+writing node 'Resource/CMap/B5-H' len=6645
+writing node 'Resource/CMap/B5-V' len=1833
+writing node 'Resource/CMap/B5pc-H' len=6703
+writing node 'Resource/CMap/B5pc-UCS2' len=1536
+writing node 'Resource/CMap/B5pc-UCS2C' len=284917
+writing node 'Resource/CMap/B5pc-V' len=1845
+writing node 'Resource/CMap/CNS-EUC-H' len=11555
+writing node 'Resource/CMap/CNS-EUC-V' len=12635
+writing node 'Resource/CMap/CNS01-RKSJ-H' len=3050
+writing node 'Resource/CMap/CNS02-RKSJ-H' len=3349
+writing node 'Resource/CMap/CNS03-RKSJ-H' len=3055
+writing node 'Resource/CMap/CNS04-RKSJ-H' len=3307
+writing node 'Resource/CMap/CNS05-RKSJ-H' len=3601
+writing node 'Resource/CMap/CNS06-RKSJ-H' len=3097
+writing node 'Resource/CMap/CNS07-RKSJ-H' len=3139
+writing node 'Resource/CMap/CNS1-H' len=4667
+writing node 'Resource/CMap/CNS1-V' len=1841
+writing node 'Resource/CMap/CNS15-RKSJ-H' len=3286
+writing node 'Resource/CMap/CNS2-H' len=3254
+writing node 'Resource/CMap/CNS2-V' len=1578
+writing node 'Resource/CMap/ETen-B5-H' len=6865
+writing node 'Resource/CMap/ETen-B5-UCS2' len=288774
+writing node 'Resource/CMap/ETen-B5-V' len=1884
+writing node 'Resource/CMap/ETenms-B5-H' len=1514
+writing node 'Resource/CMap/ETenms-B5-V' len=1941
+writing node 'Resource/CMap/ETHK-B5-H' len=23307
+writing node 'Resource/CMap/ETHK-B5-V' len=1864
+writing node 'Resource/CMap/EUC-H' len=4101
+writing node 'Resource/CMap/EUC-V' len=2147
+writing node 'Resource/CMap/Ext-H' len=15000
+writing node 'Resource/CMap/Ext-RKSJ-H' len=15194
+writing node 'Resource/CMap/Ext-RKSJ-V' len=2417
+writing node 'Resource/CMap/Ext-V' len=2387
+writing node 'Resource/CMap/GB-EUC-H' len=3419
+writing node 'Resource/CMap/GB-EUC-V' len=2017
+writing node 'Resource/CMap/GB-H' len=3307
+writing node 'Resource/CMap/GB-RKSJ-H' len=3550
+writing node 'Resource/CMap/GB-V' len=1993
+writing node 'Resource/CMap/GBK-EUC-H' len=86194
+writing node 'Resource/CMap/GBK-EUC-UCS2' len=233863
+writing node 'Resource/CMap/GBK-EUC-V' len=2005
+writing node 'Resource/CMap/GBK2K-H' len=95070
+writing node 'Resource/CMap/GBK2K-V' len=2419
+writing node 'Resource/CMap/GBKp-EUC-H' len=86174
+writing node 'Resource/CMap/GBKp-EUC-V' len=2011
+writing node 'Resource/CMap/GBpc-EUC-H' len=3449
+writing node 'Resource/CMap/GBpc-EUC-UCS2' len=1623
+writing node 'Resource/CMap/GBpc-EUC-UCS2C' len=148429
+writing node 'Resource/CMap/GBpc-EUC-V' len=2029
+writing node 'Resource/CMap/GBT-EUC-H' len=48024
+writing node 'Resource/CMap/GBT-EUC-V' len=2025
+writing node 'Resource/CMap/GBT-H' len=47912
+writing node 'Resource/CMap/GBT-RKSJ-H' len=48193
+writing node 'Resource/CMap/GBT-V' len=2001
+writing node 'Resource/CMap/GBTpc-EUC-H' len=48056
+writing node 'Resource/CMap/GBTpc-EUC-V' len=2037
+writing node 'Resource/CMap/H' len=3960
+writing node 'Resource/CMap/Hankaku' len=1728
+writing node 'Resource/CMap/Hiragana' len=1700
+writing node 'Resource/CMap/HK-RKSJ-H' len=7247
+writing node 'Resource/CMap/HKdla-B5-H' len=23221
+writing node 'Resource/CMap/HKdla-B5-V' len=1849
+writing node 'Resource/CMap/HKdlb-B5-H' len=20763
+writing node 'Resource/CMap/HKdlb-B5-V' len=1849
+writing node 'Resource/CMap/HKgccs-B5-H' len=13191
+writing node 'Resource/CMap/HKgccs-B5-V' len=1855
+writing node 'Resource/CMap/HKm314-B5-H' len=12995
+writing node 'Resource/CMap/HKm314-B5-V' len=1855
+writing node 'Resource/CMap/HKm471-B5-H' len=16115
+writing node 'Resource/CMap/HKm471-B5-V' len=1855
+writing node 'Resource/CMap/HKscs-B5-H' len=23361
+writing node 'Resource/CMap/HKscs-B5-V' len=1870
+writing node 'Resource/CMap/Hojo-EUC-H' len=3607
+writing node 'Resource/CMap/Hojo-EUC-V' len=1604
+writing node 'Resource/CMap/Hojo-H' len=3257
+writing node 'Resource/CMap/Hojo-RKSJ-H' len=3288
+writing node 'Resource/CMap/Hojo-V' len=1580
+writing node 'Resource/CMap/Identity-H' len=1614
+writing node 'Resource/CMap/Identity-V' len=1527
+writing node 'Resource/CMap/Katakana' len=1610
+writing node 'Resource/CMap/KSC-EUC-H' len=11109
+writing node 'Resource/CMap/KSC-EUC-V' len=1949
+writing node 'Resource/CMap/KSC-H' len=11012
+writing node 'Resource/CMap/KSC-Johab-H' len=87414
+writing node 'Resource/CMap/KSC-Johab-V' len=1963
+writing node 'Resource/CMap/KSC-RKSJ-H' len=11242
+writing node 'Resource/CMap/KSC-V' len=1925
+writing node 'Resource/CMap/KSC2-RKSJ-H' len=2225
+writing node 'Resource/CMap/KSCms-UHC-H' len=15535
+writing node 'Resource/CMap/KSCms-UHC-HW-H' len=15530
+writing node 'Resource/CMap/KSCms-UHC-HW-V' len=1961
+writing node 'Resource/CMap/KSCms-UHC-UCS2' len=190158
+writing node 'Resource/CMap/KSCms-UHC-V' len=1963
+writing node 'Resource/CMap/KSCpc-EUC-H' len=11982
+writing node 'Resource/CMap/KSCpc-EUC-UCS2' len=16639
+writing node 'Resource/CMap/KSCpc-EUC-UCS2C' len=157136
+writing node 'Resource/CMap/KSCpc-EUC-V' len=1961
+writing node 'Resource/CMap/NWP-H' len=16974
+writing node 'Resource/CMap/NWP-V' len=2547
+writing node 'Resource/CMap/RKSJ-H' len=4153
+writing node 'Resource/CMap/RKSJ-V' len=2153
+writing node 'Resource/CMap/Roman' len=1586
+writing node 'Resource/CMap/TCVN-RKSJ-H' len=2380
+writing node 'Resource/CMap/UCS2-90ms-RKSJ' len=155710
+writing node 'Resource/CMap/UCS2-90pv-RKSJ' len=148650
+writing node 'Resource/CMap/UCS2-B5pc' len=285242
+writing node 'Resource/CMap/UCS2-ETen-B5' len=299594
+writing node 'Resource/CMap/UCS2-GBK-EUC' len=244146
+writing node 'Resource/CMap/UCS2-GBpc-EUC' len=197474
+writing node 'Resource/CMap/UCS2-KSCms-UHC' len=196760
+writing node 'Resource/CMap/UCS2-KSCpc-EUC' len=153636
+writing node 'Resource/CMap/UniCNS-UCS2-H' len=342160
+writing node 'Resource/CMap/UniCNS-UCS2-V' len=1880
+writing node 'Resource/CMap/UniCNS-UTF16-H' len=269489
+writing node 'Resource/CMap/UniCNS-UTF16-V' len=1873
+writing node 'Resource/CMap/UniCNS-UTF32-H' len=340567
+writing node 'Resource/CMap/UniCNS-UTF32-V' len=1953
+writing node 'Resource/CMap/UniCNS-UTF8-H' len=306201
+writing node 'Resource/CMap/UniCNS-UTF8-V' len=1909
+writing node 'Resource/CMap/UniGB-UCS2-H' len=287523
+writing node 'Resource/CMap/UniGB-UCS2-V' len=2087
+writing node 'Resource/CMap/UniGB-UTF16-H' len=213047
+writing node 'Resource/CMap/UniGB-UTF16-V' len=1984
+writing node 'Resource/CMap/UniGB-UTF32-H' len=280925
+writing node 'Resource/CMap/UniGB-UTF32-V' len=2100
+writing node 'Resource/CMap/UniGB-UTF8-H' len=251083
+writing node 'Resource/CMap/UniGB-UTF8-V' len=2038
+writing node 'Resource/CMap/UniHojo-UCS2-H' len=86847
+writing node 'Resource/CMap/UniHojo-UCS2-V' len=1608
+writing node 'Resource/CMap/UniHojo-UTF16-H' len=66235
+writing node 'Resource/CMap/UniHojo-UTF16-V' len=1614
+writing node 'Resource/CMap/UniHojo-UTF32-H' len=88102
+writing node 'Resource/CMap/UniHojo-UTF32-V' len=1614
+writing node 'Resource/CMap/UniHojo-UTF8-H' len=77011
+writing node 'Resource/CMap/UniHojo-UTF8-V' len=1610
+writing node 'Resource/CMap/UniJIS-UCS2-H' len=176286
+writing node 'Resource/CMap/UniJIS-UCS2-HW-H' len=1720
+writing node 'Resource/CMap/UniJIS-UCS2-HW-V' len=5689
+writing node 'Resource/CMap/UniJIS-UCS2-V' len=5603
+writing node 'Resource/CMap/UniJIS-UTF16-H' len=199837
+writing node 'Resource/CMap/UniJIS-UTF16-V' len=4811
+writing node 'Resource/CMap/UniJIS-UTF32-H' len=256831
+writing node 'Resource/CMap/UniJIS-UTF32-V' len=5819
+writing node 'Resource/CMap/UniJIS-UTF8-H' len=227921
+writing node 'Resource/CMap/UniJIS-UTF8-V' len=5325
+writing node 'Resource/CMap/UniJISPro-UCS2-HW-V' len=5835
+writing node 'Resource/CMap/UniJISPro-UCS2-V' len=5717
+writing node 'Resource/CMap/UniJISPro-UTF8-V' len=6570
+writing node 'Resource/CMap/UniJISX0213-UTF32-H' len=256815
+writing node 'Resource/CMap/UniJISX0213-UTF32-V' len=5871
+writing node 'Resource/CMap/UniKS-UCS2-H' len=173553
+writing node 'Resource/CMap/UniKS-UCS2-V' len=1990
+writing node 'Resource/CMap/UniKS-UTF16-H' len=130616
+writing node 'Resource/CMap/UniKS-UTF16-V' len=1948
+writing node 'Resource/CMap/UniKS-UTF32-H' len=172674
+writing node 'Resource/CMap/UniKS-UTF32-V' len=2048
+writing node 'Resource/CMap/UniKS-UTF8-H' len=153615
+writing node 'Resource/CMap/UniKS-UTF8-V' len=1994
+writing node 'Resource/CMap/V' len=2123
+writing node 'Resource/CMap/WP-Symbol' len=2017
+writing node 'Resource/ColorSpace/DefaultCMYK' len=1422
+writing node 'Resource/ColorSpace/DefaultGray' len=1093
+writing node 'Resource/ColorSpace/DefaultRGB' len=1087
+writing node 'Resource/ColorSpace/TrivialCMYK' len=1416
+writing node 'Resource/Decoding/Latin1' len=8770
+writing node 'Resource/Decoding/StandardEncoding' len=3344
+writing node 'Resource/Decoding/Unicode' len=58263
+writing node 'Resource/Fonts/CenturySchL-Bold' len=48864
+writing node 'Resource/Fonts/CenturySchL-BoldItal' len=47083
+writing node 'Resource/Fonts/CenturySchL-Ital' len=45832
+writing node 'Resource/Fonts/CenturySchL-Roma' len=46830
+writing node 'Resource/Fonts/Dingbats' len=45955
+writing node 'Resource/Fonts/NimbusMonL-Bold' len=50493
+writing node 'Resource/Fonts/NimbusMonL-BoldObli' len=51527
+writing node 'Resource/Fonts/NimbusMonL-Regu' len=45758
+writing node 'Resource/Fonts/NimbusMonL-ReguObli' len=44404
+writing node 'Resource/Fonts/NimbusRomNo9L-Medi' len=44729
+writing node 'Resource/Fonts/NimbusRomNo9L-MediItal' len=44656
+writing node 'Resource/Fonts/NimbusRomNo9L-Regu' len=46026
+writing node 'Resource/Fonts/NimbusRomNo9L-ReguItal' len=45458
+writing node 'Resource/Fonts/NimbusSanL-Bold' len=35941
+writing node 'Resource/Fonts/NimbusSanL-BoldCond' len=37240
+writing node 'Resource/Fonts/NimbusSanL-BoldCondItal' len=38310
+writing node 'Resource/Fonts/NimbusSanL-BoldItal' len=39013
+writing node 'Resource/Fonts/NimbusSanL-Regu' len=36026
+writing node 'Resource/Fonts/NimbusSanL-ReguCond' len=36615
+writing node 'Resource/Fonts/NimbusSanL-ReguCondItal' len=37247
+writing node 'Resource/Fonts/NimbusSanL-ReguItal' len=38314
+writing node 'Resource/Fonts/StandardSymL' len=33709
+writing node 'Resource/Fonts/URWBookmanL-DemiBold' len=44768
+writing node 'Resource/Fonts/URWBookmanL-DemiBoldItal' len=44950
+writing node 'Resource/Fonts/URWBookmanL-Ligh' len=44934
+writing node 'Resource/Fonts/URWBookmanL-LighItal' len=44162
+writing node 'Resource/Fonts/URWChanceryL-MediItal' len=49289
+writing node 'Resource/Fonts/URWGothicL-Book' len=34871
+writing node 'Resource/Fonts/URWGothicL-BookObli' len=35156
+writing node 'Resource/Fonts/URWGothicL-Demi' len=36354
+writing node 'Resource/Fonts/URWGothicL-DemiObli' len=36128
+writing node 'Resource/Fonts/URWPalladioL-Bold' len=52406
+writing node 'Resource/Fonts/URWPalladioL-BoldItal' len=51285
+writing node 'Resource/Fonts/URWPalladioL-Ital' len=50022
+writing node 'Resource/Fonts/URWPalladioL-Roma' len=52665
+warning: no files found from path 'Resource/Procset/'
+warning: no files found from path 'Resource/IdiomSet/'
+warning: no files found from path 'Resource/CIDFont/'
+writing node 'lib/gs_init.ps' len=389802
+writing node 'lib/Fontmap' len=109
+writing node 'lib/Fontmap.ATB' len=5915
+writing node 'lib/Fontmap.ATM' len=5691
+writing node 'lib/Fontmap.GS' len=13531
+writing node 'lib/Fontmap.OS2' len=7275
+writing node 'lib/Fontmap.OSF' len=6532
+writing node 'lib/Fontmap.SGI' len=13791
+writing node 'lib/Fontmap.Sol' len=16470
+writing node 'lib/Fontmap.txt' len=2345
+writing node 'lib/Fontmap.Ult' len=6084
+writing node 'lib/Fontmap.VMS' len=14409
+writing node 'lib/cidfmap' len=996
+writing node 'lib/xlatmap' len=1796
+writing node 'lib/FAPIcidfmap' len=1495
+writing node 'lib/FAPIconfig' len=778
+writing node 'lib/FAPIfontmap' len=1480
+writing node 'lib/3dcolor.ps' len=1313
+writing node 'lib/Rotate-fontlist2.ps' len=1038
+writing node 'lib/fractal-fern.ps' len=1316
+writing node 'lib/EEMBCJournalPage1.ps' len=423229
+writing node 'lib/doretree.ps' len=139726
+writing node 'lib/golfer.eps' len=27009
+Total %rom% structure size is 5251888 bytes.
+gcc  -DHAVE_HYPOT=1 -O2 -Wall -fno-builtin -fno-common -DHAVE_STDINT_H -DGX_COLOR_INDEX_TYPE="unsigned long long"  -O2  -I../../th/src -I../../th/x86/al -I.. -Iinclude   -I./obj -I./src  -o ./obj/gsromfs.o -c ./obj/gsromfs.c

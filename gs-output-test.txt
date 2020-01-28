@@ -1,0 +1,15 @@
+Checking ghostscript output
+===========================
+To easily view the difference between two images, you can use the composite tool from Image Magick (http://www.imagemagick.org).
+
+composite <ref bmp> <target bmp> -compose Difference diff.bmp
+
+For files that are not in bmp format, use ghostscript convert them to BMP first e.g. 
+For CMYK, since this is not an encapsulated format, you need to supply the width and height.
+gswin32c -dBITS=<N> -dSCALE=1 -sDEVICE=bmp256 -sOutputFile=target.bmp -dUseCIEColor -- viewcmyk.ps <filename> <width>
+e.g.
+$ /c/apps/gs/gs8.53/bin/gswin32c.exe -dBITS=2 -dSCALE=1 -sDEVICE=bmp256 -sOutputFile=test.bmp -dUseCIEColor -- viewcmyk.ps gs8.banner.cmyk2b 612
+
+The output image should be mostly empty (black). Any visible pixel reflects the difference between the output image and the reference image.
+Reference output can be found under oav2/gs-output.
+

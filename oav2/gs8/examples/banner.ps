@@ -1,0 +1,108 @@
+%!PS
+
+/warp {
+    1 index
+    1.4 mul
+    cos 2 add
+    mul
+} bind def
+
+/warpmove{
+    2 index {
+        newpath
+    } if
+    warp moveto
+    pop false
+} bind def
+
+/warpline {
+    warp lineto
+} bind def
+
+/warpcurve {
+    6 2 roll warp
+    6 2 roll warp
+    6 2 roll warp
+    curveto
+} bind def
+
+/warpit {
+    true
+    { warpmove } { warpline } { warpcurve } { closepath } pathforall
+    pop
+} bind def
+
+/circ {
+    exch neg
+    % .5 mul
+    90 add
+    dup cos 2 index mul
+    3 1 roll
+    sin mul
+} bind def
+
+/circmove{
+    2 index {
+        newpath
+    } if
+    circ moveto
+    pop false
+} bind def
+
+/circline {
+    circ lineto
+} bind def
+
+/circcurve {
+    6 2 roll circ
+    6 2 roll circ
+    6 2 roll circ
+    curveto
+} bind def
+
+/circit {
+    true
+    { circmove } { circline } { circcurve } { closepath } pathforall
+    pop
+} bind def
+
+/Times-Roman findfont 30 scalefont setfont
+/circtxt (Office Automation Version 2) def
+/circwidth circtxt stringwidth pop def
+
+200 600 translate
+circwidth 2 div neg 100 moveto
+circtxt true charpath
+
+circit
+gsave
+    1 .6 .6 setrgbcolor
+    fill
+grestore
+stroke
+
+100 -200 translate
+
+/Times-Roman findfont 50 scalefont setfont
+/warptxt (From EEMBC) def
+/warpwidth warptxt stringwidth pop def
+/warphalf warpwidth 2 div def
+
+warphalf neg -30 moveto
+warphalf neg 1 warphalf { -30 lineto } for
+warphalf -1 warphalf neg { -35 lineto } for
+closepath
+
+warphalf neg 0 moveto
+warptxt true charpath
+
+warpit
+gsave
+    .6 1 1 setrgbcolor
+    fill
+grestore
+stroke
+
+showpage
+
+%%EOF

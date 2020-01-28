@@ -1,0 +1,8 @@
+RC8 bugfix update
+=================
+ bugs 87,88,89,90 
+ other: 
+	- memory leaks fixed in rotate,text,gs8 and bezier.
+	- GS command line changed to allow <file>:<N> syntax. 
+	This will allow a command line of less then 256 chars.
+

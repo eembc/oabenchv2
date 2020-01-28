@@ -1,0 +1,499 @@
+/* $Id: index.dox,v 1.2 2003/12/17 21:33:56 rick Exp $ */
+
+/**
+@mainpage ECL Introduction
+
+@addindex index
+
+This document describes the detail design level details of the Ghostscript
+project. There are three levels of Ghostscript. The goal is to provide
+Ghostscript Level 3, with features removed for a standalone executable in a
+portable embedded environment.
+
+\section gsupdates Ghostscript Updates
+Artifex has recently released Ghostscript 8.12.  The review of
+published release notes did not reveal any relevant changes to EEMBC,
+other than ensuring that the benchmarks reflect the most current stable
+release of Ghostscript.
+
+Further review of the CVS repository logs using viewcvs showed a number
+of bug fixes that are directly relevant to the porting effort. 
+Specifically, fixes pointed out by GCC warning messages concerning
+variables that were used without being initialized.
+
+To ensure that the porting effort has access to the latest updates:
+
+-# A CVS account to the ghostscript repository was created, and the 8.12 source
+base was downloaded.
+-# The 8.12 sources were merged in with the EEMBC ghostscript sources.
+-# ECL is now on the CVS notification mailing lists for gs, jbig2, and GhostPCL.
+
+This should ensure that we have the latest information on upcoming code
+changes, and avoid any duplicate efforts.
+
+The Ghostscript list has proven to be fairly active, and the project
+will can benefit from the ongoing maintenance changes to the Artifex
+version of Ghostscript.
+
+\section gsfeatures Ghostscript Features
+Ghostscript makefiles cannot use default compilation rules, because
+they may place the output in (multiple) different directories.
+All compilation rules must have the form
+#	<<compiler>> $(O_)<<output_file>> $(C_)<<input_file>>
+to cope with the divergent syntaxes of the various compilers.
+Spaces must appear where indicated, and nowhere else; in particular,
+there must be no space between $(O_) and the output file name.
+
+The platform-specific makefiles define the following symbols:
+- GS - the name of the executable (without the extension, if any).
+- GS_LIB_DEFAULT - the default directory/ies for searching for the
+    initialization and font files at run time.
+- SEARCH_HERE_FIRST - the default setting of -P (whether or not to
+    look for files in the current directory first).
+- GS_DOCDIR - the directory where documentation will be available
+    at run time.
+- JSRCDIR - the directory where the IJG JPEG library source code
+    is stored (at compilation time).
+- JVERSION - the major version number of the IJG JPEG library.
+- PSRCDIR, PVERSION - the same for libpng.
+- ZSRCDIR - the same for zlib.
+- SHARE_JPEG - normally 0; if set to 1, asks the linker to use
+    an existing compiled libjpeg (-ljpeg) instead of compiling and
+    linking libjpeg explicitly.  (We strongly recommend against
+    doing this: see Make.htm details.)
+- JPEG_NAME - the name of the shared library, currently always
+    jpeg (libjpeg, -lpjeg).
+- SHARE_LIBPNG - normally 0; if set to 1, asks the linker to use
+    an existing compiled libpng (-lpng) instead of compiling and
+    linking libpng explicitly.
+- LIBPNG_NAME, the name of the shared libpng, currently always
+    png (libpng, -lpng).
+- SHARE_ZLIB - normally 0; if set to 1, asks the linker to use
+    an existing compiled zlib (-lgz or -lz) instead of compiling
+    and linking libgz/libz explicitly.
+- ZLIB_NAME - the name of the shared zlib, either gz (for libgz, -lgz)
+    or z (for libz, -lz).
+- SHARE_JBIG2 - normally 0; if set to 1, asks the linker to use
+    an existing complied libjbig2dec instead of compiling and linking
+    in from a local copy of the source
+- JBIG2SRCDIR - the name of the jbig2dec library source directory
+    typically 'jbig2dec' or 'jbig2dec-/version/'
+- ICCSRCDIR - the name of the ICC lib source dir, currently
+    always icclib (compiled in statically)
+- DEVICE_DEVS - the devices to include in the executable.
+    See devs.mak for details.
+- DEVICE_DEVS1...DEVICE_DEVS21 - additional devices, if the definition
+    of DEVICE_DEVS doesn't fit on one line.  See devs.mak for details.
+- FEATURE_DEVS - what features to include in the executable.
+\verbatim
+    Normally this is one of:
+	    $(PSD)psl1.dev - a PostScript Level 1 language interpreter.
+	    $(PSD)psl2.dev - a PostScript Level 2 language interpreter.
+	    $(PSD)psl3.dev - a PostScript LanguageLevel 3 language
+	      interpreter.
+      and/or
+	    pdf - a PDF 1.2 interpreter.
+    psl3 includes everything in psl2, and psl2 includes everything
+      in psl1.  For backward compatibility, level1 is a synonym for
+      psl1, and level2 is a synonym for psl2.  
+    The following feature may be added to any of the standard
+      configurations:
+	    ccfonts - precompile fonts into C, and link them
+		with the executable.  See Fonts.htm for details.
+    The remaining features are of interest primarily to developers
+      who want to "mix and match" features to create custom
+      configurations:
+	    btoken - support for binary token encodings.
+		Included automatically in the dps and psl2 features.
+	    cidfont - (currently partial) support for CID-keyed fonts.
+	    color - support for the Level 1 CMYK color extensions.
+		Included automatically in the dps and psl2 features.
+	    compfont - support for composite (type 0) fonts.
+		Included automatically in the psl2 feature.
+	    dct - support for DCTEncode/Decode filters.
+		Included automatically in the psl2 feature.
+                  diskn - support for %disk IODevice emulation. Adds support
+                      for %disk0 thru %disk9. Use requires setting the /Root
+                      paramter for each %disk (see Language.htm).
+	    dps - (partial) support for Display PostScript extensions:
+		see Language.htm for details.
+	    dpsnext - (partial) support for Display PostScript
+		extensions with NeXT's additions.
+	    epsf - support for recognizing and skipping the binary
+		header of MS-DOS EPSF files.
+	    filter - support for Level 2 filters (other than eexec,
+		ASCIIHexEncode/Decode, NullEncode, PFBDecode,
+		RunLengthEncode/Decode, and SubFileDecode, which are
+		always included, and DCTEncode/Decode,
+		which are separate).
+		Included automatically in the psl2 feature.
+	    fzlib - support for zlibEncode/Decode filters.
+	    ttfont - support for TrueType fonts.
+	    type1 - support for Type 1 fonts and eexec;
+		normally included automatically in all configurations.
+	    type32 - support for Type 32 (downloaded bitmap) fonts.
+		Included automatically in the psl2 feature.
+	    type42 - support for Type 42 (embedded TrueType) fonts.
+		Included automatically in the psl2 feature.
+                  fapi - Font API (3d party font renderer interface).
+	There are quite a number of other sub-features that can be
+	selectively included in or excluded from a configuration,
+	but the above are the ones that are most likely to be of
+	interest.
+\endverbatim
+- COMPILE_INITS - normally 0; if set to 1, compiles the PostScript
+    language initialization files (gs_init.ps et al) into the
+    executable, eliminating the need for these files to be present
+    at run time.
+- BAND_LIST_STORAGE - normally file; if set to memory, stores band
+    lists in memory (with compression if needed).
+- BAND_LIST_COMPRESSOR - normally zlib: selects the compression method
+    to use for band lists in memory.
+- FILE_IMPLEMENTATION - normally stdio; if set to fd, uses file
+    descriptors instead of buffered stdio for file I/O; if set to
+    both, provides both implementations with different procedure
+    names for the fd-based implementation (see sfxfd.c for
+    more information).
+- STDIO_IMPLEMENTATION - normally 'c' which uses callouts and 
+    ziodevsc.c, but ghostscript library must use '' for file 
+    based stdio in ziodevs.c. 
+          Callouts use procedure based streams and return back to
+          to gs_main_interpret() in imain.c whenever stdio is needed.
+- EXTEND_NAMES - a value N between 0 and 6, indicating that the name
+    table should have a capacity of 2^(16+N) names.  This normally
+    should be set to 0 (or left undefined), since non-zero values
+    result in a larger fixed space overhead and slightly slower code.
+- SYSTEM_CONSTANTS_ARE_WRITABLE - normally 0 (or undefined); if set to
+    1, makes the system configuration constants (buildtime, copyright,
+    product, revision, revisiondate, serialnumber) writable.  Only
+    one unusual application needs this.
+
+It is very unlikely that anyone would want to edit the remaining
+  symbols, but we describe them here for completeness:
+- GS_INIT - the name of the initialization file for the interpreter,
+	normally gs_init.ps.
+- PLATFORM - a "device" name for the platform, so that platforms can
+	add various kinds of resources like devices and features.
+- CMD - the suffix for shell command files (e.g., null or .bat).
+	(This is only needed in a few places.)
+- D - the directory separator character (\ for MS-DOS, / for Unix).
+- O_ - the string for specifying the output file from the C compiler
+	(-o for MS-DOS, -o ./ for Unix).
+- OBJ - the extension for relocatable object files (e.g., o or obj).
+- XE - the extension for executable files (e.g., null or .exe).
+- XEAUX - the extension for the executable files (e.g., null or .exe)
+	for the utility programs (those compiled with CCAUX).
+- BEGINFILES - the list of additional files that `make clean' should
+	delete.
+- CCAUX - the C invocation for auxiliary programs (echogs, genarch,
+	genconf, gendev, genht, geninit).
+- CC_ - the C invocation for normal compilation.
+- CCD - the C invocation for files that store into frame buffers or
+	device registers.  Needed because some optimizing compilers
+	will eliminate necessary stores.
+- CCINT - the C invocation for compiling the main interpreter module,
+	normally the same as CC_: this is needed because the
+	Borland compiler generates *worse* code for this module
+	(but only this module) when optimization (-O) is turned on.
+- CCLEAF - the C invocation for compiling modules that contain only
+	leaf procedures, which don't need to build stack frames.
+	This is needed only because many compilers aren't able to
+	recognize leaf procedures on their own.
+- AK - if a particular platform requires any programs or data files
+	to be built before compiling the source code, AK must list
+	them.
+- EXP - the prefix for invoking an executable program in a specified
+	directory (MCR on OpenVMS, null on all other platforms).
+- SH - the shell for scripts (null on MS-DOS, sh on Unix).
+- CONFILES - the arguments for genconf to generate the appropriate
+	linker control files (various).
+- CONFLDTR - the genconf switch for generating ld_tr.
+- CP_ - the command for copying one file to another.  Because of
+	limitations in the MS-DOS/MS Windows environment, the
+	second argument must be either '.' (in which case the
+	write date may be either preserved or set to the current
+	date) or a file name (in which case the write date is
+	always updated).
+- RM_ - the command for deleting (a) file(s) (including wild cards,
+	but limited to a single file or pattern).
+- RMN_ = the command for deleting multiple files / patterns.
+
+The platform-specific makefiles must also include rules for creating
+certain dynamically generated files:
+
+- gconfig_.h - this indicates the presence or absence of
+certain system header files that are located in different
+places on different systems.  (It could be generated by
+the GNU `configure' program.)
+
+- gconfigv.h - this indicates the status of certain machine-
+and configuration-specific features derived from definitions
+in the platform-specific makefile.
+
+\section eclfeatures ECL Development Features
+
+The autoconf build, and newer code base uncovered several features that were
+not being used, as well as several modifications needed to bring us to Ghostscript level 3.
+
+- Several host configuration programs are used in addition to autoconf. While these
+should have been integrated, they are instead an integral part of the build. The
+following utilities needed to be removed from the build, and need to be integrated
+with EEMBC porting:
+
+- genarch.c: Generate a header file (arch.h) with parameters
+reflecting the machine architecture and compiler characteristics.
+
+- genconf.c: Generate device configurations. This is the most complex utility,
+and will be discussed further in the next section.
+
+- geninit.c: Utility for merging all the Ghostscript initialization
+files (gs_*.ps) into a single file, optionally converting them to C
+data.
+
+\subsection genconf Generate Resource Configuration
+
+The genconf program reads .dev files, which contain definitions of modules,
+and generates merged configuration files.
+
+A .dev file specifies a list of "resources" of various kinds (.obj/.o
+files, other .dev files to be merged in, PostScript files, driver names,
+compiled fonts, etc.)  that make up the module.  (This is similar in
+spirit to the Macintosh resource fork, and to PostScript resources, but
+has nothing to do directly with the latter.)
+
+A .dev file consists of a series of switches and resource names.  Most
+switches specifies the type of the following resources, until the next
+type switch; there are also a few other switches.
+
+genconf recognizes the following resource type switches in .dev files.
+See the next section on command line switches for the meaning of
+<name_prefix>.
+
+   -comp <name>
+
+Adds compositor_(<name_prefix>_composite_<name>_type) to <gconfig.h>.
+Used for gs_composite_type_t structures, whose identity may need to
+passed through the command list.
+
+   -dev <device>
+
+Adds device_(<name_prefix><device>_device) to <gconfig.h>.
+Used for ordinary devices.
+
+   -dev2 <device>
+
+Adds device2_(<name_prefix><device>_device) to <gconfig.h>.
+Used for some newer devices with potentially different structures
+or conventions.
+
+   -emulator <emulator>
+
+Adds emulator_("<emulator>",<len>), where len is the number of
+characters in <emulator>, to <gconfig.h>.
+Used for names that should appear as instances of the PostScript
+Emulator resource category.
+
+   -font <font>
+
+Adds an entry to <gconfigf.h>, as described below.
+
+   -functiontype <fntype>
+
+Adds function_type_(<fntype>,<name_prefix>build_function_<fntype>)
+to <gconfig.h>.
+Used for instances of the PostScript FunctionType resource category,
+and also to generate a table of procedures for processing
+Function dictionaries.
+
+   -halftone <htname>
+
+Adds halftone_(<name_prefix>dht_<htname>) to <gconfig.h>.
+Used for halftones that will be compiled into the executable.
+
+   -imageclass <iclass>
+
+Adds image_class_(<name_prefix>image_class_<iclass>) to <gconfig.h>.
+Used internally for the various cases of rendering images.
+
+   -imagetype <itype>
+
+Adds image_type_(<itype>,<name_prefix>image_type_<itype>) to
+<gconfig.h>.
+Used for instances of the PostScript ImageType resource category,
+and also to generate a table of procedures for handling the various
+types of images.
+
+   -include <module>
+
+Reads the file named <module> (or <module>.dev if <module> doesn't
+end with ".dev") as though it were part of the current .dev file.
+Used when one module requires the presence of another.
+
+   -init <initname>
+
+Adds init_(<name_prefix><initname>_init) to <gconfig.h>.
+Used for initialization procedures to be called when Ghostscript
+is started.  By convention, <initname> is (almost always) the name
+of the source file in which the procedure is defined.
+
+   -iodev <iodev>
+
+Adds io_device_(<name_prefix>iodev_<iodev>) to <gconfig.h>.
+Used for instances of the PostScript IODevice resource category.
+
+   -lib <lib>
+
+Adds <lib> to the list of libraries to be written by -l.
+
+   -libpath <libpath>
+
+Adds <libpath> to the list of library paths to be written by -l.
+
+   -link <link>
+
+Adds <link> to the list of switches to be passed to the linker,
+to be written by -l.
+
+   -obj <obj>
+
+Adds <obj> to the list of files to be linked, to be written by -o.
+
+   -oper <opername>
+
+Adds oper_(<opername>_op_defs) to <gconfig.h>.
+Used for tables of PostScript operators.  By convention,
+<opername> is (usually) the name of the source file in which the
+table appears.
+
+   -plugin <plugin_name>
+
+Adds plugin_(<name_prefix><plugin_name>_instantiate) to <gconfig.h>.
+Used for plugins to be instantiated when Ghostscript
+is started.  By convention, <plugin_name> is (almost always) the name
+of the source file in which the plugin is defined.
+
+   -ps <psname>
+
+Adds psfile_("<psname>.ps",<len+3>), where <len> is the number of
+character in <psname>, to <gconfig.h>.
+Used for PostScript files that should be read at initialization.
+
+genconf recognizes the following other switches in .dev files:
+
+   -replace <module>
+
+This switch declares that <module> has been replaced by another
+module (presumably the one defined by the .dev file in which the
+switch appears), and should be removed from consideration.
+Modules that can be -replaced should not -include other modules.
+
+genconf writes the following files if the corresponding switch is used:
+
+   -h <gconfig.h>
+
+Writes a list of all the resources as described above.  Each
+sublist is surrounded by an #ifdef/#endif in case the
+referenced macro (e.g., device_, oper_) is undefined.
+Duplicates are eliminated.
+
+   -f <gconfigf.h>
+
+Writes a list of all the -font resources, in the form
+	font_("0.font_<name>",<name_prefix>f_<name>,zf_<name)
+
+Other switches specify various options and parameters:
+
+   -Z
+
+Turns on debugging output.
+
+   -C [<file_prefix>]
+
+Prefixes <file_prefix> to the names of all .dev files read in,
+and to the names of all .obj/.o files written in <gconfig.h>.
+The default file_prefix is the empty string.
+This switch should probably be removed, since nothing in the
+current Ghostscript makefiles uses it.
+
+   -e <escapechar>
+
+Sets the escape character for patterns.  See below.
+
+   -n [<name_prefix> | -]
+
+Prefixes <name_prefix>, or the empty string, to certain items in
+the output, as indicated above.
+The default name_prefix is "gs_".
+
+   -p[l|L][u][e] <pattern>
+
+Sets the pattern (format string) used for writing certain items in
+the output, as indicated above.  '%' in the pattern indicates
+substitution of the variable data, as for printf except that the
+'%' is not followed by a format character -- the data are always
+inserted literally.  See below for more information about patterns.
+
+   -l[o] <lib.tr>
+
+Writes the list of library paths, links, and library file names
+on <lib.tr>.  -lo also writes the list of object file names,
+as for -o.
+
+   -o[l] <obj.tr>
+
+Writes the list object file names on <obj.tr>.  -ol also writes
+the list of library paths, links, and library file names as for -l.
+
+Usage summary:
+
+     genconf [-Z] [-C prefix] [-e escapechar] [-n [name_prefix | -]]
+  [@]xxx.dev* [-f gconfigf.h] [-h gconfig.h]
+       [-p[l|L][u][e] pattern] [-l|o|lo|ol lib.tr]
+
+Patterns:
+
+  The default escape character is &.  When this character appears in a
+  pattern, it acts as follows:
+- &p produces a %;
+- &s produces a space;
+- && (i.e., the escape character twice) produces a \;
+- &- produces a -;
+- &x, for any other character x, is an error.
+
+\section eembcbuild Conversion from Autoconf to EEMBC Build
+A specific conversion between the Ghostscript Autoconf Build to the EEMBC
+makefile build is required.
+
+The Autoconf build process provides a method for generating a portable source
+code build that evaluates host/target, compiler capabilities, etc. Autoconf only
+works with GCC based compilers. The cross platform portability features are
+largely coded by the developer, autoconf serves as a framework for this not a 
+total solution. 
+
+Since many of the build features of Autoconf are determined by the developer,
+the entire build process must be understood in detail before portability issues,
+(i.e. architecture, toolchain, cross-compilation, platform, etc.), can be
+evaluated.
+
+The EEMBC makefile build process provides a proven, widely portable, toolchain
+independant method for generating embedded standalone executables.
+
+The Ghostscript Autoconf process has several showstoppers, as does any
+autoconf build, for EEMBC.  Autoconf will NOT work with most embedded
+toolchains.  Autoconf does not help in evaluating target architecture
+capabilities to the extent needed by EEMBC builds.  The Autoconf build
+needs to be converted to an EEMBC makefile build.
+
+Ghostscript Autoconf Build provides the following services relevant to
+ECL development:
+
+-# Generation of device driver lists, and resulting builds for those drivers.
+-# Generation of Source file and linkage lists, src/gs.mak -> ld.tr, ldt.tr.
+-# Generation of compiler defines for options defined in \ref gsfeatures.
+-# Architecture specific declarations, via genarch program, src/arch.mak -> arch.h.
+-# Device configuration structures, via gconf program -> gconfig.c.
+-# Library, shared or static build, for JPEG, JBIG2, IJS Server, PNG, ICC.
+
+
+
+*/
