@@ -1,18 +1,11 @@
-#!/usr/local/bin/gawk -f
-#==============================================================================
-#$RCSfile: sizevc.awk,v $
+# ============================================================================
 #
-#   DESC : Application Level Make
+# Copyright (C) EEMBC(R) All Rights Reserved
 #
-# AUTHOR : Rick Foos, ECL, LLC
+# This software is licensed with an Acceptable Use Agreement under Apache 2.0.
+# Please refer to the license file (LICENSE.md) included with this code.
 #
-#  EEMBC : Technical Advisory Group (TechTAG)
-#
-#    CVS : $Revision: 1.5 $
-#------------------------------------------------------------------------------
-# Copyright (c) 1998-2005 by the EDN Embedded Microprocessor 
-# Benchmark Consortium (EEMBC), Inc. All Rights Reserved.
-#==============================================================================
+# ============================================================================
 
 ## Convert hexadecimal string x to decimal n
 # @note Parameters h,n,l are required to create local variables.
